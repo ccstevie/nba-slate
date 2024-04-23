@@ -1,8 +1,8 @@
 // Post.js
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import posts from '../posts';
-import NotFound from '../NotFound';
+import posts from '../../posts';
+import NotFound from '../NotFound/NotFound';
 
 const Post = () => {
   const { id } = useParams();

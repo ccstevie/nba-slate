@@ -1,0 +1,35 @@
+/* FuturePlans.css */
+.future-plans-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .future-plans-container h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333; /* Dark text color */
+  }
+  
+  .future-plans-container ul {
+    list-style-type: none; /* Remove bullet points */
+  }
+  
+  .future-plans-container li {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #555; /* Medium-dark text color */
+    border: 1px solid #ddd; /* Add border around list items */
+    padding: 10px; /* Add padding inside the border */
+    border-radius: 5px; /* Add rounded corners */
+  }
+  
+  .future-plans-container li:first-child {
+    margin-top: 0; /* Remove top margin for the first list item */
+  }
+  
+  .future-plans-container li:last-child {
+    margin-bottom: 0; /* Remove bottom margin for the last list item */
+  }
+  

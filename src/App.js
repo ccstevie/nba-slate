@@ -2,11 +2,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import Home from './components/Home/Home';
-import About from './components/About/About';
+import Home from './pages/Home/Home';
+import About from './pages/About/About';
 import Post from './components/Post/Post';
-import NotFound from './components/NotFound';
-import Footer from './components/Footer/Footer'; // Import Footer component
+import NotFound from './components/NotFound/NotFound';
 import './App.css';
 
 const App = () => {
@@ -24,7 +23,6 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
-        <Footer />
       </div>
     </Router>
   );
