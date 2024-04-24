@@ -1,25 +1,24 @@
-import React from 'react';
 import './Home.css';
-// import Subscription from '../../components/Subscription/Subscription';
+import blogEntries from '../../blogEntries.json';
 
 const Home = () => {
   return (
     <div className="home">
       <header>
-        <h1>Today's Slate</h1>
+        <h1>My Personal Sports Betting Blog</h1>
+        <p>Welcome to my blog! Feel free to check out the <i>About</i> page for some information about me.</p>
       </header>
       <section>
-        <h2>NBA</h2>
-        <ul>
-          <li>
-            <h3>Post Title</h3>
-            <p>Post content goes here...</p>
-          </li>
-        </ul>
+        <h2>Daily Entry</h2>
+        {blogEntries ? (blogEntries.map((blogEntry) => 
+          <div>
+            <h3>{blogEntry.league}</h3>
+            <p>{blogEntry.content}</p>
+          </div>
+        )) : (
+          <p>No blog entry for today.</p>
+        )}
       </section>
-      {/* <aside>
-          <Subscription />
-      </aside> */}
     </div>
   );
 }
