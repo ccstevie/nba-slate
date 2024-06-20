@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './Create.css'; // Import the CSS file
+import './Create.css';
+import Lineups from '../../components/Lineups/Lineups';
 
 function Create() {
   const [games, setGames] = useState([]);
@@ -80,6 +81,7 @@ function Create() {
             <div key={game.gameId} className="game-card">
               <h2 className="game-title">{game.away_team} at {game.home_team}</h2>
               <p className="game-details"> {new Date(game.time).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</p>
+              <Lineups gameId={game.gameId} />
               <textarea
                 className="game-notes"
                 placeholder="Enter your notes..."
