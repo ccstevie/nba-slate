@@ -91,53 +91,5 @@ def get_starting_lineups(game_id):
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-# @app.route('/api/team_vs_pitcher/<team_id>/<pitcher_hand>', methods=['GET'])
-# def get_team_vs_pitcher(team_id, pitcher_hand):
-#     try:
-#         # Use a scraping tool or API service for detailed stats
-#         data = {
-#             'wRC+': 120,  # Example data
-#             'K%': 22.5    # Example data
-#         }
-#         return jsonify(data), 200
-#     except Exception as e:
-#         return jsonify({'error': str(e)}), 500
-    
-# @app.route('/api/pitcher_statcast/<pitcher_id>', methods=['GET'])
-# def get_pitcher_statcast(pitcher_id):
-#     try:
-#         # Use a scraping tool or API service for detailed stats
-#         data = {
-#             'K%': 28.7,     # Example data
-#             'Whiff%': 30.2, # Example data
-#             'Chase%': 35.1  # Example data
-#         }
-#         return jsonify(data), 200
-#     except Exception as e:
-#         return jsonify({'error': str(e)}), 500
-
-# @app.route('/api/batter_vs_pitcher/<pitcher_id>', methods=['GET'])
-# def get_batter_vs_pitcher(pitcher_id):
-#     try:
-#         # Use a scraping tool or API service for detailed stats
-#         data = {
-#             'players': [
-#                 {'name': 'Player A', 'OPS': .900},
-#                 {'name': 'Player B', 'OPS': .850},
-#             ]
-#         }
-#         return jsonify(data), 200
-#     except Exception as e:
-#         return jsonify({'error': str(e)}), 500
-    
-# @app.route('/api/weather/<location>', methods=['GET'])
-# def get_weather(location):
-#     try:
-#         response = requests.get(f'http://api.weatherapi.com/v1/current.json?key=YOUR_API_KEY&q={location}')
-#         weather_data = response.json()
-#         return jsonify(weather_data), 200
-#     except Exception as e:
-#         return jsonify({'error': str(e)}), 500
-
 if __name__ == '__main__':
     app.run(debug=True)
