@@ -1,79 +1,122 @@
-.create-container {
-    max-width: 800px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box; /* Ensure padding and border are included in total width */
-  }
-  
-  /* Header styling */
-  .create-header {
-    padding-bottom: 40px;
-    text-align: center;
-    color: #333;
-  }
-  
-  /* Styling for each game card */
-  .game-card {
-    margin-bottom: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box; /* Ensure padding and border are included in total width */
-  }
-  
-  /* Game title styling */
-  .game-title {
-    margin: 0;
-    font-size: 1.5em;
-    color: #007BFF;
-  }
-  
-  /* Game details styling */
-  .game-details {
-    margin: 10px 0;
-    font-size: 1em;
-    color: #555;
-  }
-  
-  /* Textarea styling for notes */
-  .game-notes {
-    width: calc(100% - 20px); /* Subtract padding from 100% to prevent overflow */
-    height: 100px;
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: none;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box; /* Ensure padding and border are included in total width */
-  }
-  
-  /* Button styling */
-  .save-button {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 1.2em;
-    color: #fff;
-    background-color: #28a745;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-  }
-  
-  .save-button:hover {
-    background-color: #218838;
-  }
-  
-  /* Loading and error messages */
-  .loading, .error {
-    text-align: center;
-    font-size: 1.2em;
-    color: #d9534f;
-  }
+.create-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.loading,
+.error {
+  text-align: center;
+}
+
+.game-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.game-card button {
+  padding: 0;
+}
+
+.game-title {
+  font-size: 1.2em;
+}
+
+.game-time {
+  margin: 5px 0;
+}
+
+.details-link {
+  background: none;
+  border: none;
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 1em;
+}
+
+.details-link:hover {
+  color: darkblue;
+}
+
+.lineup {
+  margin-top: 10px;
+}
+
+.lineups-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.batter-stats {
+  margin-left: 10px;
+  font-style: italic;
+}
+
+.game-notes {
+  width: 100%;
+  height: 60px;
+  margin-top: 10px;
+}
+
+.save-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1em;
+}
+
+.game-details {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.game-details-container {
+  padding-left: 20px;
+  background-color: #f9f9f9;
+}
+
+.game-details-container h1 {
+  padding-left: 30px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+}
+
+.lineups-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.lineup {
+  width: 45%;
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.lineup h3 {
+  margin-top: 0;
+}
+
+.lineup ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.lineup li {
+  margin-bottom: 10px;
+}
+
+.batter-stats {
+  margin-left: 10px;
+  color: #666;
+}
+
+.batter-stats p {
+  margin: 0;
+}

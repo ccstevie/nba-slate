@@ -1,5 +1,3 @@
-# app.py
-
 from flask import Flask, jsonify
 from flask_cors import CORS
 import requests
@@ -56,6 +54,7 @@ def get_starting_lineups(game_id):
             f'{MLB_API_BASE_URL}/game/{game_id}/feed/live'
         )
         lineups_data = lineups_response.json()
+        print(lineups_data)
 
         # Extract probable pitchers
         game_details = pitchers_data.get('dates', [])[0].get('games', [])[0]
@@ -105,7 +104,6 @@ def get_starting_lineups(game_id):
         print(f"Error in get_starting_lineups: {e}")
         return jsonify({'error': str(e)}), 500
 
-# Function to fetch batter vs pitcher stats
 def get_batter_vs_pitcher_stats(batter_id, pitcher_id):
     try:
         response = requests.get(

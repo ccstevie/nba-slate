@@ -1,6 +1,5 @@
-// FuturePlans.js
 import React from 'react';
-import './FuturePlans.css'; // Import CSS file
+import './FuturePlans.css';
 
 const FuturePlans = () => {
   return (
@@ -11,7 +10,6 @@ const FuturePlans = () => {
         <li>Implement user authentication for commenting and posting</li>
         <li>Create user profiles</li>
         <li>Add a search functionality for blog posts</li>
-        {/* Add more future plans here */}
       </ul>
     </div>
   );

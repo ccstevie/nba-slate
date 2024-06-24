@@ -1,4 +1,3 @@
-/* App.css */
 html, body, #root {
   height: 100%;
 }
@@ -11,4 +10,57 @@ html, body, #root {
 
 main {
   flex-grow: 1;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif; /* Apply Montserrat font to the entire app */
+  font-size: 14px; /* Base font size */
+}
+
+/* Optionally, adjust font sizes */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600; /* Semi-bold */
+}
+
+p {
+  font-size: 0.95em; /* Slightly smaller paragraph font */
+}
+
+ul {
+  list-style-type: none; /* Remove list styles */
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px; /* Adjust list item spacing */
+}
+
+a {
+  text-decoration: none; /* Remove default underline from links */
+  color: inherit; /* Inherit text color */
+}
+
+/* Global container styles */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Global section styles */
+.section {
+  margin-bottom: 40px;
+}
+
+/* Global title styles */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Global text styles */
+.text {
+  line-height: 1.6;
+  margin-bottom: 20px;
 }

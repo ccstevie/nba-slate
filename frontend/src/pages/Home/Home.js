@@ -1,24 +1,22 @@
-import './Home.css';
 import blogEntries from '../../blogEntries.json';
 
 const Home = () => {
   return (
-    <div className="home">
+    <div className="container">
       <header>
-        <h1>My Personal Sports Betting Blog</h1>
-        <p>Welcome to my blog! Feel free to check out the <i>About</i> page for some information about me.</p>
+        <h1 className="title">My Personal Sports Betting Blog</h1>
+        <p className="text">Welcome to my blog! Feel free to check out the <i>About</i> page for some information about me.</p>
       </header>
-      <section>
-        <h2>Daily Entry</h2>
+      <div className="section">
         {blogEntries ? (blogEntries.map((blogEntry) => 
           <div>
-            <h3>{blogEntry.league}</h3>
-            <p>{blogEntry.content}</p>
+            <h2>{blogEntry.league}</h2>
+            <p className="text">{blogEntry.content}</p>
           </div>
         )) : (
-          <p>No blog entry for today.</p>
+          <p className="text">No blog entry for today.</p>
         )}
-      </section>
+      </div>
     </div>
   );
 }

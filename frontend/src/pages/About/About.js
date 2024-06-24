@@ -1,12 +1,11 @@
-// About.js
 import React from 'react';
 import './About.css';
 
 const About = () => {
   return (
-    <div className="about-container">
-      <h1>About Me</h1>
-      <p>
+    <div className="container">
+      <h1 className="title">About Me</h1>
+      <p className="text">
         I'm just a normal guy who has watched and played a ton of sports and have had success betting over the past year.
         I aim to provide enough explanation and reasoning so that it can aid your own judgement on what picks you decide to tail.
       </p>
