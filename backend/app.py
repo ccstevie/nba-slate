@@ -67,20 +67,31 @@ def get_starting_lineups(game_id):
             'home': [],
             'away': []
         }
+
+        def get_player_name(player_id):
+            url = f"https://statsapi.mlb.com/api/v1/people/{player_id}"
+            
+            response = requests.get(url)
+            
+            if response.status_code == 200:
+                player_data = response.json()
+                player_name = player_data['people'][0]['fullName']
+                return player_name
+            else:
+                return f"Error: Unable to fetch data (Status Code: {response.status_code})"
+            
+        # Extract teams from boxscore
         teams = lineups_data.get('liveData', {}).get('boxscore', {}).get('teams', {})
-        
-        for team, lineup in teams.items():
-            batters = lineup.get('batters', [])
-            batter_info = []
-            for batter_id in batters:
-                batter_data = lineups_data.get('liveData', {}).get('players', {}).get(f'ID{batter_id}', {})
-                batter_info.append({
-                    'id': batter_id,
-                    'name': batter_data.get('fullName', ''),
-                    'position': batter_data.get('position', {}).get('abbreviation', ''),
-                    'batting_order': batter_data.get('battingOrder', '')
-                })
-            lineups[team] = batter_info
+
+        # Extract away team lineup
+        away_batters = teams.get('away', {}).get('batters', [])
+        for batter_id in away_batters:
+            lineups['away'].append(get_player_name(batter_id))
+
+        # Extract home team lineup
+        home_batters = teams.get('home', {}).get('batters', [])
+        for batter_id in home_batters:
+            lineups['home'].append(get_player_name(batter_id))
 
         result = {
             'probable_pitchers': probable_pitchers,
@@ -89,6 +100,7 @@ def get_starting_lineups(game_id):
 
         return jsonify(result), 200
     except Exception as e:
+        print(f"Error in get_starting_lineups: {e}")
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
