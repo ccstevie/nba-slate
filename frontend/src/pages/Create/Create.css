@@ -27,17 +27,9 @@
   margin: 5px 0;
 }
 
-.details-link {
-  background: none;
-  border: none;
-  color: blue;
-  cursor: pointer;
-  text-decoration: underline;
-  font-size: 1em;
-}
-
-.details-link:hover {
-  color: darkblue;
+.details-section {
+  display: flex;
+  justify-content: space-between;
 }
 
 .lineup {

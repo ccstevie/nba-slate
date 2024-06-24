@@ -51,10 +51,9 @@ def get_starting_lineups(game_id):
 
         # Fetch lineups
         lineups_response = requests.get(
-            f'{MLB_API_BASE_URL}/game/{game_id}/feed/live'
+            f'https://statsapi.mlb.com/api/v1.1/game/{game_id}/feed/live'
         )
         lineups_data = lineups_response.json()
-        print(lineups_data)
 
         # Extract probable pitchers
         game_details = pitchers_data.get('dates', [])[0].get('games', [])[0]
