@@ -8,8 +8,10 @@ from datetime import datetime
 app = Flask(__name__)
 CORS(app)
 
+MLB_API_BASE_URL = "https://statsapi.mlb.com/api/v1"
+
 def get_todays_mlb_games():
-    url = "http://statsapi.mlb.com/api/v1/schedule/games"
+    url = f"{MLB_API_BASE_URL}/schedule/games"
     today = datetime.now().strftime("%Y-%m-%d")
     params = {"sportId": 1, "date": today}
 
@@ -45,13 +47,13 @@ def get_starting_lineups(game_id):
     try:
         # Fetch probable pitchers
         pitchers_response = requests.get(
-            f'https://statsapi.mlb.com/api/v1/schedule?sportId=1&gamePk={game_id}&hydrate=probablePitcher(note)'
+            f'{MLB_API_BASE_URL}/schedule?sportId=1&gamePk={game_id}&hydrate=probablePitcher(note)'
         )
         pitchers_data = pitchers_response.json()
 
         # Fetch lineups
         lineups_response = requests.get(
-            f'https://statsapi.mlb.com/api/v1.1/game/{game_id}/feed/live'
+            f'{MLB_API_BASE_URL}/game/{game_id}/feed/live'
         )
         lineups_data = lineups_response.json()
 
@@ -69,7 +71,7 @@ def get_starting_lineups(game_id):
         }
 
         def get_player_name(player_id):
-            url = f"https://statsapi.mlb.com/api/v1/people/{player_id}"
+            url = f"{MLB_API_BASE_URL}/people/{player_id}"
             
             response = requests.get(url)
             
@@ -102,6 +104,32 @@ def get_starting_lineups(game_id):
     except Exception as e:
         print(f"Error in get_starting_lineups: {e}")
         return jsonify({'error': str(e)}), 500
+
+# Function to fetch batter vs pitcher stats
+def get_batter_vs_pitcher_stats(batter_id, pitcher_id):
+    try:
+        response = requests.get(
+            f"{MLB_API_BASE_URL}/people/{batter_id}/stats/game/{pitcher_id}?stats=vsPlayer"
+        )
+        data = response.json()
+
+        stats = data.get('stats', [])[0].get('splits', [])[0].get('stat', {})
+        batting_average = stats.get('avg', 'N/A')
+        ops = stats.get('ops', 'N/A')
+        home_runs = stats.get('homeRuns', 'N/A')
+
+        return {
+            'batting_average': batting_average,
+            'ops': ops,
+            'home_runs': home_runs
+        }
+    except Exception as e:
+        return {'error': str(e)}
+
+@app.route('/api/batter_vs_pitcher/<int:batter_id>/<int:pitcher_id>', methods=['GET'])
+def batter_vs_pitcher(batter_id, pitcher_id):
+    stats = get_batter_vs_pitcher_stats(batter_id, pitcher_id)
+    return jsonify(stats), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
