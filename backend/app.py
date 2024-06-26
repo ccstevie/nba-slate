@@ -86,12 +86,12 @@ def get_starting_lineups(game_id):
         # Extract away team lineup
         away_batters = teams.get('away', {}).get('batters', [])
         for batter_id in away_batters:
-            lineups['away'].append(get_player_name(batter_id))
+            lineups['away'].append((batter_id, get_player_name(batter_id)))
 
         # Extract home team lineup
         home_batters = teams.get('home', {}).get('batters', [])
         for batter_id in home_batters:
-            lineups['home'].append(get_player_name(batter_id))
+            lineups['home'].append((batter_id, get_player_name(batter_id)))
 
         result = {
             'probable_pitchers': probable_pitchers,

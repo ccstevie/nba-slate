@@ -59,9 +59,10 @@ const Create = () => {
           const statsPromises = [];
           for (const team in data.lineups) {
             data.lineups[team].forEach((batter) => {
-              const pitcher = team === 'home' ? data.probable_pitchers.away : data.probable_pitchers.home;
-              if (batter.id) {
-                statsPromises.push(fetchBatterStats(batter.id, pitcher.id, gameId));
+              const batterId = batter[0];
+              const pitcherId = team === 'home' ? data.probable_pitchers.away.id : data.probable_pitchers.home.id;
+              if (batterId) {
+                statsPromises.push(fetchBatterStats(batterId, pitcherId, gameId));
               }
             });
           }
@@ -145,12 +146,13 @@ const Create = () => {
       <h3>{team === 'home' ? 'Home Team' : 'Away Team'}</h3>
       <p>Opposing Pitcher: {team === 'home' ? pitchers[gameId].away.fullName : pitchers[gameId].home.fullName}</p>
       <ul>
-        {players.map((player) => (
-          <li key={player.id}>
-            {player.name} - {player.position}
-            {batterStats[gameId] && batterStats[gameId][player.id] && (
+        {players.map(([batterId, batterName]) => (
+          <li key={batterId}>
+            {batterName} - {batterStats[gameId] && batterStats[gameId][batterId] && (
               <span className="batter-stats">
-                <strong>BA:</strong> {batterStats[gameId][player.id].batting_average} <strong>OPS:</strong> {batterStats[gameId][player.id].ops} <strong>HR:</strong> {batterStats[gameId][player.id].home_runs}
+                <strong>BA:</strong> {batterStats[gameId][batterId].batting_average}
+                <strong>OPS:</strong> {batterStats[gameId][batterId].ops}
+                <strong>HR:</strong> {batterStats[gameId][batterId].home_runs}
               </span>
             )}
           </li>
