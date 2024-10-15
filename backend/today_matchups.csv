@@ -1,0 +1,271 @@
+date,game_time,pitcher_name,pitcher_team,pitcher_throws,batter_name,batter_team,batter_position,batting_order,batter_bats,PA,AB,H,HR,SO,AVG,OBP,SLG,OPS
+2024-08-14,1:10 PM ET,Louie Varland,Twins,R,Adam Frazier,Royals,2B,1,L,3.0,3.0,2.0,0.0,0.0,0.667,0.667,0.667,1.333
+2024-08-14,1:10 PM ET,Louie Varland,Twins,R,Bobby Witt,Royals,SS,2,R,3.0,3.0,2.0,1.0,0.0,0.667,0.667,1.667,2.333
+2024-08-14,1:10 PM ET,Louie Varland,Twins,R,V. Pasquantino,Royals,DH,3,L,3.0,2.0,0.0,0.0,1.0,0.0,0.333,0.0,0.333
+2024-08-14,1:10 PM ET,Louie Varland,Twins,R,S. Perez,Royals,1B,4,R,3.0,3.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+2024-08-14,1:10 PM ET,Louie Varland,Twins,R,H. Renfroe,Royals,RF,5,R,6.0,6.0,2.0,0.0,1.0,0.333,0.333,0.333,0.667
+2024-08-14,1:10 PM ET,Louie Varland,Twins,R,MJ Melendez,Royals,LF,6,L,3.0,3.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,1:10 PM ET,Louie Varland,Twins,R,Paul DeJong,Royals,3B,7,R,3.0,3.0,3.0,1.0,0.0,1.0,1.0,2.333,3.333
+2024-08-14,1:10 PM ET,Louie Varland,Twins,R,F. Fermin,Royals,C,8,R,3.0,3.0,1.0,0.0,0.0,0.333,0.333,0.333,0.667
+2024-08-14,1:10 PM ET,Louie Varland,Twins,R,Kyle Isbel,Royals,CF,9,L,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,1:10 PM ET,Cole Ragans,Royals,L,M. Margot,Twins,RF,1,R,10.0,10.0,4.0,0.0,1.0,0.4,0.4,0.5,0.9
+2024-08-14,1:10 PM ET,Cole Ragans,Royals,L,Royce Lewis,Twins,DH,2,R,5.0,5.0,2.0,1.0,0.0,0.4,0.4,1.0,1.4
+2024-08-14,1:10 PM ET,Cole Ragans,Royals,L,C. Santana,Twins,1B,3,S,8.0,7.0,2.0,1.0,3.0,0.286,0.375,0.714,1.089
+2024-08-14,1:10 PM ET,Cole Ragans,Royals,L,Jose Miranda,Twins,3B,4,R,8.0,8.0,2.0,0.0,3.0,0.25,0.25,0.375,0.625
+2024-08-14,1:10 PM ET,Cole Ragans,Royals,L,Ryan Jeffers,Twins,C,5,R,9.0,9.0,0.0,0.0,5.0,0.0,0.0,0.0,0.0
+2024-08-14,1:10 PM ET,Cole Ragans,Royals,L,Willi Castro,Twins,SS,6,S,9.0,9.0,0.0,0.0,5.0,0.0,0.0,0.0,0.0
+2024-08-14,1:10 PM ET,Cole Ragans,Royals,L,Kyle Farmer,Twins,2B,7,R,8.0,7.0,2.0,0.0,2.0,0.286,0.375,0.286,0.661
+2024-08-14,1:10 PM ET,Cole Ragans,Royals,L,T. Larnach,Twins,LF,8,L,3.0,3.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+2024-08-14,1:10 PM ET,Cole Ragans,Royals,L,A. Martin,Twins,CF,9,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,3:40 PM ET,J. Montgomery,Diamondbacks,L,E. Tovar,Rockies,SS,1,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,3:40 PM ET,J. Montgomery,Diamondbacks,L,B. Rodgers,Rockies,2B,2,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,3:40 PM ET,J. Montgomery,Diamondbacks,L,B. Doyle,Rockies,CF,3,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,3:40 PM ET,J. Montgomery,Diamondbacks,L,J. Stallings,Rockies,C,4,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,3:40 PM ET,J. Montgomery,Diamondbacks,L,M. Toglia,Rockies,1B,5,S,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,3:40 PM ET,J. Montgomery,Diamondbacks,L,H. Goodman,Rockies,DH,6,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,3:40 PM ET,J. Montgomery,Diamondbacks,L,Jordan Beck,Rockies,LF,7,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,3:40 PM ET,J. Montgomery,Diamondbacks,L,Sam Hilliard,Rockies,RF,8,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,3:40 PM ET,J. Montgomery,Diamondbacks,L,Aaron Schunk,Rockies,3B,9,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,3:40 PM ET,Tanner Gordon,Rockies,R,C. Carroll,Diamondbacks,RF,1,L,1.0,0.0,0.0,0.0,0.0,,1.0,,
+2024-08-14,3:40 PM ET,Tanner Gordon,Rockies,R,J. McCarthy,Diamondbacks,CF,2,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,3:40 PM ET,Tanner Gordon,Rockies,R,Joc Pederson,Diamondbacks,DH,3,L,1.0,1.0,1.0,0.0,0.0,1.0,1.0,2.0,3.0
+2024-08-14,3:40 PM ET,Tanner Gordon,Rockies,R,Josh Bell,Diamondbacks,1B,4,S,1.0,0.0,0.0,0.0,0.0,,,,
+2024-08-14,3:40 PM ET,Tanner Gordon,Rockies,R,L. Gurriel,Diamondbacks,LF,5,R,1.0,1.0,1.0,0.0,0.0,1.0,1.0,1.0,2.0
+2024-08-14,3:40 PM ET,Tanner Gordon,Rockies,R,A. Del Castillo,Diamondbacks,C,6,L,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,3:40 PM ET,Tanner Gordon,Rockies,R,E. Suarez,Diamondbacks,3B,7,R,1.0,0.0,0.0,0.0,0.0,,1.0,,
+2024-08-14,3:40 PM ET,Tanner Gordon,Rockies,R,B. Alexander,Diamondbacks,2B,8,R,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,3:40 PM ET,Tanner Gordon,Rockies,R,G. Perdomo,Diamondbacks,SS,9,S,1.0,0.0,0.0,0.0,0.0,,1.0,,
+2024-08-14,4:10 PM ET,Martin Perez,Padres,L,I. Kiner-Falefa,Pirates,SS,1,R,11.0,9.0,2.0,0.0,2.0,0.222,0.364,0.222,0.586
+2024-08-14,4:10 PM ET,Martin Perez,Padres,L,B. Reynolds,Pirates,LF,2,S,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,4:10 PM ET,Martin Perez,Padres,L,Connor Joe,Pirates,1B,3,R,12.0,10.0,2.0,0.0,3.0,0.2,0.333,0.3,0.633
+2024-08-14,4:10 PM ET,Martin Perez,Padres,L,Joey Bart,Pirates,DH,4,R,3.0,3.0,2.0,1.0,0.0,0.667,0.667,1.667,2.333
+2024-08-14,4:10 PM ET,Martin Perez,Padres,L,K. Hayes,Pirates,3B,5,R,6.0,6.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0
+2024-08-14,4:10 PM ET,Martin Perez,Padres,L,B. De La Cruz,Pirates,RF,6,R,6.0,6.0,4.0,0.0,1.0,0.667,0.667,0.833,1.5
+2024-08-14,4:10 PM ET,Martin Perez,Padres,L,M. Taylor,Pirates,CF,7,R,16.0,14.0,6.0,0.0,2.0,0.429,0.5,0.5,1.0
+2024-08-14,4:10 PM ET,Martin Perez,Padres,L,Y. Grandal,Pirates,C,8,S,7.0,5.0,3.0,0.0,0.0,0.6,0.714,0.6,1.314
+2024-08-14,4:10 PM ET,Martin Perez,Padres,L,Jared Triolo,Pirates,2B,9,R,2.0,2.0,1.0,0.0,0.0,0.5,0.5,0.5,1.0
+2024-08-14,4:10 PM ET,Mitch Keller,Pirates,R,Luis Arraez,Padres,1B,1,L,9.0,9.0,3.0,0.0,1.0,0.333,0.333,0.444,0.778
+2024-08-14,4:10 PM ET,Mitch Keller,Pirates,R,J. Profar,Padres,LF,2,S,16.0,14.0,3.0,0.0,4.0,0.214,0.313,0.286,0.598
+2024-08-14,4:10 PM ET,Mitch Keller,Pirates,R,J. Cronenworth,Padres,DH,3,L,14.0,11.0,3.0,1.0,2.0,0.273,0.357,0.636,0.994
+2024-08-14,4:10 PM ET,Mitch Keller,Pirates,R,M. Machado,Padres,3B,4,R,14.0,11.0,3.0,1.0,4.0,0.273,0.429,0.545,0.974
+2024-08-14,4:10 PM ET,Mitch Keller,Pirates,R,X. Bogaerts,Padres,2B,5,R,6.0,6.0,1.0,0.0,0.0,0.167,0.167,0.167,0.333
+2024-08-14,4:10 PM ET,Mitch Keller,Pirates,R,J. Merrill,Padres,CF,6,L,3.0,3.0,2.0,0.0,0.0,0.667,0.667,1.333,2.0
+2024-08-14,4:10 PM ET,Mitch Keller,Pirates,R,D. Peralta,Padres,RF,7,L,9.0,9.0,4.0,1.0,1.0,0.444,0.444,0.889,1.333
+2024-08-14,4:10 PM ET,Mitch Keller,Pirates,R,L. Campusano,Padres,C,8,R,4.0,3.0,0.0,0.0,0.0,0.0,0.25,0.0,0.25
+2024-08-14,4:10 PM ET,Mitch Keller,Pirates,R,Tyler Wade,Padres,SS,9,L,2.0,2.0,1.0,0.0,0.0,0.5,0.5,0.5,1.0
+2024-08-14,6:10 PM ET,Tanner Houck,Red Sox,R,M. Semien,Rangers,2B,1,R,15.0,15.0,3.0,0.0,5.0,0.2,0.2,0.267,0.467
+2024-08-14,6:10 PM ET,Tanner Houck,Red Sox,R,Corey Seager,Rangers,SS,2,L,10.0,9.0,0.0,0.0,2.0,0.0,0.1,0.0,0.1
+2024-08-14,6:10 PM ET,Tanner Houck,Red Sox,R,Josh Smith,Rangers,3B,3,L,6.0,6.0,2.0,0.0,1.0,0.333,0.333,0.5,0.833
+2024-08-14,6:10 PM ET,Tanner Houck,Red Sox,R,A. Garcia,Rangers,DH,4,R,9.0,7.0,4.0,2.0,2.0,0.571,0.667,1.571,2.238
+2024-08-14,6:10 PM ET,Tanner Houck,Red Sox,R,N. Lowe,Rangers,1B,5,L,9.0,9.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+2024-08-14,6:10 PM ET,Tanner Houck,Red Sox,R,W. Langford,Rangers,LF,6,R,3.0,3.0,1.0,0.0,1.0,0.333,0.333,0.333,0.667
+2024-08-14,6:10 PM ET,Tanner Houck,Red Sox,R,Carson Kelly,Rangers,C,7,R,6.0,4.0,0.0,0.0,0.0,0.0,0.333,0.0,0.333
+2024-08-14,6:10 PM ET,Tanner Houck,Red Sox,R,T. Jankowski,Rangers,RF,8,L,3.0,2.0,0.0,0.0,1.0,0.0,0.333,0.0,0.333
+2024-08-14,6:10 PM ET,Tanner Houck,Red Sox,R,L. Taveras,Rangers,CF,9,S,7.0,3.0,2.0,1.0,0.0,0.667,0.714,1.667,2.381
+2024-08-14,6:10 PM ET,Dane Dunning,Rangers,R,Jarren Duran,Red Sox,LF,1,L,9.0,9.0,2.0,0.0,2.0,0.222,0.222,0.556,0.778
+2024-08-14,6:10 PM ET,Dane Dunning,Rangers,R,Wilyer Abreu,Red Sox,RF,2,L,4.0,4.0,1.0,1.0,0.0,0.25,0.25,1.0,1.25
+2024-08-14,6:10 PM ET,Dane Dunning,Rangers,R,M. Yoshida,Red Sox,DH,3,L,7.0,7.0,3.0,0.0,0.0,0.429,0.429,0.429,0.857
+2024-08-14,6:10 PM ET,Dane Dunning,Rangers,R,R. Devers,Red Sox,3B,4,L,15.0,15.0,2.0,0.0,1.0,0.133,0.133,0.133,0.267
+2024-08-14,6:10 PM ET,Dane Dunning,Rangers,R,Danny Jansen,Red Sox,C,5,R,6.0,5.0,0.0,0.0,0.0,0.0,0.167,0.0,0.167
+2024-08-14,6:10 PM ET,Dane Dunning,Rangers,R,D. Smith,Red Sox,1B,6,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:10 PM ET,Dane Dunning,Rangers,R,Nick Sogard,Red Sox,2B,7,S,3.0,3.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+2024-08-14,6:10 PM ET,Dane Dunning,Rangers,R,C. Rafaela,Red Sox,CF,8,R,3.0,3.0,1.0,0.0,0.0,0.333,0.333,0.333,0.667
+2024-08-14,6:10 PM ET,Dane Dunning,Rangers,R,D. Hamilton,Red Sox,SS,9,L,4.0,4.0,1.0,0.0,0.0,0.25,0.25,0.25,0.5
+2024-08-14,6:35 PM ET,Dean Kremer,Orioles,R,CJ Abrams,Nationals,SS,1,L,8.0,7.0,2.0,0.0,3.0,0.286,0.375,0.429,0.804
+2024-08-14,6:35 PM ET,Dean Kremer,Orioles,R,Juan Yepez,Nationals,DH,2,R,3.0,3.0,1.0,0.0,0.0,0.333,0.333,0.333,0.667
+2024-08-14,6:35 PM ET,Dean Kremer,Orioles,R,James Wood,Nationals,LF,3,L,3.0,3.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+2024-08-14,6:35 PM ET,Dean Kremer,Orioles,R,A. Chaparro,Nationals,1B,4,R,2.0,2.0,1.0,0.0,1.0,0.5,0.5,0.5,1.0
+2024-08-14,6:35 PM ET,Dean Kremer,Orioles,R,Luis Garcia,Nationals,2B,5,L,9.0,9.0,2.0,0.0,0.0,0.222,0.222,0.333,0.556
+2024-08-14,6:35 PM ET,Dean Kremer,Orioles,R,Keibert Ruiz,Nationals,C,6,S,6.0,6.0,1.0,0.0,0.0,0.167,0.167,0.167,0.333
+2024-08-14,6:35 PM ET,Dean Kremer,Orioles,R,Alex Call,Nationals,RF,7,R,5.0,5.0,2.0,0.0,0.0,0.4,0.4,0.8,1.2
+2024-08-14,6:35 PM ET,Dean Kremer,Orioles,R,I. Vargas,Nationals,3B,8,S,4.0,4.0,2.0,0.0,0.0,0.5,0.5,0.5,1.0
+2024-08-14,6:35 PM ET,Dean Kremer,Orioles,R,Jacob Young,Nationals,CF,9,R,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:35 PM ET,DJ Herz,Nationals,L,A. Slater,Orioles,LF,1,R,3.0,3.0,1.0,0.0,0.0,0.333,0.333,0.333,0.667
+2024-08-14,6:35 PM ET,DJ Herz,Nationals,L,A. Rutschman,Orioles,C,2,S,3.0,3.0,1.0,0.0,0.0,0.333,0.333,0.333,0.667
+2024-08-14,6:35 PM ET,DJ Herz,Nationals,L,G. Henderson,Orioles,SS,3,L,3.0,2.0,1.0,1.0,1.0,0.5,0.667,2.0,2.667
+2024-08-14,6:35 PM ET,DJ Herz,Nationals,L,R. Mountcastle,Orioles,1B,4,R,3.0,3.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:35 PM ET,DJ Herz,Nationals,L,A. Santander,Orioles,RF,5,S,3.0,2.0,0.0,0.0,1.0,0.0,0.333,0.0,0.333
+2024-08-14,6:35 PM ET,DJ Herz,Nationals,L,Eloy Jimenez,Orioles,DH,6,R,2.0,2.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+2024-08-14,6:35 PM ET,DJ Herz,Nationals,L,C. Cowser,Orioles,CF,7,L,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:35 PM ET,DJ Herz,Nationals,L,Coby Mayo,Orioles,3B,8,R,2.0,2.0,1.0,0.0,0.0,0.5,0.5,0.5,1.0
+2024-08-14,6:35 PM ET,DJ Herz,Nationals,L,J. Holliday,Orioles,2B,9,L,2.0,2.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Alex Cobb,Guardians,R,Ian Happ,Cubs,LF,1,S,6.0,6.0,2.0,0.0,2.0,0.333,0.333,0.333,0.667
+2024-08-14,6:40 PM ET,Alex Cobb,Guardians,R,M. Busch,Cubs,1B,2,L,3.0,2.0,0.0,0.0,0.0,0.0,0.333,0.0,0.333
+2024-08-14,6:40 PM ET,Alex Cobb,Guardians,R,Seiya Suzuki,Cubs,RF,3,R,6.0,5.0,1.0,0.0,3.0,0.2,0.333,0.6,0.933
+2024-08-14,6:40 PM ET,Alex Cobb,Guardians,R,C. Bellinger,Cubs,DH,4,L,7.0,6.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Alex Cobb,Guardians,R,I. Paredes,Cubs,3B,5,R,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Alex Cobb,Guardians,R,Nico Hoerner,Cubs,2B,6,R,5.0,4.0,0.0,0.0,2.0,0.0,0.2,0.0,0.2
+2024-08-14,6:40 PM ET,Alex Cobb,Guardians,R,D. Swanson,Cubs,SS,7,R,8.0,8.0,1.0,0.0,4.0,0.125,0.125,0.375,0.5
+2024-08-14,6:40 PM ET,Alex Cobb,Guardians,R,P. Crow-Armstrong,Cubs,CF,8,L,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Alex Cobb,Guardians,R,Miguel Amaya,Cubs,C,9,R,2.0,2.0,1.0,0.0,0.0,0.5,0.5,1.0,1.5
+2024-08-14,6:40 PM ET,Jameson Taillon,Cubs,R,Steven Kwan,Guardians,LF,1,L,6.0,6.0,3.0,0.0,0.0,0.5,0.5,0.667,1.167
+2024-08-14,6:40 PM ET,Jameson Taillon,Cubs,R,Will Brennan,Guardians,DH,2,L,6.0,6.0,2.0,0.0,1.0,0.333,0.333,0.667,1.0
+2024-08-14,6:40 PM ET,Jameson Taillon,Cubs,R,Jose Ramirez,Guardians,3B,3,S,15.0,13.0,2.0,0.0,1.0,0.154,0.267,0.231,0.497
+2024-08-14,6:40 PM ET,Jameson Taillon,Cubs,R,Josh Naylor,Guardians,1B,4,L,11.0,11.0,3.0,0.0,2.0,0.273,0.273,0.455,0.727
+2024-08-14,6:40 PM ET,Jameson Taillon,Cubs,R,Lane Thomas,Guardians,CF,5,R,7.0,6.0,2.0,2.0,1.0,0.333,0.429,1.333,1.762
+2024-08-14,6:40 PM ET,Jameson Taillon,Cubs,R,A. Gimenez,Guardians,2B,6,L,10.0,9.0,5.0,1.0,3.0,0.556,0.6,1.0,1.6
+2024-08-14,6:40 PM ET,Jameson Taillon,Cubs,R,J. Noel,Guardians,RF,7,R,3.0,3.0,0.0,0.0,3.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Jameson Taillon,Cubs,R,B. Rocchio,Guardians,SS,8,S,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Jameson Taillon,Cubs,R,A. Hedges,Guardians,C,9,R,16.0,15.0,1.0,0.0,6.0,0.067,0.125,0.067,0.192
+2024-08-14,6:40 PM ET,Bryan Sammons,Tigers,L,V. Robles,Mariners,CF,1,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Bryan Sammons,Tigers,L,J. Polanco,Mariners,2B,2,S,2.0,2.0,1.0,0.0,1.0,0.5,0.5,0.5,1.0
+2024-08-14,6:40 PM ET,Bryan Sammons,Tigers,L,R. Arozarena,Mariners,LF,3,R,2.0,2.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Bryan Sammons,Tigers,L,Cal Raleigh,Mariners,C,4,S,2.0,2.0,1.0,0.0,1.0,0.5,0.5,0.5,1.0
+2024-08-14,6:40 PM ET,Bryan Sammons,Tigers,L,J. Rodriguez,Mariners,DH,5,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Bryan Sammons,Tigers,L,Luke Raley,Mariners,1B,6,L,2.0,1.0,1.0,1.0,0.0,1.0,1.0,4.0,5.0
+2024-08-14,6:40 PM ET,Bryan Sammons,Tigers,L,M. Haniger,Mariners,RF,7,R,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Bryan Sammons,Tigers,L,Josh Rojas,Mariners,3B,8,L,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Bryan Sammons,Tigers,L,Dylan Moore,Mariners,SS,9,R,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Bryan Woo,Mariners,R,M. Vierling,Tigers,RF,1,R,3.0,3.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Bryan Woo,Mariners,R,K. Carpenter,Tigers,DH,2,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Bryan Woo,Mariners,R,Colt Keith,Tigers,2B,3,L,3.0,3.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Bryan Woo,Mariners,R,Gio Urshela,Tigers,3B,4,R,2.0,2.0,1.0,0.0,1.0,0.5,0.5,0.5,1.0
+2024-08-14,6:40 PM ET,Bryan Woo,Mariners,R,Bligh Madris,Tigers,1B,5,L,3.0,3.0,1.0,0.0,0.0,0.333,0.333,0.333,0.667
+2024-08-14,6:40 PM ET,Bryan Woo,Mariners,R,P. Meadows,Tigers,CF,6,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Bryan Woo,Mariners,R,J. Malloy,Tigers,LF,7,R,3.0,3.0,1.0,0.0,0.0,0.333,0.333,0.333,0.667
+2024-08-14,6:40 PM ET,Bryan Woo,Mariners,R,Z. McKinstry,Tigers,SS,8,L,3.0,2.0,1.0,0.0,0.0,0.5,0.667,1.0,1.667
+2024-08-14,6:40 PM ET,Bryan Woo,Mariners,R,Jake Rogers,Tigers,C,9,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Carson Spiers,Reds,R,Masyn Winn,Cardinals,SS,1,R,5.0,5.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Carson Spiers,Reds,R,A. Burleson,Cardinals,DH,2,L,5.0,5.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Carson Spiers,Reds,R,W. Contreras,Cardinals,C,3,R,5.0,5.0,2.0,1.0,1.0,0.4,0.4,1.0,1.4
+2024-08-14,6:40 PM ET,Carson Spiers,Reds,R,N. Arenado,Cardinals,3B,4,R,4.0,3.0,0.0,0.0,0.0,0.0,0.25,0.0,0.25
+2024-08-14,6:40 PM ET,Carson Spiers,Reds,R,B. Donovan,Cardinals,2B,5,L,3.0,2.0,0.0,0.0,1.0,0.0,0.333,0.0,0.333
+2024-08-14,6:40 PM ET,Carson Spiers,Reds,R,P. Goldschmidt,Cardinals,1B,6,R,5.0,5.0,1.0,1.0,1.0,0.2,0.2,0.8,1.0
+2024-08-14,6:40 PM ET,Carson Spiers,Reds,R,L. Nootbaar,Cardinals,RF,7,L,2.0,1.0,0.0,0.0,0.0,0.0,0.5,0.0,0.5
+2024-08-14,6:40 PM ET,Carson Spiers,Reds,R,Tommy Pham,Cardinals,LF,8,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Carson Spiers,Reds,R,Victor Scott,Cardinals,CF,9,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Kyle Gibson,Cardinals,R,J. India,Reds,2B,1,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Kyle Gibson,Cardinals,R,E. De La Cruz,Reds,SS,2,S,6.0,6.0,1.0,0.0,2.0,0.167,0.167,0.167,0.333
+2024-08-14,6:40 PM ET,Kyle Gibson,Cardinals,R,T. Stephenson,Reds,C,3,R,4.0,4.0,1.0,0.0,1.0,0.25,0.25,0.25,0.5
+2024-08-14,6:40 PM ET,Kyle Gibson,Cardinals,R,TJ Friedl,Reds,CF,4,L,5.0,5.0,3.0,0.0,0.0,0.6,0.6,0.6,1.2
+2024-08-14,6:40 PM ET,Kyle Gibson,Cardinals,R,S. Steer,Reds,1B,5,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Kyle Gibson,Cardinals,R,J. Candelario,Reds,DH,6,S,23.0,23.0,5.0,1.0,9.0,0.217,0.217,0.435,0.652
+2024-08-14,6:40 PM ET,Kyle Gibson,Cardinals,R,Jake Fraley,Reds,RF,7,L,10.0,9.0,5.0,2.0,1.0,0.556,0.6,1.222,1.822
+2024-08-14,6:40 PM ET,Kyle Gibson,Cardinals,R,Will Benson,Reds,LF,8,L,4.0,3.0,2.0,1.0,1.0,0.667,0.75,2.0,2.75
+2024-08-14,6:40 PM ET,Kyle Gibson,Cardinals,R,Noelvi Marte,Reds,3B,9,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Tyler Phillips,Phillies,R,X. Edwards,Marlins,SS,1,S,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Tyler Phillips,Phillies,R,Jake Burger,Marlins,DH,2,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Tyler Phillips,Phillies,R,J. Sanchez,Marlins,RF,3,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Tyler Phillips,Phillies,R,Jonah Bride,Marlins,1B,4,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Tyler Phillips,Phillies,R,Kyle Stowers,Marlins,LF,5,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Tyler Phillips,Phillies,R,Otto Lopez,Marlins,2B,6,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Tyler Phillips,Phillies,R,Derek Hill,Marlins,CF,7,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Tyler Phillips,Phillies,R,E. Rivera,Marlins,3B,8,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Tyler Phillips,Phillies,R,Ali Sanchez,Marlins,C,9,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Edward Cabrera,Marlins,R,K. Schwarber,Phillies,DH,1,L,11.0,9.0,1.0,0.0,2.0,0.111,0.273,0.111,0.384
+2024-08-14,6:40 PM ET,Edward Cabrera,Marlins,R,N. Castellanos,Phillies,RF,2,R,5.0,5.0,1.0,0.0,2.0,0.2,0.2,0.4,0.6
+2024-08-14,6:40 PM ET,Edward Cabrera,Marlins,R,Bryce Harper,Phillies,1B,3,L,5.0,5.0,2.0,1.0,1.0,0.4,0.4,1.0,1.4
+2024-08-14,6:40 PM ET,Edward Cabrera,Marlins,R,Alec Bohm,Phillies,3B,4,R,9.0,6.0,1.0,0.0,1.0,0.167,0.444,0.167,0.611
+2024-08-14,6:40 PM ET,Edward Cabrera,Marlins,R,Bryson Stott,Phillies,2B,5,L,9.0,9.0,2.0,0.0,3.0,0.222,0.222,0.333,0.556
+2024-08-14,6:40 PM ET,Edward Cabrera,Marlins,R,J. Realmuto,Phillies,C,6,R,7.0,5.0,1.0,1.0,3.0,0.2,0.429,0.8,1.229
+2024-08-14,6:40 PM ET,Edward Cabrera,Marlins,R,Edmundo Sosa,Phillies,SS,7,R,1.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+2024-08-14,6:40 PM ET,Edward Cabrera,Marlins,R,B. Marsh,Phillies,LF,8,L,6.0,4.0,1.0,0.0,0.0,0.25,0.5,0.25,0.75
+2024-08-14,6:40 PM ET,Edward Cabrera,Marlins,R,Johan Rojas,Phillies,CF,9,R,1.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+2024-08-14,6:50 PM ET,Zack Littell,Rays,R,Jose Altuve,Astros,2B,1,R,6.0,5.0,4.0,0.0,0.0,0.8,0.833,0.8,1.633
+2024-08-14,6:50 PM ET,Zack Littell,Rays,R,Alex Bregman,Astros,3B,2,R,6.0,6.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0
+2024-08-14,6:50 PM ET,Zack Littell,Rays,R,Y. Alvarez,Astros,DH,3,L,5.0,5.0,1.0,0.0,1.0,0.2,0.2,0.4,0.6
+2024-08-14,6:50 PM ET,Zack Littell,Rays,R,Yainer Diaz,Astros,C,4,R,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:50 PM ET,Zack Littell,Rays,R,Jeremy Pena,Astros,SS,5,R,5.0,5.0,2.0,0.0,1.0,0.4,0.4,0.4,0.8
+2024-08-14,6:50 PM ET,Zack Littell,Rays,R,Zach Dezenzo,Astros,1B,6,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:50 PM ET,Zack Littell,Rays,R,Jake Meyers,Astros,CF,7,R,2.0,2.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+2024-08-14,6:50 PM ET,Zack Littell,Rays,R,M. Dubon,Astros,RF,8,R,4.0,4.0,1.0,0.0,0.0,0.25,0.25,0.25,0.5
+2024-08-14,6:50 PM ET,Zack Littell,Rays,R,C. McCormick,Astros,LF,9,R,2.0,2.0,1.0,0.0,1.0,0.5,0.5,0.5,1.0
+2024-08-14,6:50 PM ET,Ronel Blanco,Astros,R,Yandy Diaz,Rays,1B,1,R,4.0,4.0,1.0,0.0,1.0,0.25,0.25,0.25,0.5
+2024-08-14,6:50 PM ET,Ronel Blanco,Astros,R,Brandon Lowe,Rays,2B,2,L,4.0,4.0,2.0,0.0,1.0,0.5,0.5,0.5,1.0
+2024-08-14,6:50 PM ET,Ronel Blanco,Astros,R,C. Morel,Rays,DH,3,R,3.0,2.0,0.0,0.0,2.0,0.0,0.333,0.0,0.333
+2024-08-14,6:50 PM ET,Ronel Blanco,Astros,R,Josh Lowe,Rays,LF,4,L,4.0,4.0,2.0,1.0,0.0,0.5,0.5,1.5,2.0
+2024-08-14,6:50 PM ET,Ronel Blanco,Astros,R,J. Caminero,Rays,3B,5,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,6:50 PM ET,Ronel Blanco,Astros,R,Ben Rortvedt,Rays,C,6,L,2.0,2.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+2024-08-14,6:50 PM ET,Ronel Blanco,Astros,R,Jonny DeLuca,Rays,RF,7,R,2.0,2.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0
+2024-08-14,6:50 PM ET,Ronel Blanco,Astros,R,Taylor Walls,Rays,SS,8,S,2.0,2.0,1.0,0.0,0.0,0.5,0.5,0.5,1.0
+2024-08-14,6:50 PM ET,Ronel Blanco,Astros,R,Jose Siri,Rays,CF,9,R,2.0,1.0,1.0,0.0,0.0,1.0,1.0,1.0,2.0
+2024-08-14,7:10 PM ET,David Peterson,Mets,L,L. Butler,Athletics,RF,1,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,7:10 PM ET,David Peterson,Mets,L,M. Andujar,Athletics,DH,2,R,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,7:10 PM ET,David Peterson,Mets,L,JJ Bleday,Athletics,CF,3,L,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,7:10 PM ET,David Peterson,Mets,L,S. Langeliers,Athletics,C,4,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,7:10 PM ET,David Peterson,Mets,L,Daz Cameron,Athletics,LF,5,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,7:10 PM ET,David Peterson,Mets,L,Zack Gelof,Athletics,2B,6,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,7:10 PM ET,David Peterson,Mets,L,Tyler Nevin,Athletics,1B,7,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,7:10 PM ET,David Peterson,Mets,L,D. Hernaiz,Athletics,3B,8,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,7:10 PM ET,David Peterson,Mets,L,M. Schuemann,Athletics,SS,9,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,7:10 PM ET,Joey Estes,Athletics,R,F. Lindor,Mets,SS,1,S,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,7:10 PM ET,Joey Estes,Athletics,R,B. Nimmo,Mets,CF,2,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,7:10 PM ET,Joey Estes,Athletics,R,J. Martinez,Mets,DH,3,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,7:10 PM ET,Joey Estes,Athletics,R,Jesse Winker,Mets,LF,4,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,7:10 PM ET,Joey Estes,Athletics,R,Pete Alonso,Mets,1B,5,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,7:10 PM ET,Joey Estes,Athletics,R,Jeff McNeil,Mets,2B,6,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,7:10 PM ET,Joey Estes,Athletics,R,Mark Vientos,Mets,3B,7,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,7:10 PM ET,Joey Estes,Athletics,R,Ben Gamel,Mets,RF,8,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,7:10 PM ET,Joey Estes,Athletics,R,F. Alvarez,Mets,C,9,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Davis Martin,White Sox,R,Alex Verdugo,Yankees,LF,1,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Davis Martin,White Sox,R,Juan Soto,Yankees,RF,2,L,3.0,3.0,1.0,0.0,1.0,0.333,0.333,0.667,1.0
+2024-08-14,8:10 PM ET,Davis Martin,White Sox,R,Aaron Judge,Yankees,DH,3,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Davis Martin,White Sox,R,Austin Wells,Yankees,C,4,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Davis Martin,White Sox,R,G. Torres,Yankees,2B,5,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Davis Martin,White Sox,R,T. Grisham,Yankees,CF,6,L,2.0,2.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Davis Martin,White Sox,R,A. Volpe,Yankees,SS,7,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Davis Martin,White Sox,R,O. Cabrera,Yankees,3B,8,S,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Davis Martin,White Sox,R,DJ LeMahieu,Yankees,1B,9,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Will Warren,Yankees,R,Nicky Lopez,White Sox,SS,1,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Will Warren,Yankees,R,Luis Robert,White Sox,CF,2,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Will Warren,Yankees,R,A. Benintendi,White Sox,LF,3,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Will Warren,Yankees,R,A. Vaughn,White Sox,DH,4,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Will Warren,Yankees,R,Gavin Sheets,White Sox,1B,5,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Will Warren,Yankees,R,M. Vargas,White Sox,3B,6,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Will Warren,Yankees,R,D. Fletcher,White Sox,RF,7,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Will Warren,Yankees,R,C. Robinson,White Sox,C,8,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Will Warren,Yankees,R,B. Baldwin,White Sox,2B,9,S,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Frankie Montas,Brewers,R,S. Ohtani,Dodgers,DH,1,L,33.0,27.0,11.0,5.0,7.0,0.407,0.515,0.963,1.478
+2024-08-14,8:10 PM ET,Frankie Montas,Brewers,R,Mookie Betts,Dodgers,RF,2,R,14.0,11.0,5.0,1.0,0.0,0.455,0.571,0.727,1.299
+2024-08-14,8:10 PM ET,Frankie Montas,Brewers,R,F. Freeman,Dodgers,1B,3,L,3.0,2.0,0.0,0.0,0.0,0.0,0.333,0.0,0.333
+2024-08-14,8:10 PM ET,Frankie Montas,Brewers,R,T. Hernandez,Dodgers,LF,4,R,9.0,9.0,3.0,0.0,0.0,0.333,0.333,0.333,0.667
+2024-08-14,8:10 PM ET,Frankie Montas,Brewers,R,Gavin Lux,Dodgers,2B,5,L,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Frankie Montas,Brewers,R,E. Hernandez,Dodgers,3B,6,R,8.0,7.0,2.0,0.0,0.0,0.286,0.375,0.286,0.661
+2024-08-14,8:10 PM ET,Frankie Montas,Brewers,R,K. Kiermaier,Dodgers,CF,7,L,10.0,9.0,2.0,0.0,2.0,0.222,0.3,0.444,0.744
+2024-08-14,8:10 PM ET,Frankie Montas,Brewers,R,A. Barnes,Dodgers,C,8,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Frankie Montas,Brewers,R,Nick Ahmed,Dodgers,SS,9,R,3.0,3.0,1.0,1.0,1.0,0.333,0.333,1.333,1.667
+2024-08-14,8:10 PM ET,Walker Buehler,Dodgers,R,Brice Turang,Brewers,2B,1,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Walker Buehler,Dodgers,R,J. Chourio,Brewers,LF,2,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Walker Buehler,Dodgers,R,Tyler Black,Brewers,DH,3,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Walker Buehler,Dodgers,R,W. Contreras,Brewers,C,4,R,12.0,12.0,3.0,1.0,3.0,0.25,0.25,0.5,0.75
+2024-08-14,8:10 PM ET,Walker Buehler,Dodgers,R,Willy Adames,Brewers,SS,5,R,5.0,5.0,1.0,0.0,2.0,0.2,0.2,0.4,0.6
+2024-08-14,8:10 PM ET,Walker Buehler,Dodgers,R,Jake Bauers,Brewers,1B,6,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Walker Buehler,Dodgers,R,G. Mitchell,Brewers,CF,7,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Walker Buehler,Dodgers,R,Sal Frelick,Brewers,RF,8,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,8:10 PM ET,Walker Buehler,Dodgers,R,Joey Ortiz,Brewers,3B,9,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,9:38 PM ET,Tyler Anderson,Angels,L,G. Springer,Blue Jays,RF,1,R,9.0,9.0,2.0,1.0,0.0,0.222,0.222,0.556,0.778
+2024-08-14,9:38 PM ET,Tyler Anderson,Angels,L,D. Varsho,Blue Jays,CF,2,L,10.0,9.0,5.0,0.0,1.0,0.556,0.6,0.778,1.378
+2024-08-14,9:38 PM ET,Tyler Anderson,Angels,L,V. Guerrero,Blue Jays,1B,3,R,6.0,6.0,3.0,0.0,1.0,0.5,0.5,0.5,1.0
+2024-08-14,9:38 PM ET,Tyler Anderson,Angels,L,A. Kirk,Blue Jays,C,4,R,5.0,5.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+2024-08-14,9:38 PM ET,Tyler Anderson,Angels,L,S. Horwitz,Blue Jays,DH,5,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,9:38 PM ET,Tyler Anderson,Angels,L,E. Clement,Blue Jays,SS,6,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,9:38 PM ET,Tyler Anderson,Angels,L,D. Schneider,Blue Jays,LF,7,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,9:38 PM ET,Tyler Anderson,Angels,L,Leo Jimenez,Blue Jays,2B,8,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,9:38 PM ET,Tyler Anderson,Angels,L,A. Barger,Blue Jays,3B,9,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,9:38 PM ET,Jose Berrios,Blue Jays,R,N. Schanuel,Angels,1B,1,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,9:38 PM ET,Jose Berrios,Blue Jays,R,A. Rendon,Angels,3B,2,R,7.0,6.0,1.0,0.0,0.0,0.167,0.286,0.167,0.452
+2024-08-14,9:38 PM ET,Jose Berrios,Blue Jays,R,Kevin Pillar,Angels,RF,3,R,3.0,3.0,1.0,0.0,0.0,0.333,0.333,0.333,0.667
+2024-08-14,9:38 PM ET,Jose Berrios,Blue Jays,R,W. Calhoun,Angels,DH,4,L,3.0,3.0,1.0,0.0,1.0,0.333,0.333,0.333,0.667
+2024-08-14,9:38 PM ET,Jose Berrios,Blue Jays,R,Taylor Ward,Angels,LF,5,R,7.0,6.0,2.0,0.0,1.0,0.333,0.429,0.5,0.929
+2024-08-14,9:38 PM ET,Jose Berrios,Blue Jays,R,M. Moniak,Angels,CF,6,L,3.0,3.0,1.0,0.0,0.0,0.333,0.333,0.333,0.667
+2024-08-14,9:38 PM ET,Jose Berrios,Blue Jays,R,Matt Thaiss,Angels,C,7,L,5.0,4.0,0.0,0.0,2.0,0.0,0.2,0.0,0.2
+2024-08-14,9:38 PM ET,Jose Berrios,Blue Jays,R,L. Guillorme,Angels,SS,8,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,9:38 PM ET,Jose Berrios,Blue Jays,R,M. Stefanic,Angels,2B,9,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,9:45 PM ET,Robbie Ray,Giants,L,Jorge Soler,Braves,LF,1,R,9.0,7.0,1.0,0.0,3.0,0.143,0.333,0.143,0.476
+2024-08-14,9:45 PM ET,Robbie Ray,Giants,L,Austin Riley,Braves,3B,2,R,8.0,8.0,1.0,0.0,4.0,0.125,0.125,0.125,0.25
+2024-08-14,9:45 PM ET,Robbie Ray,Giants,L,M. Ozuna,Braves,DH,3,R,20.0,20.0,5.0,1.0,5.0,0.25,0.25,0.45,0.7
+2024-08-14,9:45 PM ET,Robbie Ray,Giants,L,Matt Olson,Braves,1B,4,L,9.0,7.0,1.0,0.0,2.0,0.143,0.333,0.143,0.476
+2024-08-14,9:45 PM ET,Robbie Ray,Giants,L,O. Arcia,Braves,SS,5,R,2.0,2.0,2.0,0.0,0.0,1.0,1.0,1.5,2.5
+2024-08-14,9:45 PM ET,Robbie Ray,Giants,L,M. Harris,Braves,CF,6,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,9:45 PM ET,Robbie Ray,Giants,L,R. Laureano,Braves,RF,7,R,9.0,8.0,5.0,1.0,2.0,0.625,0.667,1.25,1.917
+2024-08-14,9:45 PM ET,Robbie Ray,Giants,L,Sean Murphy,Braves,C,8,R,12.0,10.0,2.0,0.0,2.0,0.2,0.333,0.2,0.533
+2024-08-14,9:45 PM ET,Robbie Ray,Giants,L,W. Merrifield,Braves,2B,9,R,8.0,6.0,1.0,0.0,1.0,0.167,0.375,0.167,0.542
+2024-08-14,9:45 PM ET,Grant Holmes,Braves,R,T. Fitzgerald,Giants,SS,1,R,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,9:45 PM ET,Grant Holmes,Braves,R,LaMonte Wade,Giants,1B,2,L,1.0,1.0,1.0,0.0,0.0,1.0,1.0,2.0,3.0
+2024-08-14,9:45 PM ET,Grant Holmes,Braves,R,Heliot Ramos,Giants,LF,3,R,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,9:45 PM ET,Grant Holmes,Braves,R,M. Conforto,Giants,DH,4,L,1.0,0.0,0.0,0.0,0.0,,1.0,,
+2024-08-14,9:45 PM ET,Grant Holmes,Braves,R,Matt Chapman,Giants,3B,5,R,1.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+2024-08-14,9:45 PM ET,Grant Holmes,Braves,R,M. Yastrzemski,Giants,RF,6,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,9:45 PM ET,Grant Holmes,Braves,R,P. Bailey,Giants,C,7,S,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,9:45 PM ET,Grant Holmes,Braves,R,Brett Wisely,Giants,2B,8,L,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2024-08-14,9:45 PM ET,Grant Holmes,Braves,R,Grant McCray,Giants,CF,9,L,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
