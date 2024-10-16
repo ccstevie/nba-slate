@@ -191,7 +191,9 @@ def get_statmuse_player_vs_team(player, team, category):
     url = format_statmuse_url(player, team)
     response = requests.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
+    
     stats = {stat: [] for stat in category}
+    games_played = 0  # Initialize games played counter
 
     table = soup.find('table')
     if table:
@@ -201,12 +203,16 @@ def get_statmuse_player_vs_team(player, team, category):
         # Create a list of games as rows
         rows = [values[i:i + len(headers)] for i in range(0, len(values), len(headers))]
         
+        # Count the number of rows representing games, excluding the summary row
+        games_played = len(rows) - 2
+
         for stat in category:
             stat_index = headers.index(stat)
-            for row in rows[:-1]:
+            for row in rows[:-1]:  # Loop through game rows (excluding summary)
                 if row[stat_index].strip():
                     stats[stat].append(float(row[stat_index]))  # Append the value
-    return stats
+
+    return stats, games_played  # Return stats and the number of games played
 
 # Function to format the StatMuse URL for season averages
 def format_season_averages_url(player):
@@ -253,7 +259,7 @@ def get_player_statistics(player_map):
         defense_stats = player_info['defense_stats']
         
         # Get the stats for the player vs the opposing team (historical)
-        stats = get_statmuse_player_vs_team(player_name, opposing_team, player_info['defense_stats'].keys())
+        stats, games_played = get_statmuse_player_vs_team(player_name, opposing_team, player_info['defense_stats'].keys())
         
         # Get the player's season averages
         season_averages = get_statmuse_season_averages(player_name)
@@ -263,6 +269,7 @@ def get_player_statistics(player_map):
             'opposing_team': opposing_team,
             'defense_stats': defense_stats,
             'stats': stats,  # Historical stats vs the team
+            'games_played': games_played,
             'season_averages': season_averages  # Season averages
         })
 
@@ -347,9 +354,12 @@ def create_player_rankings():
         player = player_data['player']
         opposing_team = player_data['opposing_team']
         season_averages = player_data['season_averages']
+        games_played = player_data['games_played']
+
         if not opposing_team or not season_averages: continue
-        good_stats_row = {'player': player, 'opposing_team': opposing_team}
-        bad_stats_row = {'player': player, 'opposing_team': opposing_team}
+
+        good_stats_row = {'player': player, 'opposing_team': opposing_team, 'games_played': games_played}
+        bad_stats_row = {'player': player, 'opposing_team': opposing_team, 'games_played': games_played}
 
         # Check if the player is on the injury report
         injury_info = injury_report[injury_report['player'] == player]
