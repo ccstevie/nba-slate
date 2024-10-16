@@ -22,24 +22,25 @@ const PlayerTable = () => {
     const [defenseFilter, setDefenseFilter] = useState('all');
 
     useEffect(() => {
-        // Fetch CSV data
         fetch('/nba_slate.csv')
             .then(response => response.text())
             .then(text => {
                 const rows = text.split('\n').slice(1);
                 const parsedData = rows.map(row => {
                     const columns = row.split(',');
+    
                     return {
                         player: columns[0],
                         opposing_team: columns[1],
-                        injury_note: columns[2],
-                        AST: parseFloat(columns[3]) || 0,
-                        '3PM': parseFloat(columns[4]) || 0,
-                        STL: parseFloat(columns[5]) || 0,
-                        PTS: parseFloat(columns[6]) || 0,
-                        REB: parseFloat(columns[7]) || 0,
-                        BLK: parseFloat(columns[8]) || 0,
-                        defense_type: columns[9]?.trim().toLowerCase() === 'bad defense' ? 'bad defense' : 'good defense', // Adjusted here
+                        games_played: parseInt(columns[2]) || 0,
+                        injury_note: columns[3],
+                        PTS: parseFloat(columns[4]) || 0,
+                        REB: parseFloat(columns[5]) || 0,
+                        STL: parseFloat(columns[6]) || 0,
+                        BLK: parseFloat(columns[7]) || 0,
+                        AST: parseFloat(columns[8]) || 0,
+                        '3PM': parseFloat(columns[9]) || 0,
+                        defense_type: columns[10]?.trim().toLowerCase() === 'bad defense' ? 'bad defense' : 'good defense',
                     };
                 });
                 setData(parsedData);
@@ -93,6 +94,7 @@ const PlayerTable = () => {
                         <TableRow>
                             <TableCell>Player</TableCell>
                             <TableCell>Opposing Team</TableCell>
+                            <TableCell>Games Played</TableCell>
                             <TableCell>Injury Note</TableCell>
                             <TableCell>
                                 <TableSortLabel
@@ -169,6 +171,7 @@ const PlayerTable = () => {
                             <TableRow key={index}>
                                 <TableCell>{row.player}</TableCell>
                                 <TableCell>{row.opposing_team}</TableCell>
+                                <TableCell>{row.games_played}</TableCell>
                                 <TableCell>{row.injury_note}</TableCell>
                                 <TableCell style={{ backgroundColor: getColor(row.PTS) }}>{row.PTS}</TableCell>
                                 <TableCell style={{ backgroundColor: getColor(row.REB) }}>{row.REB}</TableCell>
