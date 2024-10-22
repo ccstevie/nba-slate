@@ -15,7 +15,7 @@ def scrape_nba_lineups():
 
     matchups = soup.find_all('div', class_='lineup__matchup')
     games = []
-    
+
     for matchup in matchups:
         if matchup.find('a', class_='lineup__mteam is-visit white') == None: continue
         # Find away team with the class for visiting team
@@ -31,23 +31,32 @@ def scrape_nba_lineups():
         away_lineup = []
         home_lineup = []
 
-        # Get away team players
+        # Get away team players and add team name with each player
         away_lineup_section = matchup.find_next('ul', class_='lineup__list is-visit')
-        if away_lineup_section: away_players = away_lineup_section.find_all('li', class_='lineup__player')
-        for player in away_players:
-            position = player.find('div', class_='lineup__pos').text.strip()
-            name = player.find('a').text.strip()
-            away_lineup.append((position, name))
+        if away_lineup_section: 
+            away_players = away_lineup_section.find_all('li', class_='lineup__player')
+            for player in away_players:
+                position = player.find('div', class_='lineup__pos').text.strip()
+                name = player.find('a').text.strip()
+                # Add player's team alongside their name and position
+                away_lineup.append((position, name, away_team_name))
         
-        # Get home team players
+        # Get home team players and add team name with each player
         home_lineup_section = matchup.find_next('ul', class_='lineup__list is-home')
-        if home_lineup_section: home_players = home_lineup_section.find_all('li', class_='lineup__player')
-        for player in home_players:
-            position = player.find('div', class_='lineup__pos').text.strip()
-            name = player.find('a').text.strip()
-            home_lineup.append((position, name))
+        if home_lineup_section: 
+            home_players = home_lineup_section.find_all('li', class_='lineup__player')
+            for player in home_players:
+                position = player.find('div', class_='lineup__pos').text.strip()
+                name = player.find('a').text.strip()
+                # Add player's team alongside their name and position
+                home_lineup.append((position, name, home_team_name))
         
-        games.append({"away_team": away_team_name, "home_team": home_team_name, "away_lineup": away_lineup, "home_lineup": home_lineup})
+        games.append({
+            "away_team": away_team_name, 
+            "home_team": home_team_name, 
+            "away_lineup": away_lineup, 
+            "home_lineup": home_lineup
+        })
         
     return games
 
@@ -108,17 +117,25 @@ def get_positional_ranks(positional_dfs, lineups, rank_columns):
         positional_dfs[position] = create_ranks(df, rank_columns)
 
     for game in lineups:
-        teams = [game['home_team'], game['away_team']]
         game_ranks = {}
 
-        for team in teams:
+        # Extract both the home and away team lineups
+        teams = {
+            "home_team": game['home_team'],
+            "away_team": game['away_team'],
+            "home_lineup": game['home_lineup'],
+            "away_lineup": game['away_lineup']
+        }
+
+        for team_key in ['home_team', 'away_team']:
+            team_name = teams[team_key]
             team_data = {}
 
             # Iterate over each position (PG, SG, SF, PF, C)
             for position, df in positional_dfs.items():
                 # Check if the team name is in the 'Team' column (using contains for partial matches)
-                team_row = df[df['Team'].str.contains(team, case=False, na=False)]
-                
+                team_row = df[df['Team'].str.contains(team_name, case=False, na=False)]
+
                 if not team_row.empty:
                     pos_ranks = {}
                     
@@ -131,7 +148,7 @@ def get_positional_ranks(positional_dfs, lineups, rank_columns):
                     # If team not found for a specific position, set None for all columns
                     team_data[position] = {column: None for column in rank_columns}
 
-            game_ranks[team] = team_data
+            game_ranks[team_name] = team_data
 
         team_ranks.append(game_ranks)
 
@@ -169,26 +186,25 @@ def map_players_to_defense_rankings(lineups, filtered_ranks):
                 else:
                     continue
 
-                # Now map the opposing players and their respective position ranks
-                for pos, player in opposing_lineup:
+                for pos, player, player_team in opposing_lineup:
                     if pos in position_ranks:
                         defense_stats = position_ranks[pos]
                         player_defense_mapping.append({
                             'player': player,
                             'position': pos,
+                            'player_team': player_team,
                             'opposing_team': team,
                             'defense_stats': defense_stats
                         })
 
     return player_defense_mapping
 
-# Function to format the StatMuse URL
-def format_statmuse_url(player, team):
+def format_statmuse_url(player, player_team, opp_team):
     player_formatted = "-".join(player.lower().split())
-    return f"https://www.statmuse.com/nba/ask/{player_formatted}-vs-{team}-last-2-years-including-playoffs"
+    return f"https://www.statmuse.com/nba/ask/{player_team}+{player_formatted}-vs-{opp_team}-last-2-years-including-playoffs"
 
-def get_statmuse_player_vs_team(player, team, category):
-    url = format_statmuse_url(player, team)
+def get_statmuse_player_vs_team(player, player_team, opp_team, category):
+    url = format_statmuse_url(player, player_team, opp_team)
     response = requests.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
     
@@ -214,13 +230,12 @@ def get_statmuse_player_vs_team(player, team, category):
 
     return stats, games_played  # Return stats and the number of games played
 
-# Function to format the StatMuse URL for season averages
-def format_season_averages_url(player):
+def format_season_averages_url(player, team):
     player_formatted = "-".join(player.lower().split())
-    return f"https://www.statmuse.com/nba/ask?q={player_formatted}+averages+this+season"
+    return f"https://www.statmuse.com/nba/ask?q={team}+{player_formatted}+averages+this+season"
 
-def get_statmuse_season_averages(player):
-    url = format_season_averages_url(player)
+def get_statmuse_season_averages(player, team):
+    url = format_season_averages_url(player, team)
     response = requests.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
     
@@ -257,12 +272,13 @@ def get_player_statistics(player_map):
         player_name = player_info['player']
         opposing_team = player_info['opposing_team']
         defense_stats = player_info['defense_stats']
+        player_team = player_info['player_team']
         
         # Get the stats for the player vs the opposing team (historical)
-        stats, games_played = get_statmuse_player_vs_team(player_name, opposing_team, player_info['defense_stats'].keys())
+        stats, games_played = get_statmuse_player_vs_team(player_name, player_team, opposing_team, player_info['defense_stats'].keys())
         
         # Get the player's season averages
-        season_averages = get_statmuse_season_averages(player_name)
+        season_averages = get_statmuse_season_averages(player_name, player_team)
         
         player_stats.append({
             'player': player_name,
@@ -331,6 +347,7 @@ def create_player_rankings():
     categories = ['PTS', 'REB', 'AST', '3PM', 'STL', 'BLK']
     # Get team rankings based on today's lineups
     ranks = get_positional_ranks(df_dvp, lineups, categories)
+    # print("Team ranks:", ranks)
 
     filtered_ranks = filter_top_bottom_ranks(ranks)
     
@@ -341,7 +358,7 @@ def create_player_rankings():
     
     print("Fetching statmuse")
     player_history = get_player_statistics(player_defense_map)
-    # print(player_history)
+    print(player_history)
 
     print("Getting injury report")
     injury_report = get_injury_report()

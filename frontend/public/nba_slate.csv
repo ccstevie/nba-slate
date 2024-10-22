@@ -1,135 +1,41 @@
 player,opposing_team,games_played,injury_note,PTS,REB,AST,3PM,STL,BLK,defense_type
-Tyrese Maxey,Magic,5,,,,,,,0,Good Defense
-Eric Gordon,Magic,5,,,0,,0,,0,Good Defense
-Kelly Oubre,Magic,6,,,,0,,,,Good Defense
-Caleb Martin,Magic,7,,-1,0,-1,-1,,,Good Defense
-A. Drummond,Magic,6,,-1,-1,,,,,Good Defense
-J. Embiid,Magic,4,,-3,0,,,,,Good Defense
-Jalen Suggs,76ers,6,,,0,,,,,Good Defense
-K. Caldwell-Pope,76ers,4,,,1,0,,0,,Good Defense
-Franz Wagner,76ers,6,,,,,,,,Good Defense
-P. Banchero,76ers,7,,,,,,0,,Good Defense
-W. Carter,76ers,5,,,,,,,,Good Defense
-Jalen Brunson,Wizards,7,"Oct 15: Brunson won't play in Tuesday's preseason game versus the Hornets for rest purposes, Tim Bontemps of ESPN.com reports.",,,,,,,Good Defense
-Mikal Bridges,Wizards,6,"Oct 15: Bridges won't play in Tuesday's preseason game against the Hornets for rest purposes, Tim Bontemps of ESPN.com reports.",,,,,,,Good Defense
-Josh Hart,Wizards,5,"Oct 15: Hart won't play in Tuesday's preseason game against the Hornets for rest purposes, Tim Bontemps of ESPN.com reports.",,,,,,,Good Defense
-OG Anunoby,Wizards,6,"Oct 15: Anunoby won't play in Tuesday's preseason game against the Hornets, Tim Bontemps of ESPN.com reports.",,,,,,,Good Defense
-K. Towns,Wizards,2,,,,,-1,,,Good Defense
-M. Robinson,Wizards,5,,,,,,,,Good Defense
-Jordan Poole,Knicks,5,,,,,,,,Good Defense
-B. Coulibaly,Knicks,3,,-3,,,,,,Good Defense
-Kyle Kuzma,Knicks,6,,,,,,0,,Good Defense
-J. Valanciunas,Knicks,4,,,0,,,,,Good Defense
-J. Valanciunas,Knicks,4,,,0,,,,,Good Defense
-D. Mitchell,Nets,6,,,,,,,0,Good Defense
-Gradey Dick,Nets,3,,,,,,0,,Good Defense
-Ochai Agbaji,Nets,7,,,,,,,0,Good Defense
-Jakob Poeltl,Nets,4,,,,,,,,Good Defense
-K. Olynyk,Nets,5,,,,,,,,Good Defense
-D. Schroder,Raptors,5,,,,,,,,Good Defense
-Cam Thomas,Raptors,5,,,,,,,,Good Defense
-C. Johnson,Raptors,4,,,,,,,,Good Defense
-Noah Clowney,Raptors,2,,,,,,,,Good Defense
-B. Simmons,Raptors,4,,,,,,,,Good Defense
-N. Claxton,Raptors,8,,,,,,,,Good Defense
-D. Sharpe,Raptors,6,,,,,0,,,Good Defense
-D. Garland,Bulls,3,,,,,,,,Good Defense
-D. Mitchell,Bulls,7,,,,,,,,Good Defense
-Max Strus,Bulls,7,"Oct 15: Strus (hip) will not play in Wednesday's preseason game against the Pistons, Evan Dammarell of FearTheSword.com reports.",,-1,,,,,Good Defense
-Evan Mobley,Bulls,4,,,,,,0,,Good Defense
-Josh Giddey,Cavaliers,4,,-2,,0,-1,,,Good Defense
-Coby White,Cavaliers,8,,,,,,,,Good Defense
-Zach LaVine,Cavaliers,5,,,,,,,,Good Defense
-P. Williams,Cavaliers,5,,,,,,,,Good Defense
-N. Vucevic,Cavaliers,8,,-2,,,,,,Good Defense
-Dru Smith,Grizzlies,-1,,,,,,,,Good Defense
-Jaime Jaquez,Grizzlies,-1,,,,,,,,Good Defense
-Nikola Jovic,Grizzlies,0,,,,,,,,Good Defense
-B. Adebayo,Grizzlies,4,,,,,,,,Good Defense
-Ja Morant,Heat,0,"Oct 17: Morant (ankle) is expected to play in Friday's preseason game versus the Heat, Drew Hill of The Daily Memphian reports.",,,,,,,Good Defense
-Desmond Bane,Heat,2,,-11,,,-1,0,,Good Defense
-Santi Aldama,Heat,3,,1,,,,0,,Good Defense
-K. George,Trail Blazers,3,,,2,,,,,Good Defense
-Collin Sexton,Trail Blazers,7,,,,,0,,,Good Defense
-L. Markkanen,Trail Blazers,6,,,,,,,,Good Defense
-T. Hendricks,Trail Blazers,2,,,,,,,,Good Defense
-W. Kessler,Trail Blazers,6,,,,,,,,Good Defense
-S. Henderson,Jazz,3,,,,,,,,Good Defense
-A. Simons,Jazz,4,,,,,,,,Good Defense
-Deni Avdija,Jazz,3,,,,,,,,Good Defense
-Deandre Ayton,Jazz,6,,,,,,,,Good Defense
-D. Russell,Warriors,14,,-1,0,,,,,Good Defense
-Austin Reaves,Warriors,14,,,-1,,,0,,Good Defense
-R. Hachimura,Warriors,14,,,,,,,,Good Defense
-Stephen Curry,Lakers,12,,,,,,,,Good Defense
-B. Podziemski,Lakers,4,,,0,,,,,Good Defense
-A. Wiggins,Lakers,12,,,,,,,,Good Defense
-J. Kuminga,Lakers,12,,,,,,0,0,Good Defense
-D. Green,Lakers,14,,,,,,,,Good Defense
-Tyrese Maxey,Magic,5,,,,,,,,Bad Defense
-Eric Gordon,Magic,5,,,,,,,,Bad Defense
-Kelly Oubre,Magic,6,,,,,,,,Bad Defense
-Caleb Martin,Magic,7,,,,,,0,,Bad Defense
-A. Drummond,Magic,6,,,,,,,,Bad Defense
-J. Embiid,Magic,4,,,,,,,,Bad Defense
-Jalen Suggs,76ers,6,,,,,,,,Bad Defense
-K. Caldwell-Pope,76ers,4,,,,,,,0,Bad Defense
-Franz Wagner,76ers,6,,,-1,,,,,Bad Defense
-P. Banchero,76ers,7,,,1,,,,0,Bad Defense
-W. Carter,76ers,5,,,0,,,,0,Bad Defense
-Jalen Brunson,Wizards,7,"Oct 15: Brunson won't play in Tuesday's preseason game versus the Hornets for rest purposes, Tim Bontemps of ESPN.com reports.",,,,,0,,Bad Defense
-Mikal Bridges,Wizards,6,"Oct 15: Bridges won't play in Tuesday's preseason game against the Hornets for rest purposes, Tim Bontemps of ESPN.com reports.",-1,1,,,,1,Bad Defense
-Josh Hart,Wizards,5,"Oct 15: Hart won't play in Tuesday's preseason game against the Hornets for rest purposes, Tim Bontemps of ESPN.com reports.",,,-2,,-1,0,Bad Defense
-OG Anunoby,Wizards,6,"Oct 15: Anunoby won't play in Tuesday's preseason game against the Hornets, Tim Bontemps of ESPN.com reports.",4,,0,,-1,0,Bad Defense
-K. Towns,Wizards,2,,-4,-4,,,,0,Bad Defense
-M. Robinson,Wizards,5,,0,0,,,,0,Bad Defense
-Jordan Poole,Knicks,5,,-1,,,,,,Bad Defense
-B. Coulibaly,Knicks,3,,,,,,,,Bad Defense
-Kyle Kuzma,Knicks,6,,,,,,,,Bad Defense
-J. Valanciunas,Knicks,4,,-3,,-1,,,,Bad Defense
-J. Valanciunas,Knicks,4,,-3,,-1,,,,Bad Defense
-D. Mitchell,Nets,6,,,,,0,,,Bad Defense
-Gradey Dick,Nets,3,,4,,,,,,Bad Defense
-Ochai Agbaji,Nets,7,,,,,,,,Bad Defense
-Jakob Poeltl,Nets,4,,,,,,0,0,Bad Defense
-K. Olynyk,Nets,5,,,,,,0,0,Bad Defense
-D. Schroder,Raptors,5,,,,0,0,,,Bad Defense
-Cam Thomas,Raptors,5,,,,,-1,,,Bad Defense
-C. Johnson,Raptors,4,,-3,,-1,-2,,0,Bad Defense
-Noah Clowney,Raptors,2,,3,3,,,,3,Bad Defense
-B. Simmons,Raptors,4,,2,-3,,,,0,Bad Defense
-N. Claxton,Raptors,8,,2,1,,,,1,Bad Defense
-D. Sharpe,Raptors,6,,-1,-1,,,,0,Bad Defense
-D. Garland,Bulls,3,,,,,2,,,Bad Defense
-D. Mitchell,Bulls,7,,,,1,,,,Bad Defense
-Max Strus,Bulls,7,"Oct 15: Strus (hip) will not play in Wednesday's preseason game against the Pistons, Evan Dammarell of FearTheSword.com reports.",,,,0,0,,Bad Defense
-Evan Mobley,Bulls,4,,,,,,,,Bad Defense
-Josh Giddey,Cavaliers,4,,,,,,,,Bad Defense
-Coby White,Cavaliers,8,,,,,-1,,,Bad Defense
-Zach LaVine,Cavaliers,5,,1,,0,,,,Bad Defense
-P. Williams,Cavaliers,5,,0,,,0,0,,Bad Defense
-N. Vucevic,Cavaliers,8,,,,,,0,,Bad Defense
-Dru Smith,Grizzlies,-1,,,,,,,,Bad Defense
-Jaime Jaquez,Grizzlies,-1,,,,,,,,Bad Defense
-Nikola Jovic,Grizzlies,0,,,,,,,,Bad Defense
-B. Adebayo,Grizzlies,4,,2,,0,,,,Bad Defense
-Ja Morant,Heat,0,"Oct 17: Morant (ankle) is expected to play in Friday's preseason game versus the Heat, Drew Hill of The Daily Memphian reports.",,,,,,,Bad Defense
-Desmond Bane,Heat,2,,,,,,,,Bad Defense
-Santi Aldama,Heat,3,,,,,,,,Bad Defense
-K. George,Trail Blazers,3,,,,,,0,,Bad Defense
-Collin Sexton,Trail Blazers,7,,,,,,0,0,Bad Defense
-L. Markkanen,Trail Blazers,6,,,0,,,0,0,Bad Defense
-T. Hendricks,Trail Blazers,2,,,,,,,0,Bad Defense
-W. Kessler,Trail Blazers,6,,,,0,,0,,Bad Defense
-S. Henderson,Jazz,3,,,,1,0,0,,Bad Defense
-A. Simons,Jazz,4,,1,0,1,0,,1,Bad Defense
-Deni Avdija,Jazz,3,,-1,,,0,,,Bad Defense
-Deandre Ayton,Jazz,6,,1,,,,,,Bad Defense
-D. Russell,Warriors,14,,,,,,0,,Bad Defense
-Austin Reaves,Warriors,14,,,,-2,,,,Bad Defense
-R. Hachimura,Warriors,14,,-3,-1,,0,,0,Bad Defense
-Stephen Curry,Lakers,12,,3,,2,,,,Bad Defense
-B. Podziemski,Lakers,4,,,,,,,,Bad Defense
-A. Wiggins,Lakers,12,,,,,1,,,Bad Defense
-J. Kuminga,Lakers,12,,-7,-2,0,,,,Bad Defense
-D. Green,Lakers,14,,,,6,1,,,Bad Defense
+Jalen Brunson,Celtics,8,,,,,,,0,Good Defense
+Josh Hart,Celtics,8,,2,1,,,,,Good Defense
+OG Anunoby,Celtics,12,,-1,,0,,0,0,Good Defense
+P. Achiuwa,Celtics,2,,,,,,,0,Good Defense
+M. Robinson,Celtics,6,,,,,,0,0,Good Defense
+Jrue Holiday,Knicks,11,,,,,,,,Good Defense
+Derrick White,Knicks,9,,-3,,,,,,Good Defense
+Jaylen Brown,Knicks,8,,,,,,0,,Good Defense
+Jayson Tatum,Knicks,9,,,0,,0,,,Good Defense
+Al Horford,Knicks,8,,,0,,,0,,Good Defense
+K. Porzingis,Knicks,5,,,-1,,,0,,Good Defense
+Mike Conley,Lakers,10,,,,,,,,Good Defense
+A. Edwards,Lakers,7,,,-1,,,,,Good Defense
+J. McDaniels,Lakers,7,,,,,,,,Good Defense
+Rudy Gobert,Lakers,6,,,,,,,,Good Defense
+D. Russell,Timberwolves,5,,,,,,,0,Good Defense
+Austin Reaves,Timberwolves,7,,-2,,-3,0,0,,Good Defense
+LeBron James,Timberwolves,4,,0,,-2,,,0,Good Defense
+Rui Hachimura,Timberwolves,6,,-1,-1,0,0,,,Good Defense
+Anthony Davis,Timberwolves,6,,,,,,,,Good Defense
+Jalen Brunson,Celtics,8,,,,,,,,Bad Defense
+Josh Hart,Celtics,8,,,,,,,,Bad Defense
+OG Anunoby,Celtics,12,,,,,,,,Bad Defense
+P. Achiuwa,Celtics,2,,,,,,,,Bad Defense
+M. Robinson,Celtics,6,,,,,,,,Bad Defense
+Jrue Holiday,Knicks,11,,4,,,,,,Bad Defense
+Derrick White,Knicks,9,,,,,,,,Bad Defense
+Jaylen Brown,Knicks,8,,,,,,,,Bad Defense
+Jayson Tatum,Knicks,9,,,,,,,,Bad Defense
+Al Horford,Knicks,8,,1,,-1,1,,,Bad Defense
+K. Porzingis,Knicks,5,,2,,0,1,,,Bad Defense
+Mike Conley,Lakers,10,,3,,1,,,,Bad Defense
+A. Edwards,Lakers,7,,,,,,,,Bad Defense
+J. McDaniels,Lakers,7,,,,,0,,,Bad Defense
+Rudy Gobert,Lakers,6,,,,1,,,,Bad Defense
+D. Russell,Timberwolves,5,,-6,,,,,,Bad Defense
+Austin Reaves,Timberwolves,7,,,,,,,,Bad Defense
+LeBron James,Timberwolves,4,,,,,,,,Bad Defense
+Rui Hachimura,Timberwolves,6,,,,,,,,Bad Defense
+Anthony Davis,Timberwolves,6,,,,0,,1,,Bad Defense
