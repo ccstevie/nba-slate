@@ -12,6 +12,7 @@ import {
     Typography,
     Tooltip,
 } from '@mui/material';
+import Papa from 'papaparse';
 
 const PlayerTable = () => {
     const [data, setData] = useState([]);
@@ -22,29 +23,31 @@ const PlayerTable = () => {
         fetch('/nba_slate.csv')
             .then(response => response.text())
             .then(text => {
-                const rows = text.split('\n').slice(1);
-                const parsedData = rows.map(row => {
-                    const columns = row.split(',');
-                    return {
-                        player: columns[0],
-                        opposing_team: columns[1],
-                        games_played: parseInt(columns[2]) || 0,
-                        injury_note: columns[3] || '',
-                        PTS: parseFloat(columns[4]) || 0,
-                        PTS_rank: parseInt(columns[5]) || 0,
-                        REB: parseFloat(columns[6]) || 0,
-                        REB_rank: parseInt(columns[7]) || 0,
-                        AST: parseFloat(columns[8]) || 0,
-                        AST_rank: parseInt(columns[9]) || 0,
-                        '3PM': parseFloat(columns[10]) || 0,
-                        '3PM_rank': parseInt(columns[11]) || 0,
-                        STL: parseFloat(columns[12]) || 0,
-                        STL_rank: parseInt(columns[13]) || 0,
-                        BLK: parseFloat(columns[14]) || 0,
-                        BLK_rank: parseInt(columns[15]) || 0,
-                    };
+                Papa.parse(text, {
+                    header: true,
+                    skipEmptyLines: true,
+                    complete: (result) => {
+                        const parsedData = result.data.map(row => ({
+                            player: row.player,
+                            opposing_team: row.opposing_team,
+                            games_played: parseInt(row.games_played) || 0,
+                            injury_note: row.injury_note || '',
+                            PTS: parseFloat(row.PTS) || 0,
+                            PTS_rank: parseInt(row.PTS_rank) || 0,
+                            REB: parseFloat(row.REB) || 0,
+                            REB_rank: parseInt(row.REB_rank) || 0,
+                            AST: parseFloat(row.AST) || 0,
+                            AST_rank: parseInt(row.AST_rank) || 0,
+                            '3PM': parseFloat(row['3PM']) || 0,
+                            '3PM_rank': parseInt(row['3PM_rank']) || 0,
+                            STL: parseFloat(row.STL) || 0,
+                            STL_rank: parseInt(row.STL_rank) || 0,
+                            BLK: parseFloat(row.BLK) || 0,
+                            BLK_rank: parseInt(row.BLK_rank) || 0,
+                        }));
+                        setData(parsedData);
+                    },
                 });
-                setData(parsedData);
             });
     }, []);
 
@@ -205,7 +208,13 @@ const PlayerTable = () => {
                                 <TableCell>{row.player}</TableCell>
                                 <TableCell>{row.opposing_team}</TableCell>
                                 <TableCell>{row.games_played}</TableCell>
-                                <TableCell>{row.injury_note}</TableCell>
+                                <TableCell align="center" style={{ minWidth: 100 }}>
+                                    <Tooltip title={row.injury_note || 'No injury note'}>
+                                        <Typography variant="body2" style={{ cursor: 'pointer', color: row.injury_note ? 'red' : 'inherit' }}>
+                                            {row.injury_note ? 'Inj' : '-'}
+                                        </Typography>
+                                    </Tooltip>
+                                </TableCell>
                                 <TableCell style={{ backgroundColor: getColor(row.PTS) }}>{row.PTS}</TableCell>
                                 <TableCell>{row.PTS_rank}</TableCell>
                                 <TableCell style={{ backgroundColor: getColor(row.REB) }}>{row.REB}</TableCell>
