@@ -87,7 +87,7 @@ const PlayerTable = () => {
                 fetch(`/${player.replace(/\s+/g, '_')}_statlines.json`)
                     .then(response => response.json())
                     .then(logs => {
-                        setGameLogs((prev) => ({ ...prev, [player]: logs }));
+                        setGameLogs((prev) => ({ ...prev, [player]: logs.reverse() }));
                     });
             }
         }
