@@ -421,7 +421,6 @@ def create_player_rankings():
 
     # Create the DataFrame from the final table
     df_final = pd.DataFrame(final_table)
-    print(df_final)
 
     df_final_filtered = df_final[(df_final[categories] != 0).any(axis=1)]
 
