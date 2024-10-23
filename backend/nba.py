@@ -260,8 +260,11 @@ def get_statmuse_season_averages(player, team):
                           for stat in categories_mapping if stat in season_stats}
         
         player_name = season_stats.get('NAME', 'N/A')
+        name_before_abbr = player_name.split('.')[0]
+        name_parts = name_before_abbr.split()
+        full_name = " ".join(name_parts[:-1])
 
-        return player_name, filtered_stats
+        return full_name, filtered_stats
     else:
         return '', {}
 
@@ -347,7 +350,7 @@ def create_player_rankings():
     categories = ['PTS', 'REB', 'AST', '3PM', 'STL', 'BLK']
     ranks = get_positional_ranks(df_dvp, lineups, categories)
     filtered_ranks = filter_ranks(ranks)
-    print("Team ranks:", ranks)
+    # print("Team ranks:", ranks)
     
     print("Mapping player to opposing defence")
     player_defense_map = map_players_to_defense_rankings(lineups, filtered_ranks)
@@ -398,7 +401,7 @@ def create_player_rankings():
 
             # Calculate the difference between the season average and historical average
             if avg and season_avg:
-                difference = round(float(avg) - float(season_avg))
+                difference = round(float(avg) - float(season_avg), 1)
             else:
                 difference = ''
 
@@ -418,6 +421,7 @@ def create_player_rankings():
 
     # Create the DataFrame from the final table
     df_final = pd.DataFrame(final_table)
+    print(df_final)
 
     df_final_filtered = df_final[(df_final[categories] != 0).any(axis=1)]
 
