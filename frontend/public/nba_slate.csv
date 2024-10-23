@@ -1,41 +1,88 @@
-player,opposing_team,games_played,injury_note,PTS,REB,AST,3PM,STL,BLK,defense_type
-Jalen Brunson,Celtics,8,,,,,,,0,Good Defense
-Josh Hart,Celtics,8,,2,1,,,,,Good Defense
-OG Anunoby,Celtics,12,,-1,,0,,0,0,Good Defense
-P. Achiuwa,Celtics,2,,,,,,,0,Good Defense
-M. Robinson,Celtics,6,,,,,,0,0,Good Defense
-Jrue Holiday,Knicks,11,,,,,,,,Good Defense
-Derrick White,Knicks,9,,-3,,,,,,Good Defense
-Jaylen Brown,Knicks,8,,,,,,0,,Good Defense
-Jayson Tatum,Knicks,9,,,0,,0,,,Good Defense
-Al Horford,Knicks,8,,,0,,,0,,Good Defense
-K. Porzingis,Knicks,5,,,-1,,,0,,Good Defense
-Mike Conley,Lakers,10,,,,,,,,Good Defense
-A. Edwards,Lakers,7,,,-1,,,,,Good Defense
-J. McDaniels,Lakers,7,,,,,,,,Good Defense
-Rudy Gobert,Lakers,6,,,,,,,,Good Defense
-D. Russell,Timberwolves,5,,,,,,,0,Good Defense
-Austin Reaves,Timberwolves,7,,-2,,-3,0,0,,Good Defense
-LeBron James,Timberwolves,4,,0,,-2,,,0,Good Defense
-Rui Hachimura,Timberwolves,6,,-1,-1,0,0,,,Good Defense
-Anthony Davis,Timberwolves,6,,,,,,,,Good Defense
-Jalen Brunson,Celtics,8,,,,,,,,Bad Defense
-Josh Hart,Celtics,8,,,,,,,,Bad Defense
-OG Anunoby,Celtics,12,,,,,,,,Bad Defense
-P. Achiuwa,Celtics,2,,,,,,,,Bad Defense
-M. Robinson,Celtics,6,,,,,,,,Bad Defense
-Jrue Holiday,Knicks,11,,4,,,,,,Bad Defense
-Derrick White,Knicks,9,,,,,,,,Bad Defense
-Jaylen Brown,Knicks,8,,,,,,,,Bad Defense
-Jayson Tatum,Knicks,9,,,,,,,,Bad Defense
-Al Horford,Knicks,8,,1,,-1,1,,,Bad Defense
-K. Porzingis,Knicks,5,,2,,0,1,,,Bad Defense
-Mike Conley,Lakers,10,,3,,1,,,,Bad Defense
-A. Edwards,Lakers,7,,,,,,,,Bad Defense
-J. McDaniels,Lakers,7,,,,,0,,,Bad Defense
-Rudy Gobert,Lakers,6,,,,1,,,,Bad Defense
-D. Russell,Timberwolves,5,,-6,,,,,,Bad Defense
-Austin Reaves,Timberwolves,7,,,,,,,,Bad Defense
-LeBron James,Timberwolves,4,,,,,,,,Bad Defense
-Rui Hachimura,Timberwolves,6,,,,,,,,Bad Defense
-Anthony Davis,Timberwolves,6,,,,0,,1,,Bad Defense
+player,opposing_team,games_played,injury_note,PTS,PTS_rank,REB,REB_rank,AST,AST_rank,3PM,3PM_rank,STL,STL_rank,BLK,BLK_rank
+Tyrese Haliburton T. Haliburton,Pistons,4,,1,4,-1,9,1,4,0,4,1,30,0,22
+Andrew Nembhard A. Nembhard,Pistons,6,,3,26,1,7,2,27,0,29,0,28,0,22
+Aaron Nesmith A. Nesmith,Pistons,5,,-1,23,-1,25,0,30,0,20,0,24,0,24
+Pascal Siakam P. Siakam,Pistons,10,,7,23,-1,18,2,20,0,7,0,29,0,23
+Myles Turner M. Turner,Pistons,4,,-1,17,2,28,0,24,-1,2,0,25,1,28
+Isaiah Jackson I. Jackson,Pistons,7,,6,17,3,28,0,24,,2,1,25,0,28
+Cade Cunningham C. Cunningham,Pacers,4,,4,14,1,3,0,1,0,6,0,2,,11
+Jaden Ivey J. Ivey,Pacers,5,,5,28,-1,24,0,18,0,15,0,13,0,20
+Jalen Duren J. Duren,Pacers,6,,-1,16,0,15,-1,6,,20,0,2,0,4
+Dennis Schröder D. Schröder,Hawks,2,,4,19,2,23,2,19,2,25,,3,1,10
+Cam Thomas C. Thomas,Hawks,3,,-13,22,-2,17,-2,24,-2,19,0,27,,29
+Cameron Johnson C. Johnson,Hawks,6,,9,28,0,2,0,24,1,25,1,8,0,22
+Dorian Finney-Smith D. Finney-Smith,Hawks,6,,4,11,1,8,0,17,1,26,0,14,0,13
+Nic Claxton N. Claxton,Hawks,7,,0,9,1,19,1,4,,8,1,14,0,16
+Day'Ron Sharpe D. Sharpe,Hawks,6,,-2,9,-1,19,-1,4,0,8,0,14,0,16
+Trae Young T. Young,Nets,5,,4,13,-1,10,-3,11,0,26,0,20,0,3
+De'Andre Hunter D. Hunter,Nets,5,,-1,11,0,15,0,14,0,13,0,12,0,4
+Jalen Johnson J. Johnson,Nets,7,,-9,17,-3,22,-2,21,-1,11,-1,8,0,12
+Clint Capela C. Capela,Nets,7,,-2,14,0,20,0,9,,22,0,27,0,29
+Jalen Suggs J. Suggs,Heat,8,,-4,7,0,16,0,22,0,7,0,1,1,17
+Franz Wagner F. Wagner,Heat,7,,-5,29,0,27,0,4,0,27,0,7,0,25
+Paolo Banchero P. Banchero,Heat,7,,-4,1,2,7,0,6,0,10,0,2,,11
+Wendell Carter Jr. W. Carter Jr.,Heat,7,,3,7,0,7,0,14,0,23,0,9,0,1
+Terry Rozier T. Rozier,Magic,-1,,,11,,20,,10,,10,,23,,3
+Tyler Herro T. Herro,Magic,7,,-6,10,-2,5,-1,8,-1,1,0,21,,3
+Jimmy Butler J. Butler,Magic,5,,5,13,1,8,0,3,0,14,0,18,0,13
+Nikola Jović N. Jović,Magic,2,,-5,4,-1,4,0,2,-1,3,,25,,17
+Bam Adebayo B. Adebayo,Magic,8,,-4,4,-2,3,1,11,,14,0,7,0,18
+Damian Lillard D. Lillard,76ers,3,,2,9,2,4,0,18,0,12,0,7,0,21
+Giannis Antetokounmpo G. Antetokounmpo,76ers,6,,-1,7,1,26,-1,7,0,22,0,4,0,26
+Brook Lopez B. Lopez,76ers,6,,5,6,0,26,1,21,1,6,0,3,0,27
+Tyrese Maxey T. Maxey,Bucks,6,,1,21,0,25,-2,26,1,13,0,8,0,20
+Kelly Oubre Jr. K. Oubre Jr.,Bucks,3,,1,8,1,14,-1,28,0,18,0,16,,11
+Joel Embiid J. Embiid,Bucks,4,,-6,8,-3,2,2,3,1,27,-1,4,-1,5
+Darius Garland D. Garland,Raptors,5,,0,15,0,7,2,29,0,27,0,24,0,7
+Donovan Mitchell D. Mitchell,Raptors,6,,-9,16,0,12,-2,20,0,27,0,24,0,17
+Isaac Okoro I. Okoro,Raptors,6,,0,30,-1,23,0,26,0,28,0,17,0,26
+Evan Mobley E. Mobley,Raptors,5,,-1,29,2,25,-1,18,0,17,0,20,0,30
+Jarrett Allen J. Allen,Raptors,5,,1,25,-1,30,0,22,,4,0,14,-1,30
+Immanuel Quickley I. Quickley,Cavaliers,2,,-7,2,0,8,-3,2,-1,2,1,14,,8
+Gradey Dick G. Dick,Cavaliers,-1,,,11,,11,,16,,25,,18,,13
+Ochai Agbaji O. Agbaji,Cavaliers,8,,-2,26,-1,24,-1,25,0,23,-1,11,0,7
+Scottie Barnes S. Barnes,Cavaliers,6,,-2,30,-1,13,-1,19,-1,28,0,28,0,8
+Jakob Poeltl J. Poeltl,Cavaliers,6,,0,2,0,14,0,12,,21,0,29,0,10
+Kelly Olynyk K. Olynyk,Cavaliers,-1,,,2,,14,,12,,21,,29,,10
+Coby White C. White,Pelicans,2,,4,4,4,6,-1,5,2,28,1,4,,19
+Zach LaVine Z. LaVine,Pelicans,2,,4,5,-2,17,1,18,1,17,0,2,,11
+Patrick Williams P. Williams,Pelicans,3,,-1,19,0,21,0,24,0,12,0,16,1,13
+Nikola Vučević N. Vučević,Pelicans,4,,-3,15,-1,23,-1,8,0,17,0,11,0,20
+CJ McCollum,Bulls,2,,-5,23,0,21,2,29,-2,18,0,9,1,8
+Brandon Ingram B. Ingram,Bulls,4,,0,22,1,1,0,20,0,29,1,25,0,10
+Zion Williamson Z. Williamson,Bulls,3,,-1,8,0,15,0,8,,9,-1,3,0,20
+Herbert Jones H. Jones,Bulls,4,,4,10,1,12,1,16,0,8,0,17,0,11
+LaMelo Ball L. Ball,Rockets,3,,-8,30,-4,28,-2,3,-1,21,-1,11,,29
+Miles Bridges M. Bridges,Rockets,-1,,,20,,29,,13,,18,,12,,29
+Nick Richards N. Richards,Rockets,3,,0,13,-1,11,0,10,,28,,6,2,26
+Fred VanVleet F. VanVleet,Hornets,2,,1,12,-1,29,-1,28,1,15,-1,5,2,11
+Jalen Green J. Green,Hornets,4,,12,5,0,27,2,25,0,10,0,22,,20
+Dillon Brooks D. Brooks,Hornets,2,,3,19,-2,9,1,15,0,22,2,4,0,3
+Jabari Smith Jr. J. Smith Jr.,Hornets,3,,-1,21,-4,22,0,14,0,25,0,9,1,2
+Alperen Şengün A. Şengün,Hornets,4,,-4,18,2,25,0,2,0,6,0,18,0,13
+Ja Morant J. Morant,Jazz,2,,3,17,1,17,-2,30,-1,29,0,26,,23
+Marcus Smart M. Smart,Jazz,4,,-2,29,0,29,1,26,0,30,-1,19,0,26
+Desmond Bane D. Bane,Jazz,6,,2,25,1,6,0,20,0,26,0,14,0,17
+Santi Aldama S. Aldama,Jazz,6,,-2,25,-2,5,-1,27,-1,29,0,27,0,24
+Keyonte George K. George,Grizzlies,3,,-5,8,0,27,1,9,-1,23,0,16,1,23
+Collin Sexton C. Sexton,Grizzlies,6,,-6,15,-1,23,-2,11,0,16,0,25,0,30
+Lauri Markkanen L. Markkanen,Grizzlies,5,,1,15,1,30,0,10,0,21,0,26,1,18
+Taylor Hendricks T. Hendricks,Grizzlies,0,,,9,,24,,25,,13,,23,,21
+Walker Kessler W. Kessler,Grizzlies,4,,0,26,2,13,0,25,,25,0,19,2,24
+Devin Booker D. Booker,Clippers,12,,3,19,-1,22,-1,2,1,26,1,20,0,15
+Bradley Beal B. Beal,Clippers,5,,3,10,1,13,-1,29,-1,8,0,12,1,28
+Kevin Durant K. Durant,Clippers,9,,0,16,0,2,0,15,0,21,0,21,0,19
+Jusuf Nurkić J. Nurkić,Clippers,7,,0,5,-2,27,0,20,1,11,-1,9,0,12
+James Harden J. Harden,Suns,2,,4,10,1,14,2,25,1,19,,18,0,15
+Norman Powell N. Powell,Suns,10,,4,20,1,19,0,13,0,21,0,29,0,17
+Terance Mann T. Mann,Suns,13,,4,14,1,22,0,8,1,4,0,29,0,8
+Ivica Zubac I. Zubac,Suns,11,,-1,12,0,4,0,13,,18,0,21,0,2
+Stephen Curry S. Curry,Trail Blazers,5,,-4,24,0,1,0,15,-1,16,0,25,0,28
+Brandin Podziemski B. Podziemski,Trail Blazers,4,,0,12,0,20,1,10,-1,3,0,30,0,27
+Andrew Wiggins A. Wiggins,Trail Blazers,4,,4,20,2,29,0,22,1,6,1,26,0,30
+Jonathan Kuminga J. Kuminga,Trail Blazers,8,,-4,12,-1,6,0,4,0,20,0,17,0,27
+Draymond Green D. Green,Trail Blazers,5,,0,19,1,24,0,28,0,24,0,30,0,23
+Scoot Henderson S. Henderson,Warriors,4,,-1,5,-1,5,0,23,0,16,1,27,,16
+Anfernee Simons A. Simons,Warriors,5,,-1,14,-1,1,-1,28,0,23,0,1,0,8
+Jerami Grant J. Grant,Warriors,5,,1,28,1,27,1,11,-1,30,0,22,0,25
+Deandre Ayton D. Ayton,Warriors,8,,0,23,-2,22,0,18,0,15,0,22,0,9

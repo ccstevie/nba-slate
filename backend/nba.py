@@ -154,23 +154,21 @@ def get_positional_ranks(positional_dfs, lineups, rank_columns):
 
     return team_ranks
 
-def filter_top_bottom_ranks(team_rankings):
-    top_bottom_ranks = []
+def filter_ranks(team_rankings):
+    all_ranks = []
 
     for game in team_rankings:
-        filtered_game = {}
+        game_ranks = {}
         for team, positions in game.items():
-            filtered_positions = {}
+            position_ranks = {}
             for position, stats in positions.items():
-                filtered_stats = {stat: rank for stat, rank in stats.items() if (rank is not None and (1 <= rank <= 5 or 25 <= rank <= 30))}
-                if filtered_stats:  # Only add if there's any top/bottom rank
-                    filtered_positions[position] = filtered_stats
-            if filtered_positions:  # Only add if any positions are filtered
-                filtered_game[team] = filtered_positions
-        if filtered_game:
-            top_bottom_ranks.append(filtered_game)
+                position_ranks[position] = stats
+            if position_ranks:
+                game_ranks[team] = position_ranks
+        if game_ranks:
+            all_ranks.append(game_ranks)
 
-    return top_bottom_ranks
+    return all_ranks
 
 def map_players_to_defense_rankings(lineups, filtered_ranks):
     player_defense_mapping = []
@@ -261,9 +259,11 @@ def get_statmuse_season_averages(player, team):
         filtered_stats = {categories_mapping[stat]: season_stats.get(stat, 'N/A') 
                           for stat in categories_mapping if stat in season_stats}
         
-        return filtered_stats
+        player_name = season_stats.get('NAME', 'N/A')
+
+        return player_name, filtered_stats
     else:
-        return {}
+        return '', {}
 
 def get_player_statistics(player_map):
     player_stats = []
@@ -278,10 +278,10 @@ def get_player_statistics(player_map):
         stats, games_played = get_statmuse_player_vs_team(player_name, player_team, opposing_team, player_info['defense_stats'].keys())
         
         # Get the player's season averages
-        season_averages = get_statmuse_season_averages(player_name, player_team)
+        fullname, season_averages = get_statmuse_season_averages(player_name, player_team)
         
         player_stats.append({
-            'player': player_name,
+            'player': fullname,
             'opposing_team': opposing_team,
             'defense_stats': defense_stats,
             'stats': stats,  # Historical stats vs the team
@@ -345,11 +345,9 @@ def create_player_rankings():
     # print(df_dvp)
 
     categories = ['PTS', 'REB', 'AST', '3PM', 'STL', 'BLK']
-    # Get team rankings based on today's lineups
     ranks = get_positional_ranks(df_dvp, lineups, categories)
-    # print("Team ranks:", ranks)
-
-    filtered_ranks = filter_top_bottom_ranks(ranks)
+    filtered_ranks = filter_ranks(ranks)
+    print("Team ranks:", ranks)
     
     print("Mapping player to opposing defence")
     player_defense_map = map_players_to_defense_rankings(lineups, filtered_ranks)
@@ -358,14 +356,13 @@ def create_player_rankings():
     
     print("Fetching statmuse")
     player_history = get_player_statistics(player_defense_map)
-    print(player_history)
+    # print(player_history)
 
     print("Getting injury report")
     injury_report = get_injury_report()
     
-    # Initialize lists for good and bad defense tables
-    good_defense_table = []
-    bad_defense_table = []
+    print("Finalizing Table")
+    final_table = []
 
     for player_data in player_history:
         player = player_data['player']
@@ -373,20 +370,19 @@ def create_player_rankings():
         season_averages = player_data['season_averages']
         games_played = player_data['games_played']
 
-        if not opposing_team or not season_averages: continue
+        if not opposing_team or not season_averages:
+            continue
 
-        good_stats_row = {'player': player, 'opposing_team': opposing_team, 'games_played': games_played}
-        bad_stats_row = {'player': player, 'opposing_team': opposing_team, 'games_played': games_played}
+        # Initialize the row for each player
+        stats_row = {'player': player, 'opposing_team': opposing_team, 'games_played': games_played}
 
         # Check if the player is on the injury report
         injury_info = injury_report[injury_report['player'] == player]
         if not injury_info.empty:
             injury_note = injury_info.iloc[0]['status_comment']  # Update to use the status_comment column
-            good_stats_row['injury_note'] = injury_note
-            bad_stats_row['injury_note'] = injury_note
+            stats_row['injury_note'] = injury_note
         else:
-            good_stats_row['injury_note'] = ''
-            bad_stats_row['injury_note'] = ''
+            stats_row['injury_note'] = ''
 
         # Process final stat values and defense rankings
         for category in categories:
@@ -400,7 +396,7 @@ def create_player_rankings():
             else:
                 season_avg = ''
 
-            # Calculate difference between season average and historical average
+            # Calculate the difference between the season average and historical average
             if avg and season_avg:
                 difference = round(float(avg) - float(season_avg))
             else:
@@ -409,29 +405,24 @@ def create_player_rankings():
             # Add stats to the row based on defense rank
             if category in player_data['defense_stats']:
                 defense_rank = player_data['defense_stats'][category]
-                
-                # Categorize based on defense ranking
-                if defense_rank <= 5:  # Good defense (opponent is strong)
-                    good_stats_row[category] = difference
-                elif defense_rank >= 25:  # Bad defense (opponent is weak)
-                    bad_stats_row[category] = difference
+
+                # Add both the difference and the opposing team rank
+                stats_row[category] = difference
+                stats_row[category + '_rank'] = defense_rank
             else:
-                good_stats_row[category] = bad_stats_row[category] = ''
+                stats_row[category] = ''
+                stats_row[category + '_rank'] = ''
 
-        # Append to the corresponding table
-        good_defense_table.append(good_stats_row)
-        bad_defense_table.append(bad_stats_row)
+        # Append the processed row to the final table
+        final_table.append(stats_row)
 
-    df_good_defense = pd.DataFrame(good_defense_table)
-    df_bad_defense = pd.DataFrame(bad_defense_table)
+    # Create the DataFrame from the final table
+    df_final = pd.DataFrame(final_table)
 
-    df_good_defense['defense_type'] = 'Good Defense'
-    df_bad_defense['defense_type'] = 'Bad Defense'
-
-    combined_df = pd.concat([df_good_defense, df_bad_defense], ignore_index=True)
+    df_final_filtered = df_final[(df_final[categories] != 0).any(axis=1)]
 
     public_folder_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'frontend', 'public', 'nba_slate.csv')
-    combined_df.to_csv(public_folder_path, index=False)
+    df_final_filtered.to_csv(public_folder_path, index=False)
 
 if __name__ == '__main__':
     create_player_rankings()
