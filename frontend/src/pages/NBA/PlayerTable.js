@@ -79,7 +79,7 @@ const PlayerTable = () => {
 
     return (
         <Container>
-            <h1>NBA Player Stats</h1>
+            <h1>NBA Daily Player Matchups</h1>
 
             <Typography variant="body1" paragraph>
                 This table presents the performance statistics of NBA players against their upcoming opponents based on their previous matchups. Each statistic represents the average performance of a player in various categories—such as points, rebounds, assists, and more—when facing that particular team. For example, the "PTS" column reflects the number of points that a player has averaged against the opposing team historically compared to their season average.
