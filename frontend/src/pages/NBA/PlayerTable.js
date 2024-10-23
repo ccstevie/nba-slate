@@ -11,13 +11,18 @@ import {
     Paper,
     Typography,
     Tooltip,
+    Collapse,
+    IconButton,
 } from '@mui/material';
 import Papa from 'papaparse';
+import { ExpandMore, ExpandLess } from '@mui/icons-material';
 
 const PlayerTable = () => {
     const [data, setData] = useState([]);
     const [sortDirection, setSortDirection] = useState('asc');
     const [sortColumn, setSortColumn] = useState('PTS');
+    const [expandedPlayer, setExpandedPlayer] = useState(null);
+    const [gameLogs, setGameLogs] = useState({});
 
     useEffect(() => {
         fetch('/nba_slate.csv')
@@ -72,7 +77,22 @@ const PlayerTable = () => {
         return 'rgba(255, 255, 255, 0)'; // Fully transparent for zero
     };
 
-    // Sort the data
+    const handleRowClick = (player) => {
+        if (expandedPlayer === player) {
+            setExpandedPlayer(null);
+        } else {
+            setExpandedPlayer(player);
+
+            if (!gameLogs[player]) {
+                fetch(`/${player.replace(/\s+/g, '_')}_statlines.json`)
+                    .then(response => response.json())
+                    .then(logs => {
+                        setGameLogs((prev) => ({ ...prev, [player]: logs }));
+                    });
+            }
+        }
+    };
+
     const sortedData = data.sort((a, b) => {
         if (sortDirection === 'asc') {
             return a[sortColumn] - b[sortColumn];
@@ -85,7 +105,7 @@ const PlayerTable = () => {
             <h1>NBA Daily Player Matchups</h1>
 
             <Typography variant="body1" paragraph>
-                This table presents the performance statistics of NBA players against their upcoming opponents based on their previous matchups. Each statistic represents the average performance of a player in various categories—such as points, rebounds, assists, and more—when facing that particular team. For example, the "PTS" column reflects the number of points that a player has averaged against the opposing team historically compared to their season average.
+                This table presents the performance statistics of NBA players against their upcoming opponents based on their previous matchups. Each statistic represents the average performance of a player in various categories—such as points, rebounds, assists, and more—when facing that particular team.
             </Typography>
 
             <Typography variant="body1" paragraph>
@@ -96,6 +116,7 @@ const PlayerTable = () => {
                 <Table style={{ tableLayout: 'fixed', width: '100%' }}>
                     <TableHead sx={{ backgroundColor: '#f0ffff' }}>
                         <TableRow>
+                            <TableCell align="center" style={{ minWidth: 50 }}>Show Games</TableCell>
                             <TableCell align="center" style={{ minWidth: 120 }}>
                                 <Typography variant="body2" fontWeight="bold">Player</Typography>
                             </TableCell>
@@ -114,7 +135,9 @@ const PlayerTable = () => {
                                 </Tooltip>
                             </TableCell>
                             <TableCell align="center" style={{ minWidth: 100 }}>
-                                <Typography variant="body2" fontWeight="bold">Injury Note</Typography>
+                                <Tooltip title="Player's current injury status">
+                                    <Typography variant="body2" fontWeight="bold">Injury Note</Typography>
+                                </Tooltip>
                             </TableCell>
                             <TableCell align="center" style={{ minWidth: 100 }}>
                                 <Tooltip title="Points per game above season average">
@@ -197,15 +220,21 @@ const PlayerTable = () => {
                                     </TableSortLabel>
                                 </Tooltip>
                             </TableCell>
-                            <TableCell align="center" style={{ minWidth: 100 }}>
+                            <TableCell align="center" style={{ minWidth: 100, pr: 2 }}>
                                 <Typography variant="body2" fontWeight="bold">Defence Rank (BLK)</Typography>
                             </TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {sortedData.map((row, index) => (
-                            <TableRow key={index}>
-                                <TableCell>{row.player}</TableCell>
+                            <React.Fragment key={index}>
+                                <TableRow hover onClick={() => handleRowClick(row.player)}>
+                                    <TableCell align="center">
+                                        <IconButton size="small">
+                                            {expandedPlayer === row.player ? <ExpandLess /> : <ExpandMore />}
+                                        </IconButton>
+                                    </TableCell>
+                                    <TableCell>{row.player}</TableCell>
                                 <TableCell>{row.opposing_team}</TableCell>
                                 <TableCell>{row.games_played}</TableCell>
                                 <TableCell align="center" style={{ minWidth: 100 }}>
@@ -215,19 +244,61 @@ const PlayerTable = () => {
                                         </Typography>
                                     </Tooltip>
                                 </TableCell>
-                                <TableCell style={{ backgroundColor: getColor(row.PTS) }}>{row.PTS}</TableCell>
-                                <TableCell>{row.PTS_rank}</TableCell>
-                                <TableCell style={{ backgroundColor: getColor(row.REB) }}>{row.REB}</TableCell>
-                                <TableCell>{row.REB_rank}</TableCell>
-                                <TableCell style={{ backgroundColor: getColor(row.AST) }}>{row.AST}</TableCell>
-                                <TableCell>{row.AST_rank}</TableCell>
-                                <TableCell style={{ backgroundColor: getColor(row['3PM']) }}>{row['3PM']}</TableCell>
-                                <TableCell>{row['3PM_rank']}</TableCell>
-                                <TableCell style={{ backgroundColor: getColor(row.STL) }}>{row.STL}</TableCell>
-                                <TableCell>{row.STL_rank}</TableCell>
-                                <TableCell style={{ backgroundColor: getColor(row.BLK) }}>{row.BLK}</TableCell>
-                                <TableCell>{row.BLK_rank}</TableCell>
-                            </TableRow>
+                                    <TableCell style={{ backgroundColor: getColor(row.PTS) }}>{row.PTS}</TableCell>
+                                    <TableCell>{row.PTS_rank}</TableCell>
+                                    <TableCell style={{ backgroundColor: getColor(row.REB) }}>{row.REB}</TableCell>
+                                    <TableCell>{row.REB_rank}</TableCell>
+                                    <TableCell style={{ backgroundColor: getColor(row.AST) }}>{row.AST}</TableCell>
+                                    <TableCell>{row.AST_rank}</TableCell>
+                                    <TableCell style={{ backgroundColor: getColor(row['3PM']) }}>{row['3PM']}</TableCell>
+                                    <TableCell>{row['3PM_rank']}</TableCell>
+                                    <TableCell style={{ backgroundColor: getColor(row.STL) }}>{row.STL}</TableCell>
+                                    <TableCell>{row.STL_rank}</TableCell>
+                                    <TableCell style={{ backgroundColor: getColor(row.BLK) }}>{row.BLK}</TableCell>
+                                    <TableCell>{row.BLK_rank}</TableCell>
+                                </TableRow>
+                                {expandedPlayer === row.player && (
+                                    <TableRow>
+                                        <TableCell colSpan={8}>
+                                            <Collapse in={expandedPlayer === row.player}>
+                                                <Typography variant="body1">
+                                                    <strong>Game Logs:</strong>
+                                                </Typography>
+                                                {gameLogs[row.player] ? (
+                                                    <Table size="small">
+                                                        <TableHead>
+                                                            <TableRow>
+                                                                <TableCell>Date</TableCell>
+                                                                <TableCell>Points</TableCell>
+                                                                <TableCell>Rebounds</TableCell>
+                                                                <TableCell>Assists</TableCell>
+                                                                <TableCell>3PM</TableCell>
+                                                                <TableCell>Steals</TableCell>
+                                                                <TableCell>Blocks</TableCell>
+                                                            </TableRow>
+                                                        </TableHead>
+                                                        <TableBody>
+                                                            {gameLogs[row.player].map((log, i) => (
+                                                                <TableRow key={i}>
+                                                                    <TableCell>{log[0]}</TableCell>
+                                                                    <TableCell>{log[1]}</TableCell>
+                                                                    <TableCell>{log[2]}</TableCell>
+                                                                    <TableCell>{log[3]}</TableCell>
+                                                                    <TableCell>{log[4]}</TableCell>
+                                                                    <TableCell>{log[5]}</TableCell>
+                                                                    <TableCell>{log[6]}</TableCell>
+                                                                </TableRow>
+                                                            ))}
+                                                        </TableBody>
+                                                    </Table>
+                                                ) : (
+                                                    <Typography variant="body2">Loading...</Typography>
+                                                )}
+                                            </Collapse>
+                                        </TableCell>
+                                    </TableRow>
+                                )}
+                            </React.Fragment>
                         ))}
                     </TableBody>
                 </Table>

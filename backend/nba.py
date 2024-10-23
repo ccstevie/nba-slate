@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import json
 import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -206,27 +207,50 @@ def get_statmuse_player_vs_team(player, player_team, opp_team, category):
     response = requests.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
     
-    stats = {stat: [] for stat in category}
-    games_played = 0  # Initialize games played counter
+    game_log = []  # List of lists to store statlines for each game
+    averages = {stat: 0 for stat in category}  # Dictionary to store average values for each stat
+    games_played = 0
 
     table = soup.find('table')
     if table:
         headers = [th.get_text().strip() for th in table.find_all('th')]
         values = [td.get_text().strip() for td in table.find_all('td')]
         
-        # Create a list of games as rows
+        # Create rows for each game
         rows = [values[i:i + len(headers)] for i in range(0, len(values), len(headers))]
-        
-        # Count the number of rows representing games, excluding the summary row
-        games_played = len(rows) - 2
 
+        # Count the number of games (excluding the summary row)
+        games_played = len(rows) - 1  # Adjusted for possible summary row
+
+        # Loop through the game rows (excluding the summary)
+        for row in rows[:-2]:
+            game_statline = []
+
+            date = row[3]
+            game_statline.append(date)
+            for stat in category:
+                stat_index = headers.index(stat)
+                stat_value = row[stat_index].strip()
+                
+                # If stat value is present, append it to the game log and update averages
+                if stat_value:
+                    stat_float = float(stat_value)
+                    game_statline.append(stat_float)
+                    averages[stat] += stat_float
+                else:
+                    game_statline.append(0.0)
+            game_log.append(game_statline)
+
+        # Calculate averages by dividing the total for each stat by games played
         for stat in category:
-            stat_index = headers.index(stat)
-            for row in rows[:-1]:  # Loop through game rows (excluding summary)
-                if row[stat_index].strip():
-                    stats[stat].append(float(row[stat_index]))  # Append the value
+            if games_played > 0:
+                averages[stat] = round(averages[stat] / games_played, 1)
 
-    return stats, games_played  # Return stats and the number of games played
+    return {
+        "game_log": game_log,  # List of lists where each sublist represents a game's stats
+        "averages": averages,  # Average stats per category
+        "games_played": games_played  # Number of games played
+    }
 
 def format_season_averages_url(player, team):
     player_formatted = "-".join(player.lower().split())
@@ -278,7 +302,10 @@ def get_player_statistics(player_map):
         player_team = player_info['player_team']
         
         # Get the stats for the player vs the opposing team (historical)
-        stats, games_played = get_statmuse_player_vs_team(player_name, player_team, opposing_team, player_info['defense_stats'].keys())
+        historical_stats = get_statmuse_player_vs_team(player_name, player_team, opposing_team, player_info['defense_stats'].keys())
+        game_log = historical_stats['game_log']
+        averages = historical_stats['averages']
+        games_played = historical_stats['games_played']
         
         # Get the player's season averages
         fullname, season_averages = get_statmuse_season_averages(player_name, player_team)
@@ -287,7 +314,8 @@ def get_player_statistics(player_map):
             'player': fullname,
             'opposing_team': opposing_team,
             'defense_stats': defense_stats,
-            'stats': stats,  # Historical stats vs the team
+            'game_log': game_log,  # Detailed game-by-game statlines
+            'averages': averages,  # Historical averages vs the team
             'games_played': games_played,
             'season_averages': season_averages  # Season averages
         })
@@ -363,7 +391,9 @@ def create_player_rankings():
 
     print("Getting injury report")
     injury_report = get_injury_report()
-    
+
+    public_folder_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'frontend', 'public')
+
     print("Finalizing Table")
     final_table = []
 
@@ -377,7 +407,19 @@ def create_player_rankings():
             continue
 
         # Initialize the row for each player
-        stats_row = {'player': player, 'opposing_team': opposing_team, 'games_played': games_played}
+        stats_row = {
+            'player': player,
+            'opposing_team': opposing_team,
+            'games_played': games_played
+        }
+
+        # Save game log (detailed statlines) to a separate JSON file for each player
+        game_log = player_data['game_log']  # The game-by-game statlines
+        player_filename = f"{public_folder_path}/{player.replace(' ', '_')}_statlines.json"
+        with open(player_filename, 'w') as json_file:
+            json.dump(game_log, json_file)
+
+        stats_row['statlines_path'] = f'/public/{player.replace(" ", "_")}_statlines.json'
 
         # Check if the player is on the injury report
         injury_info = injury_report[injury_report['player'] == player]
@@ -389,15 +431,11 @@ def create_player_rankings():
 
         # Process final stat values and defense rankings
         for category in categories:
-            if category in player_data['stats'] and player_data['stats'][category]:
-                avg = player_data['stats'][category][-1]
-            else:
-                avg = ''
+            # Get historical average vs the opposing team
+            avg = player_data['averages'].get(category, '')
 
-            if category in season_averages:
-                season_avg = season_averages[category]
-            else:
-                season_avg = ''
+            # Get the player's season average
+            season_avg = season_averages.get(category, '')
 
             # Calculate the difference between the season average and historical average
             if avg and season_avg:
@@ -421,11 +459,11 @@ def create_player_rankings():
 
     # Create the DataFrame from the final table
     df_final = pd.DataFrame(final_table)
+    df_final_filtered = df_final[(df_final[categories] != 0).any(axis=1)]  # Keep rows with non-zero categories
 
-    df_final_filtered = df_final[(df_final[categories] != 0).any(axis=1)]
-
-    public_folder_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'frontend', 'public', 'nba_slate.csv')
-    df_final_filtered.to_csv(public_folder_path, index=False)
+    # Save the final table to CSV
+    slate_csv_path = os.path.join(public_folder_path, 'nba_slate.csv')
+    df_final_filtered.to_csv(slate_csv_path, index=False)
 
 if __name__ == '__main__':
     create_player_rankings()
