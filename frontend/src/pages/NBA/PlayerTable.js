@@ -9,17 +9,14 @@ import {
     TableRow,
     TableSortLabel,
     Paper,
-    MenuItem,
-    Select,
-    FormControl,
-    InputLabel,
+    Typography,
+    Tooltip,
 } from '@mui/material';
 
 const PlayerTable = () => {
     const [data, setData] = useState([]);
     const [sortDirection, setSortDirection] = useState('asc');
     const [sortColumn, setSortColumn] = useState('PTS');
-    const [defenseFilter, setDefenseFilter] = useState('all');
 
     useEffect(() => {
         fetch('/nba_slate.csv')
@@ -28,19 +25,23 @@ const PlayerTable = () => {
                 const rows = text.split('\n').slice(1);
                 const parsedData = rows.map(row => {
                     const columns = row.split(',');
-    
                     return {
                         player: columns[0],
                         opposing_team: columns[1],
                         games_played: parseInt(columns[2]) || 0,
-                        injury_note: columns[3],
+                        injury_note: columns[3] || '',
                         PTS: parseFloat(columns[4]) || 0,
-                        REB: parseFloat(columns[5]) || 0,
-                        STL: parseFloat(columns[6]) || 0,
-                        BLK: parseFloat(columns[7]) || 0,
+                        PTS_rank: parseInt(columns[5]) || 0,
+                        REB: parseFloat(columns[6]) || 0,
+                        REB_rank: parseInt(columns[7]) || 0,
                         AST: parseFloat(columns[8]) || 0,
-                        '3PM': parseFloat(columns[9]) || 0,
-                        defense_type: columns[10]?.trim().toLowerCase() === 'bad defense' ? 'bad defense' : 'good defense',
+                        AST_rank: parseInt(columns[9]) || 0,
+                        '3PM': parseFloat(columns[10]) || 0,
+                        '3PM_rank': parseInt(columns[11]) || 0,
+                        STL: parseFloat(columns[12]) || 0,
+                        STL_rank: parseInt(columns[13]) || 0,
+                        BLK: parseFloat(columns[14]) || 0,
+                        BLK_rank: parseInt(columns[15]) || 0,
                     };
                 });
                 setData(parsedData);
@@ -54,8 +55,8 @@ const PlayerTable = () => {
     };
 
     const getColor = (value) => {
-        const maxPositive = 5;
-        const maxNegative = -5;
+        const maxPositive = 10;
+        const maxNegative = -10;
 
         if (value > 0) {
             const opacity = (value / maxPositive);
@@ -68,16 +69,8 @@ const PlayerTable = () => {
         return 'rgba(255, 255, 255, 0)'; // Fully transparent for zero
     };
 
-    // Filter data based on the selected defense type
-    const filteredData = data.filter(row => {
-        if (defenseFilter === 'bad' && row.defense_type === 'bad defense') return true;
-        if (defenseFilter === 'good' && row.defense_type === 'good defense') return true;
-        if (defenseFilter === 'all') return true;
-        return false;
-    });
-
-    // Sort the filtered data
-    const sortedData = filteredData.sort((a, b) => {
+    // Sort the data
+    const sortedData = data.sort((a, b) => {
         if (sortDirection === 'asc') {
             return a[sortColumn] - b[sortColumn];
         }
@@ -88,81 +81,121 @@ const PlayerTable = () => {
         <Container>
             <h1>NBA Player Stats</h1>
 
+            <Typography variant="body1" paragraph>
+                This table presents the performance statistics of NBA players against their upcoming opponents based on their previous matchups. Each statistic represents the average performance of a player in various categories—such as points, rebounds, assists, and more—when facing that particular team. For example, the "PTS" column reflects the number of points that a player has averaged against the opposing team historically compared to their season average.
+            </Typography>
+
+            <Typography variant="body1" paragraph>
+                Note: For defensive rankings (1-30), 1 means that the opposing defence is the best in the league in that category, and 30 means they are worst.
+            </Typography>
+
             <TableContainer component={Paper}>
-                <Table>
-                    <TableHead>
+                <Table style={{ tableLayout: 'fixed', width: '100%' }}>
+                    <TableHead sx={{ backgroundColor: '#f0ffff' }}>
                         <TableRow>
-                            <TableCell>Player</TableCell>
-                            <TableCell>Opposing Team</TableCell>
-                            <TableCell>Games Played</TableCell>
-                            <TableCell>Injury Note</TableCell>
-                            <TableCell>
-                                <TableSortLabel
-                                    active={sortColumn === 'PTS'}
-                                    direction={sortColumn === 'PTS' ? sortDirection : 'asc'}
-                                    onClick={() => handleSort('PTS')}
-                                >
-                                    PTS
-                                </TableSortLabel>
+                            <TableCell align="center" style={{ minWidth: 120 }}>
+                                <Typography variant="body2" fontWeight="bold">Player</Typography>
                             </TableCell>
-                            <TableCell>
-                                <TableSortLabel
-                                    active={sortColumn === 'REB'}
-                                    direction={sortColumn === 'REB' ? sortDirection : 'asc'}
-                                    onClick={() => handleSort('REB')}
-                                >
-                                    REB
-                                </TableSortLabel>
+                            <TableCell align="center" style={{ minWidth: 150 }}>
+                                <Typography variant="body2" fontWeight="bold">Opposing Team</Typography>
                             </TableCell>
-                            <TableCell>
-                                <TableSortLabel
-                                    active={sortColumn === 'AST'}
-                                    direction={sortColumn === 'AST' ? sortDirection : 'asc'}
-                                    onClick={() => handleSort('AST')}
-                                >
-                                    AST
-                                </TableSortLabel>
-                            </TableCell>
-                            <TableCell>
-                                <TableSortLabel
-                                    active={sortColumn === '3PM'}
-                                    direction={sortColumn === '3PM' ? sortDirection : 'asc'}
-                                    onClick={() => handleSort('3PM')}
-                                >
-                                    3PM
-                                </TableSortLabel>
-                            </TableCell>
-                            <TableCell>
-                                <TableSortLabel
-                                    active={sortColumn === 'STL'}
-                                    direction={sortColumn === 'STL' ? sortDirection : 'asc'}
-                                    onClick={() => handleSort('STL')}
-                                >
-                                    STL
-                                </TableSortLabel>
-                            </TableCell>
-                            <TableCell>
-                                <TableSortLabel
-                                    active={sortColumn === 'BLK'}
-                                    direction={sortColumn === 'BLK' ? sortDirection : 'asc'}
-                                    onClick={() => handleSort('BLK')}
-                                >
-                                    BLK
-                                </TableSortLabel>
-                            </TableCell>
-                            <TableCell>
-                                <FormControl variant="outlined" style={{ minWidth: '120px' }}>
-                                    <InputLabel>Defense Type</InputLabel>
-                                    <Select
-                                        value={defenseFilter}
-                                        onChange={(e) => setDefenseFilter(e.target.value)}
-                                        displayEmpty
+                            <TableCell align="center" style={{ minWidth: 100 }}>
+                                <Tooltip title="Total games played vs opposing team">
+                                    <TableSortLabel
+                                        active={sortColumn === 'games_played'}
+                                        direction={sortColumn === 'games_played' ? sortDirection : 'asc'}
+                                        onClick={() => handleSort('games_played')}
                                     >
-                                        <MenuItem value="all">All</MenuItem>
-                                        <MenuItem value="bad">Bad Defense</MenuItem>
-                                        <MenuItem value="good">Good Defense</MenuItem>
-                                    </Select>
-                                </FormControl>
+                                        <Typography variant="body2" fontWeight="bold">Games Played</Typography>
+                                    </TableSortLabel>
+                                </Tooltip>
+                            </TableCell>
+                            <TableCell align="center" style={{ minWidth: 100 }}>
+                                <Typography variant="body2" fontWeight="bold">Injury Note</Typography>
+                            </TableCell>
+                            <TableCell align="center" style={{ minWidth: 100 }}>
+                                <Tooltip title="Points per game above season average">
+                                    <TableSortLabel
+                                        active={sortColumn === 'PTS'}
+                                        direction={sortColumn === 'PTS' ? sortDirection : 'asc'}
+                                        onClick={() => handleSort('PTS')}
+                                    >
+                                        <Typography variant="body2" fontWeight="bold">PTS</Typography>
+                                    </TableSortLabel>
+                                </Tooltip>
+                            </TableCell>
+                            <TableCell align="center" style={{ minWidth: 100 }}>
+                                <Typography variant="body2" fontWeight="bold">Defence Rank (PTS)</Typography>
+                            </TableCell>
+                            <TableCell align="center" style={{ minWidth: 100 }}>
+                                <Tooltip title="Rebounds per game above season average">
+                                    <TableSortLabel
+                                        active={sortColumn === 'REB'}
+                                        direction={sortColumn === 'REB' ? sortDirection : 'asc'}
+                                        onClick={() => handleSort('REB')}
+                                    >
+                                        <Typography variant="body2" fontWeight="bold">REB</Typography>
+                                    </TableSortLabel>
+                                </Tooltip>
+                            </TableCell>
+                            <TableCell align="center" style={{ minWidth: 100 }}>
+                                <Typography variant="body2" fontWeight="bold">Defence Rank (REB)</Typography>
+                            </TableCell>
+                            <TableCell align="center" style={{ minWidth: 100 }}>
+                                <Tooltip title="Assists per game above season average">
+                                    <TableSortLabel
+                                        active={sortColumn === 'AST'}
+                                        direction={sortColumn === 'AST' ? sortDirection : 'asc'}
+                                        onClick={() => handleSort('AST')}
+                                    >
+                                        <Typography variant="body2" fontWeight="bold">AST</Typography>
+                                    </TableSortLabel>
+                                </Tooltip>
+                            </TableCell>
+                            <TableCell align="center" style={{ minWidth: 100 }}>
+                                <Typography variant="body2" fontWeight="bold">Defence Rank (AST)</Typography>
+                            </TableCell>
+                            <TableCell align="center" style={{ minWidth: 100 }}>
+                                <Tooltip title="Three-pointers made per game above season average">
+                                    <TableSortLabel
+                                        active={sortColumn === '3PM'}
+                                        direction={sortColumn === '3PM' ? sortDirection : 'asc'}
+                                        onClick={() => handleSort('3PM')}
+                                    >
+                                        <Typography variant="body2" fontWeight="bold">3PM</Typography>
+                                    </TableSortLabel>
+                                </Tooltip>
+                            </TableCell>
+                            <TableCell align="center" style={{ minWidth: 100 }}>
+                                <Typography variant="body2" fontWeight="bold">Defence Rank (3PM)</Typography>
+                            </TableCell>
+                            <TableCell align="center" style={{ minWidth: 100 }}>
+                                <Tooltip title="Steals per game above season average">
+                                    <TableSortLabel
+                                        active={sortColumn === 'STL'}
+                                        direction={sortColumn === 'STL' ? sortDirection : 'asc'}
+                                        onClick={() => handleSort('STL')}
+                                    >
+                                        <Typography variant="body2" fontWeight="bold">STL</Typography>
+                                    </TableSortLabel>
+                                </Tooltip>
+                            </TableCell>
+                            <TableCell align="center" style={{ minWidth: 100 }}>
+                                <Typography variant="body2" fontWeight="bold">Defence Rank (STL)</Typography>
+                            </TableCell>
+                            <TableCell align="center" style={{ minWidth: 100 }}>
+                                <Tooltip title="Blocks per game above season average">
+                                    <TableSortLabel
+                                        active={sortColumn === 'BLK'}
+                                        direction={sortColumn === 'BLK' ? sortDirection : 'asc'}
+                                        onClick={() => handleSort('BLK')}
+                                    >
+                                        <Typography variant="body2" fontWeight="bold">BLK</Typography>
+                                    </TableSortLabel>
+                                </Tooltip>
+                            </TableCell>
+                            <TableCell align="center" style={{ minWidth: 100 }}>
+                                <Typography variant="body2" fontWeight="bold">Defence Rank (BLK)</Typography>
                             </TableCell>
                         </TableRow>
                     </TableHead>
@@ -174,12 +207,17 @@ const PlayerTable = () => {
                                 <TableCell>{row.games_played}</TableCell>
                                 <TableCell>{row.injury_note}</TableCell>
                                 <TableCell style={{ backgroundColor: getColor(row.PTS) }}>{row.PTS}</TableCell>
+                                <TableCell>{row.PTS_rank}</TableCell>
                                 <TableCell style={{ backgroundColor: getColor(row.REB) }}>{row.REB}</TableCell>
+                                <TableCell>{row.REB_rank}</TableCell>
                                 <TableCell style={{ backgroundColor: getColor(row.AST) }}>{row.AST}</TableCell>
+                                <TableCell>{row.AST_rank}</TableCell>
                                 <TableCell style={{ backgroundColor: getColor(row['3PM']) }}>{row['3PM']}</TableCell>
+                                <TableCell>{row['3PM_rank']}</TableCell>
                                 <TableCell style={{ backgroundColor: getColor(row.STL) }}>{row.STL}</TableCell>
+                                <TableCell>{row.STL_rank}</TableCell>
                                 <TableCell style={{ backgroundColor: getColor(row.BLK) }}>{row.BLK}</TableCell>
-                                <TableCell>{row.defense_type}</TableCell>
+                                <TableCell>{row.BLK_rank}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
