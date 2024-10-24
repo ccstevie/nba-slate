@@ -112,7 +112,7 @@ const PlayerTable = () => {
 
             <TableContainer component={Paper} sx={{ maxHeight: 600, overflowX: 'auto', borderRadius: 1 }}>
                 <Table>
-                    <TableHead sx={{ backgroundColor: '#f0ffff', position: 'sticky', top: 0, zIndex: 1000 }}>
+                    <TableHead sx={{ backgroundColor: '#e0f3ff', position: 'sticky', top: 0, zIndex: 1000 }}>
                         <TableRow>
                             {[
                                 { label: 'Player', column: 'player', sortable: false },
@@ -165,7 +165,7 @@ const PlayerTable = () => {
                                     sx={{
                                         cursor: 'pointer',
                                         transition: 'all 0.3s ease-in-out',
-                                        backgroundColor: expandedPlayer === row.player ? '#e0f7fa' : 'white',
+                                        backgroundColor: expandedPlayer === row.player ? '#f0ffff' : 'white',
                                         boxShadow: expandedPlayer === row.player ? '0px 4px 12px rgba(0, 0, 0, 0.1)' : 'none',
                                         borderRadius: '8px',
                                         '&:hover': {
