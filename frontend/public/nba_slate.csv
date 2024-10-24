@@ -1,95 +1,34 @@
 player,opposing_team,games_played,statlines_path,injury_note,PTS,PTS_rank,REB,REB_rank,AST,AST_rank,3PM,3PM_rank,STL,STL_rank,BLK,BLK_rank
-Tyrese Haliburton,Pistons,4,/public/Tyrese_Haliburton_statlines.json,,1.1,4,-0.9,9,1.1,4,0.4,4,0.6,30,-0.2,22
-Andrew Nembhard,Pistons,6,/public/Andrew_Nembhard_statlines.json,,3.1,26,1.2,7,2.1,27,-0.1,29,-0.4,28,0.1,22
-Aaron Nesmith,Pistons,5,/public/Aaron_Nesmith_statlines.json,,-0.6,23,-1.2,25,0.1,30,-0.1,20,-0.5,24,-0.3,24
-Pascal Siakam,Pistons,10,/public/Pascal_Siakam_statlines.json,,7.2,23,-1.0,18,1.8,20,0.4,7,-0.2,29,0.3,23
-Myles Turner,Pistons,4,/public/Myles_Turner_statlines.json,,-0.9,17,1.6,28,0.5,24,-1.0,2,0.5,25,1.1,28
-Isaiah Jackson,Pistons,7,/public/Isaiah_Jackson_statlines.json,"Oct 23: Jackson (groin) is out Wednesday against Detroit, Tony East of SI.com reports.",5.9,17,2.6,28,0.3,24,,2,0.5,25,0.3,28
-James Wiseman,Pistons,-1,/public/James_Wiseman_statlines.json,"Oct 23: Wiseman has been ruled out for the remainder of Wednesday's game against the Pistons due to a left calf injury, Pat Boylan of Bally Sports Indiana reports.",,17,,28,,24,,2,,25,,28
-Cade Cunningham,Pacers,4,/public/Cade_Cunningham_statlines.json,,4.1,14,0.7,3,0.0,1,-0.1,6,-0.1,2,,11
-Jaden Ivey,Pacers,5,/public/Jaden_Ivey_statlines.json,,4.8,28,-0.6,24,0.2,18,-0.4,15,0.5,13,-0.3,20
-Tim Hardaway,Pacers,0,/public/Tim_Hardaway_statlines.json,,,27,,16,,12,,3,,14,,14
-Tobias Harris,Pacers,12,/public/Tobias_Harris_statlines.json,,5.1,13,5.0,12,1.4,12,0.6,3,0.7,7,-0.2,13
-Jalen Duren,Pacers,6,/public/Jalen_Duren_statlines.json,,-1.0,16,0.1,15,-0.6,6,,20,0.2,2,0.5,4
-Dennis Schröder,Hawks,2,/public/Dennis_Schröder_statlines.json,,3.9,19,1.5,23,1.5,19,1.9,25,,3,0.7,10
-Cam Thomas,Hawks,3,/public/Cam_Thomas_statlines.json,,-13.2,22,-2.2,17,-1.6,24,-1.9,19,0.0,27,,29
-Cameron Johnson,Hawks,6,/public/Cameron_Johnson_statlines.json,,9.1,28,0.0,2,0.4,24,1.4,25,0.9,8,-0.1,22
-Dorian Finney-Smith,Hawks,6,/public/Dorian_Finney-Smith_statlines.json,,3.5,11,1.3,8,0.4,17,0.5,26,0.0,14,-0.3,13
-Ben Simmons,Hawks,2,/public/Ben_Simmons_statlines.json,,1.9,9,-2.4,19,-1.2,4,,8,1.2,14,,16
-Day'Ron Sharpe,Hawks,6,/public/Day'Ron_Sharpe_statlines.json,"Oct 7: Sharpe will miss at least six weeks with a left hamstring strain, Brett Siegel of ClutchPoints.com reports.",-1.5,9,-0.7,19,-0.6,4,0.2,8,0.3,14,0.5,16
-Trae Young,Nets,5,/public/Trae_Young_statlines.json,,4.3,13,-1.2,10,-2.6,11,-0.4,26,0.1,20,0.4,3
-De'Andre Hunter,Nets,5,/public/De'Andre_Hunter_statlines.json,,-0.6,11,0.1,15,-0.3,14,-0.1,13,-0.3,12,0.1,4
-Jalen Johnson,Nets,7,/public/Jalen_Johnson_statlines.json,,-8.9,17,-2.6,22,-2.3,21,-0.9,11,-0.9,8,0.1,12
-Clint Capela,Nets,7,/public/Clint_Capela_statlines.json,,-1.8,14,-0.3,20,-0.5,9,,22,-0.2,27,0.1,29
-Jalen Suggs,Heat,8,/public/Jalen_Suggs_statlines.json,,-4.1,7,-0.3,16,-0.1,22,-0.5,7,0.0,1,0.8,17
-Kentavious Caldwell-Pope,Heat,-1,/public/Kentavious_Caldwell-Pope_statlines.json,,,3,,9,,21,,4,,5,,13
-Franz Wagner,Heat,7,/public/Franz_Wagner_statlines.json,,-5.0,29,0.0,27,0.3,4,-0.3,27,-0.1,7,-0.1,25
-Paolo Banchero,Heat,7,/public/Paolo_Banchero_statlines.json,,-4.0,1,2.1,7,-0.5,6,-0.5,10,-0.3,2,,11
-Wendell Carter,Heat,7,/public/Wendell_Carter_statlines.json,,2.9,7,0.2,7,0.4,14,0.2,23,0.0,9,-0.4,1
-Terry Rozier,Magic,-1,/public/Terry_Rozier_statlines.json,,,11,,20,,10,,10,,23,,3
-Tyler Herro,Magic,7,/public/Tyler_Herro_statlines.json,,-5.8,10,-1.6,5,-1.2,8,-1.1,1,-0.4,21,,3
-Jimmy Butler,Magic,5,/public/Jimmy_Butler_statlines.json,,4.6,13,0.7,8,-0.2,3,0.4,14,0.3,18,0.1,13
-Nikola Jović,Magic,2,/public/Nikola_Jović_statlines.json,,-4.7,4,-1.2,4,0.0,2,-0.9,3,,25,,17
-Bam Adebayo,Magic,8,/public/Bam_Adebayo_statlines.json,,-3.5,4,-1.6,3,0.6,11,,14,-0.2,7,-0.4,18
-Damian Lillard,76ers,3,/public/Damian_Lillard_statlines.json,,2.4,9,1.6,4,0.3,18,0.3,12,0.0,7,0.1,21
-Gary Trent,76ers,0,/public/Gary_Trent_statlines.json,,,7,,4,,4,,7,,2,,25
-Giannis Antetokounmpo,76ers,6,/public/Giannis_Antetokounmpo_statlines.json,,-0.9,7,1.2,26,-1.0,7,-0.2,22,-0.2,4,0.2,26
-Brook Lopez,76ers,6,/public/Brook_Lopez_statlines.json,,5.0,6,0.1,26,0.7,21,0.6,6,-0.2,3,-0.4,27
-Tyrese Maxey,Bucks,6,/public/Tyrese_Maxey_statlines.json,,1.4,21,0.0,25,-1.9,26,0.7,13,0.2,8,-0.3,20
-Eric Gordon,Bucks,6,/public/Eric_Gordon_statlines.json,,6.2,17,1.5,28,1.2,7,1.3,20,0.8,14,0.7,6
-Kelly Oubre,Bucks,3,/public/Kelly_Oubre_statlines.json,,0.6,8,0.7,14,-0.8,28,0.5,18,0.2,16,,11
-KJ,Bucks,4,/public/KJ_statlines.json,,7.1,14,2.3,11,0.6,9,0.1,15,0.7,10,0.0,4
-Andre Drummond,Bucks,-1,/public/Andre_Drummond_statlines.json,,,8,,2,,3,,27,,4,,5
-Joel Embiid,Bucks,4,/public/Joel_Embiid_statlines.json,"Oct 23: Embiid (knee), who has already been ruled out for Wednesday's opening night match versus Milwaukee, will remain out Friday versus Toronto and Sunday versus Indiana. His ""player participation"" in the 76ers' health management protocols will be investigated by the league in coming days, Shams Charania of ESPN reports.",-5.9,8,-2.8,2,1.6,3,0.8,27,-1.0,4,-0.7,5
-Darius Garland,Raptors,5,/public/Darius_Garland_statlines.json,,-0.4,15,-0.1,7,2.5,29,-0.1,27,-0.3,24,0.5,7
-Donovan Mitchell,Raptors,6,/public/Donovan_Mitchell_statlines.json,,-8.9,16,-0.4,12,-1.6,20,-0.1,27,0.4,24,-0.2,17
-Dean Wade,Raptors,4,/public/Dean_Wade_statlines.json,,-2.2,30,0.8,23,0.0,26,-0.7,28,0.3,17,,26
-Evan Mobley,Raptors,5,/public/Evan_Mobley_statlines.json,,-0.7,29,2.0,25,-0.8,18,0.2,17,-0.5,20,-0.2,30
-Jarrett Allen,Raptors,5,/public/Jarrett_Allen_statlines.json,,0.7,25,-0.9,30,-0.5,22,,4,-0.3,14,-0.5,30
-Immanuel Quickley,Cavaliers,2,/public/Immanuel_Quickley_statlines.json,"Oct 23: Quickley has been ruled out for the remainder of Wednesday's game against the Cavaliers due to a right pelvic contusion, Aaron Rose of SI.com reports.",-6.6,2,-0.3,8,-3.3,2,-0.8,2,0.6,14,,8
-Gradey Dick,Cavaliers,-1,/public/Gradey_Dick_statlines.json,,,11,,11,,16,,25,,18,,13
-Ochai Agbaji,Cavaliers,8,/public/Ochai_Agbaji_statlines.json,,-1.6,26,-0.8,24,-0.7,25,0.3,23,-0.6,11,-0.1,7
-Scottie Barnes,Cavaliers,6,/public/Scottie_Barnes_statlines.json,,-2.1,30,-1.4,13,-0.8,19,-1.0,28,-0.3,28,-0.2,8
-Jakob Poeltl,Cavaliers,6,/public/Jakob_Poeltl_statlines.json,,0.4,2,0.2,14,0.0,12,,21,0.3,29,-0.5,10
-Kelly Olynyk,Cavaliers,-1,/public/Kelly_Olynyk_statlines.json,Oct 22: Olynyk (back) has been ruled out for Wednesday's regular-season opener against the Cavaliers.,,2,,14,,12,,21,,29,,10
-Coby White,Pelicans,2,/public/Coby_White_statlines.json,,4.4,4,3.5,6,-0.6,5,2.4,28,0.8,4,,19
-Zach LaVine,Pelicans,2,/public/Zach_LaVine_statlines.json,,4.5,5,-1.7,17,0.6,18,1.1,17,0.2,2,,11
-Patrick Williams,Pelicans,3,/public/Patrick_Williams_statlines.json,,-1.3,19,0.1,21,-0.2,24,-0.4,12,0.1,16,1.2,13
-Nikola Vučević,Pelicans,4,/public/Nikola_Vučević_statlines.json,,-3.0,15,-1.3,23,-1.1,8,0.3,17,-0.2,11,0.0,20
-CJ,Bulls,2,/public/CJ_statlines.json,,-5.0,23,-0.3,21,1.9,29,-2.1,18,-0.4,9,0.9,8
-Brandon Ingram,Bulls,4,/public/Brandon_Ingram_statlines.json,,0.0,22,0.9,1,0.3,20,-0.1,29,1.0,25,-0.1,10
-Herbert Jones,Bulls,4,/public/Herbert_Jones_statlines.json,,3.8,8,0.9,15,1.4,8,0.0,9,0.4,3,-0.3,20
-LaMelo Ball,Rockets,3,/public/LaMelo_Ball_statlines.json,,-8.2,30,-3.8,28,-2.3,3,-1.2,21,-0.8,11,,29
-Cody Martin,Rockets,-1,/public/Cody_Martin_statlines.json,,,6,,27,,19,,2,,28,,19
-Miles Bridges,Rockets,-1,/public/Miles_Bridges_statlines.json,,,20,,29,,13,,18,,12,,29
-Nick Richards,Rockets,3,/public/Nick_Richards_statlines.json,,0.3,13,-0.7,11,-0.1,10,,28,,6,1.9,26
-Fred VanVleet,Hornets,2,/public/Fred_VanVleet_statlines.json,,0.6,12,-0.8,29,-1.1,28,0.9,15,-0.9,5,2.2,11
-Jalen Green,Hornets,4,/public/Jalen_Green_statlines.json,,11.9,5,0.3,27,1.5,25,0.5,10,0.4,22,,20
-Dillon Brooks,Hornets,2,/public/Dillon_Brooks_statlines.json,,3.3,19,-1.9,9,1.3,15,0.2,22,1.6,4,0.4,3
-Jabari Smith,Hornets,3,/public/Jabari_Smith_statlines.json,,-1.0,21,-3.8,22,0.4,14,-0.5,25,-0.4,9,0.9,2
-Alperen Şengün,Hornets,4,/public/Alperen_Şengün_statlines.json,,-4.1,18,2.2,25,0.0,2,0.0,6,0.0,18,0.1,13
-Ja Morant,Jazz,2,/public/Ja_Morant_statlines.json,,3.4,17,0.9,17,-1.6,30,-0.6,29,0.2,26,,23
-Marcus Smart,Jazz,4,/public/Marcus_Smart_statlines.json,,-2.5,29,0.3,29,1.2,26,-0.3,30,-0.6,19,-0.1,26
-Desmond Bane,Jazz,6,/public/Desmond_Bane_statlines.json,,2.1,25,0.9,6,-0.2,20,0.5,26,0.5,14,0.2,17
-Santi Aldama,Jazz,6,/public/Santi_Aldama_statlines.json,,-2.0,25,-1.6,5,-1.1,27,-0.7,29,-0.2,27,-0.4,24
-Keyonte George,Grizzlies,3,/public/Keyonte_George_statlines.json,,-5.0,8,-0.5,27,0.9,9,-0.7,23,-0.2,16,0.6,23
-Collin Sexton,Grizzlies,6,/public/Collin_Sexton_statlines.json,,-6.0,15,-0.9,23,-1.6,11,0.1,16,-0.1,25,0.0,30
-Lauri Markkanen,Grizzlies,5,/public/Lauri_Markkanen_statlines.json,,0.8,15,1.0,30,0.0,10,-0.2,21,0.1,26,1.3,18
-Taylor Hendricks,Grizzlies,0,/public/Taylor_Hendricks_statlines.json,,,9,,24,,25,,13,,23,,21
-Walker Kessler,Grizzlies,4,/public/Walker_Kessler_statlines.json,,0.1,26,1.7,13,-0.1,25,,25,-0.3,19,1.8,24
-Devin Booker,Clippers,12,/public/Devin_Booker_statlines.json,,2.7,19,-1.3,22,-1.1,2,0.6,26,0.6,20,0.2,15
-Bradley Beal,Clippers,5,/public/Bradley_Beal_statlines.json,,3.4,10,0.8,13,-1.2,29,-0.9,8,0.0,12,0.9,28
-Kevin Durant,Clippers,9,/public/Kevin_Durant_statlines.json,,0.0,16,0.3,2,-0.4,15,0.1,21,0.2,21,-0.1,19
-Jusuf Nurkić,Clippers,7,/public/Jusuf_Nurkić_statlines.json,,0.2,5,-1.9,27,0.0,20,0.6,11,-0.7,9,-0.1,12
-James Harden,Suns,2,/public/James_Harden_statlines.json,,3.9,10,0.9,14,2.0,25,0.9,19,,18,-0.3,15
-Norman Powell,Suns,10,/public/Norman_Powell_statlines.json,,4.4,20,0.9,19,0.3,13,-0.2,21,0.1,29,-0.1,17
-Terance Mann,Suns,13,/public/Terance_Mann_statlines.json,,3.5,14,0.8,22,0.2,8,0.9,4,-0.1,29,0.0,8
-Ivica Zubac,Suns,11,/public/Ivica_Zubac_statlines.json,,-1.4,12,-0.1,4,-0.2,13,,18,0.2,21,-0.5,2
-Stephen Curry,Trail Blazers,5,/public/Stephen_Curry_statlines.json,,-3.8,24,-0.1,1,0.1,15,-1.4,16,-0.3,25,0.2,28
-Andrew Wiggins,Trail Blazers,4,/public/Andrew_Wiggins_statlines.json,,3.6,12,1.7,20,0.3,10,0.9,3,0.9,30,0.2,27
-Jonathan Kuminga,Trail Blazers,8,/public/Jonathan_Kuminga_statlines.json,,-4.0,20,-1.0,29,0.3,22,-0.2,6,0.2,26,0.0,30
-Draymond Green,Trail Blazers,5,/public/Draymond_Green_statlines.json,,0.4,12,0.6,6,0.4,4,-0.1,20,0.0,17,0.5,27
-Trayce Jackson-Davis,Trail Blazers,3,/public/Trayce_Jackson-Davis_statlines.json,,4.4,19,2.0,24,2.1,28,,24,0.9,30,0.6,23
-Anfernee Simons,Warriors,5,/public/Anfernee_Simons_statlines.json,,-0.6,5,-0.6,5,-1.3,23,0.4,16,0.5,27,0.3,16
-Jerami Grant,Warriors,5,/public/Jerami_Grant_statlines.json,,1.4,28,0.7,27,0.8,11,-0.7,30,-0.4,22,-0.4,25
-Deandre Ayton,Warriors,8,/public/Deandre_Ayton_statlines.json,,0.1,23,-2.1,22,0.0,18,0.2,15,0.0,22,-0.3,9
+Jrue Holiday,Wizards,9,/public/Jrue_Holiday_statlines.json,,-0.4,16,0.7,20,1.1,17,-1.3,10,-0.1,28,0.4,23
+Derrick White,Wizards,5,/public/Derrick_White_statlines.json,,-16.8,30,-0.4,30,0.0,19,-5.0,22,0.4,10,0.8,28
+Jaylen Brown,Wizards,5,/public/Jaylen_Brown_statlines.json,,3.4,17,-0.8,17,1.6,27,-2.2,9,0.0,30,0.2,29
+Jayson Tatum,Wizards,5,/public/Jayson_Tatum_statlines.json,,-7.2,26,3.0,16,-5.0,30,-4.0,6,0.0,26,-0.2,28
+Al Horford,Wizards,6,/public/Al_Horford_statlines.json,,-2.3,29,1.8,29,-3.2,17,-1.8,1,-0.3,14,0.0,25
+Kristaps Porziņģis,Wizards,2,/public/Kristaps_Porziņģis_statlines.json,,4.4,29,1.3,29,-0.5,17,-0.4,1,,14,-0.9,25
+Jordan Poole,Celtics,7,/public/Jordan_Poole_statlines.json,,4.2,22,1.2,11,-0.7,8,0.5,20,0.2,13,0.1,2
+Bilal Coulibaly,Celtics,2,/public/Bilal_Coulibaly_statlines.json,,6.6,8,2.4,14,0.3,6,1.5,8,0.6,3,0.2,1
+Kyle Kuzma,Celtics,3,/public/Kyle_Kuzma_statlines.json,,-6.5,1,-0.9,4,-0.9,11,0.1,7,-0.2,6,,5
+Julian Champagnie,Mavericks,4,/public/Julian_Champagnie_statlines.json,,3.0,6,2.2,26,0.1,3,0.6,11,-0.1,5,-0.4,10
+Jeremy Sochan,Mavericks,5,/public/Jeremy_Sochan_statlines.json,,4.2,22,1.0,20,0.2,29,1.5,27,0.2,13,,1
+Victor Wembanyama,Mavericks,3,/public/Victor_Wembanyama_statlines.json,,-3.7,1,-2.3,1,-0.6,1,-0.1,19,0.1,12,-0.3,6
+Luka Dončić,Spurs,6,/public/Luka_Dončić_statlines.json,,-1.2,28,0.3,22,0.7,12,-1.1,3,0.6,29,0.3,19
+Kyrie Irving,Spurs,6,/public/Kyrie_Irving_statlines.json,,3.2,27,0.7,25,-0.9,30,-0.2,13,0.4,26,0.5,24
+,Spurs,0,/public/_statlines.json,,,2,,9,,23,,5,,24,,9
+Daniel Gafford,Spurs,2,/public/Daniel_Gafford_statlines.json,,0.3,27,2.1,21,0.9,26,,11,-0.2,26,-0.9,22
+Shai Gilgeous-Alexander,Nuggets,7,/public/Shai_Gilgeous-Alexander_statlines.json,,-0.4,1,-0.2,15,-0.2,14,-0.4,1,-0.6,4,0.0,5
+Luguentz Dort,Nuggets,7,/public/Luguentz_Dort_statlines.json,,0.2,2,0.5,12,-0.3,5,-0.7,1,0.0,5,-0.2,16
+Chet Holmgren,Nuggets,4,/public/Chet_Holmgren_statlines.json,,3.0,22,0.6,18,-0.6,5,0.6,8,,8,1.5,19
+Jamal Murray,Thunder,6,/public/Jamal_Murray_statlines.json,,-3.0,3,-0.8,30,0.0,21,-1.0,7,-0.8,20,-0.2,18
+Christian Braun,Thunder,7,/public/Christian_Braun_statlines.json,,0.7,13,0.4,10,0.3,17,0.1,17,-0.1,15,0.0,3
+Michael Porter,Thunder,5,/public/Michael_Porter_statlines.json,,-1.1,18,1.0,11,-0.1,23,0.5,12,-0.3,18,-0.5,27
+Aaron Gordon,Thunder,6,/public/Aaron_Gordon_statlines.json,,5.1,10,1.5,30,0.2,5,1.0,15,0.4,11,1.1,10
+Nikola Jokić,Thunder,5,/public/Nikola_Jokić_statlines.json,,-1.4,20,-1.8,6,0.4,15,-0.3,26,-0.6,12,-0.7,17
+Mike Conley,Kings,5,/public/Mike_Conley_statlines.json,,9.4,6,-0.4,12,4.4,5,2.2,9,0.2,12,,9
+Anthony Edwards,Kings,7,/public/Anthony_Edwards_statlines.json,,0.3,18,-0.1,8,3.1,11,-2.4,12,1.0,12,1.0,2
+Jaden McDaniels,Kings,6,/public/Jaden_McDaniels_statlines.json,,12.5,24,3.0,3,1.0,6,2.7,24,0.2,3,0.3,1
+Julius Randle,Kings,0,/public/Julius_Randle_statlines.json,,,15,,18,,22,,8,,30,,7
+Rudy Gobert,Kings,7,/public/Rudy_Gobert_statlines.json,,2.7,3,0.6,17,-0.9,19,,2,0.3,23,0.7,14
+De'Aaron Fox,Timberwolves,6,/public/De'Aaron_Fox_statlines.json,,3.1,29,-0.4,24,1.2,20,-1.2,24,-0.7,15,-0.1,1
+Kevin Huerter,Timberwolves,7,/public/Kevin_Huerter_statlines.json,,0.7,2,-0.1,15,0.0,1,0.2,2,-0.3,5,-0.3,11
+Keegan Murray,Timberwolves,6,/public/Keegan_Murray_statlines.json,,-5.0,5,0.8,1,-1.0,3,-0.7,2,0.2,18,-0.5,18
+Domantas Sabonis,Timberwolves,7,/public/Domantas_Sabonis_statlines.json,,0.7,24,-1.8,9,-2.8,29,0.0,13,-0.2,28,0.5,7
