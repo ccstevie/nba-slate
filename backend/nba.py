@@ -220,7 +220,7 @@ def get_statmuse_player_vs_team(player, player_team, opp_team, category):
         rows = [values[i:i + len(headers)] for i in range(0, len(values), len(headers))]
 
         # Count the number of games (excluding the summary row)
-        games_played = len(rows) - 1  # Adjusted for possible summary row
+        games_played = len(rows) - 2  # Adjusted for possible summary row
 
         # Loop through the game rows (excluding the summary)
         for row in rows[:-2]:
