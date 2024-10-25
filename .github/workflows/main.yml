@@ -1,0 +1,32 @@
+name: Daily Scraping
+
+on:
+  schedule:
+    - cron: '1 3 * * *'  # Runs every day at 3:01 AM
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'  # Specify the Python version
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        # Add any other commands to install EdgeDriver if needed
+
+    - name: Install EdgeDriver
+      run: |
+        wget -q https://msedgedriver.azureedge.net/LATEST_STABLE/msedgedriver_linux64.zip -O msedgedriver.zip
+        unzip -q msedgedriver.zip -d /usr/local/bin/
+        chmod +x /usr/local/bin/msedgedriver
+
+    - name: Run scraping script
+      run: python code/nba.py
