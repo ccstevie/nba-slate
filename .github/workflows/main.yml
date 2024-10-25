@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '1 3 * * *'  # Runs every day at 3:01 AM
   workflow_dispatch:
-  
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -20,18 +20,30 @@ jobs:
 
     - name: Install dependencies
       run: |
+        # Install Python dependencies from requirements.txt
         pip install -r requirements.txt
-        # Add any other commands to install EdgeDriver if needed
+        # Install selenium, chromedriver-autoinstaller, and pyvirtualdisplay if not already in requirements.txt
+        pip install selenium chromedriver-autoinstaller pyvirtualdisplay
 
-    - name: Download and install EdgeDriver
-      run: |
-        # Get the latest EdgeDriver version
-        LATEST_DRIVER=$(curl -s https://msedgedriver.azureedge.net/LATEST_STABLE)
-        wget -q "https://msedgedriver.azureedge.net/${LATEST_DRIVER}/msedgedriver_linux64.zip" -O msedgedriver.zip
-        unzip -q msedgedriver.zip -d /usr/local/bin/
-        chmod +x /usr/local/bin/msedgedriver
+    - name: Install xvfb
+      run: sudo apt-get install -y xvfb
 
-    - name: Run scraping script
+    - name: Start xvfb and run scraping script
       env:
         MONGODB_URI: ${{ secrets.MONGODB_URI }}
-      run: python code/nba.py
+      run: |
+        # Start virtual display for headless Chrome
+        Xvfb :99 -screen 0 1920x1080x24 &
+        export DISPLAY=:99
+
+        # Run the scraping script
+        python code/nba.py
+
+    - name: Commit and Push Results
+      if: success()
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add -A
+        git commit -m "GitHub Actions Results added"
+        git push
