@@ -13,7 +13,6 @@ import {
     Tooltip,
     Collapse,
 } from '@mui/material';
-import Papa from 'papaparse';
 
 const PlayerTable = () => {
     const [data, setData] = useState([]);
@@ -23,34 +22,27 @@ const PlayerTable = () => {
     const [gameLogs, setGameLogs] = useState({});
 
     useEffect(() => {
-        fetch('/nba_slate.csv')
-            .then(response => response.text())
-            .then(text => {
-                Papa.parse(text, {
-                    header: true,
-                    skipEmptyLines: true,
-                    complete: (result) => {
-                        const parsedData = result.data.map(row => ({
-                            player: row.player,
-                            opposing_team: row.opposing_team,
-                            games_played: parseInt(row.games_played) || 0,
-                            injury_note: row.injury_note || '',
-                            PTS: parseFloat(row.PTS) || 0,
-                            PTS_rank: parseInt(row.PTS_rank) || 0,
-                            REB: parseFloat(row.REB) || 0,
-                            REB_rank: parseInt(row.REB_rank) || 0,
-                            AST: parseFloat(row.AST) || 0,
-                            AST_rank: parseInt(row.AST_rank) || 0,
-                            '3PM': parseFloat(row['3PM']) || 0,
-                            '3PM_rank': parseInt(row['3PM_rank']) || 0,
-                            STL: parseFloat(row.STL) || 0,
-                            STL_rank: parseInt(row.STL_rank) || 0,
-                            BLK: parseFloat(row.BLK) || 0,
-                            BLK_rank: parseInt(row.BLK_rank) || 0,
-                        }));
-                        setData(parsedData);
-                    },
-                });
+        fetch('http://localhost:5000/api/players')
+            .then(response => response.json())
+            .then(playersData => {
+                setData(playersData.map(row => ({
+                    player: row.player,
+                    opposing_team: row.opposing_team,
+                    games_played: row.games_played || 0,
+                    injury_note: row.injury_note || '',
+                    PTS: row.PTS || 0,
+                    PTS_rank: row.PTS_rank || 0,
+                    REB: row.REB || 0,
+                    REB_rank: row.REB_rank || 0,
+                    AST: row.AST || 0,
+                    AST_rank: row.AST_rank || 0,
+                    '3PM': row['3PM'] || 0,
+                    '3PM_rank': row['3PM_rank'] || 0,
+                    STL: row.STL || 0,
+                    STL_rank: row.STL_rank || 0,
+                    BLK: row.BLK || 0,
+                    BLK_rank: row.BLK_rank || 0,
+                })));
             });
     }, []);
 
@@ -80,16 +72,16 @@ const PlayerTable = () => {
             setExpandedPlayer(null);
         } else {
             setExpandedPlayer(player);
-
+    
             if (!gameLogs[player]) {
-                fetch(`/${player.replace(/\s+/g, '_')}_statlines.json`)
+                fetch(`http://localhost:5000/api/players/${player.replace(/\s+/g, '_')}/statlines`)
                     .then(response => response.json())
                     .then(logs => {
                         setGameLogs((prev) => ({ ...prev, [player]: logs.reverse() }));
                     });
             }
         }
-    };
+    };    
 
     const sortedData = data.sort((a, b) => {
         if (sortDirection === 'asc') {
