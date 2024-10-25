@@ -20,6 +20,7 @@ jobs:
 
     - name: Install dependencies
       run: |
+        pip install --upgrade numpy pandas
         # Install Python dependencies from requirements.txt
         pip install -r requirements.txt
         # Install selenium, chromedriver-autoinstaller, and pyvirtualdisplay if not already in requirements.txt
