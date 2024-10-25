@@ -66,7 +66,7 @@ def scrape_nba_lineups():
 
 def scrape_fantasypros_defense_vs_position():
     driver = webdriver.Edge()
-    url = "https://www.fantasypros.com/nba/defense-vs-position.php?year=2023"
+    url = "https://www.fantasypros.com/nba/defense-vs-position.php"
     driver.get(url)
     
     wait = WebDriverWait(driver, 10)
@@ -372,25 +372,25 @@ def get_injury_report():
 def create_player_rankings():
     print("Fetching lineups")
     lineups = scrape_nba_lineups()
-    print(lineups)
+    # print(lineups)
 
     print("Scraping fantasypros")
     df_dvp = scrape_fantasypros_defense_vs_position()
-    print(df_dvp)
+    # print(df_dvp)
 
     categories = ['PTS', 'REB', 'AST', '3PM', 'STL', 'BLK']
     ranks = get_positional_ranks(df_dvp, lineups, categories)
     filtered_ranks = filter_ranks(ranks)
-    print("Team ranks:", ranks)
+    # print("Team ranks:", ranks)
     
     print("Mapping player to opposing defence")
     player_defense_map = map_players_to_defense_rankings(lineups, filtered_ranks)
     print("player_df")
-    print(player_defense_map)
+    # print(player_defense_map)
     
     print("Fetching statmuse")
     player_history = get_player_statistics(player_defense_map)
-    print(player_history)
+    # print(player_history)
 
     print("Getting injury report")
     injury_report = get_injury_report()
