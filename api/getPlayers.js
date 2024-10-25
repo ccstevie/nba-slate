@@ -9,6 +9,7 @@ export default async function handler(req, res) {
         try {
             await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
             const players = await FinalTable.find().lean();
+            console.log("DB:", players)
             res.status(200).json(players);
         } catch (err) {
             console.error(err);
