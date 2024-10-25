@@ -3,12 +3,13 @@ from bs4 import BeautifulSoup
 import json
 import pandas as pd
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.edge.options import Options
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 import time
 import os
+import chromedriver_autoinstaller
 
 from bs4 import BeautifulSoup
 import requests
@@ -84,14 +85,18 @@ def scrape_nba_lineups():
     return games
 
 def scrape_fantasypros_defense_vs_position():
+    # Automatically install the compatible ChromeDriver
+    chromedriver_autoinstaller.install()
+
+    # Set up Chrome options for headless mode and performance
     options = Options()
-    options.use_chromium = True
     options.add_argument('--headless')
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--disable-gpu')
 
-    driver = webdriver.Edge()
+    # Initialize Chrome WebDriver with options
+    driver = webdriver.Chrome(options=options)
     url = "https://www.fantasypros.com/nba/defense-vs-position.php"
     driver.get(url)
     
