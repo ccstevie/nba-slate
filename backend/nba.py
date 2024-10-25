@@ -17,16 +17,11 @@ MONGODB
 """
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
-from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
-db_uri = os.getenv("MONGODB_URI")  # MongoDB URI from .env
+db_uri = os.getenv("MONGODB_URI")
 
-# Create a new client and connect to the server with ServerApi
 client = MongoClient(db_uri, server_api=ServerApi('1'))
 
-# MongoDB database and collections
 db = client['nba_stats']
 final_table_collection = db['final_table']
 player_statlines_collection = db['player_statlines'] 
