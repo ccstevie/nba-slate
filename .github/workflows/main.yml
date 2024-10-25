@@ -23,9 +23,11 @@ jobs:
         pip install -r requirements.txt
         # Add any other commands to install EdgeDriver if needed
 
-    - name: Install EdgeDriver
+    - name: Download and install EdgeDriver
       run: |
-        wget -q https://msedgedriver.azureedge.net/LATEST_STABLE/msedgedriver_linux64.zip -O msedgedriver.zip
+        # Get the latest EdgeDriver version
+        LATEST_DRIVER=$(curl -s https://msedgedriver.azureedge.net/LATEST_STABLE)
+        wget -q "https://msedgedriver.azureedge.net/${LATEST_DRIVER}/msedgedriver_linux64.zip" -O msedgedriver.zip
         unzip -q msedgedriver.zip -d /usr/local/bin/
         chmod +x /usr/local/bin/msedgedriver
 

@@ -4,6 +4,7 @@ import json
 import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.edge.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
@@ -83,6 +84,13 @@ def scrape_nba_lineups():
     return games
 
 def scrape_fantasypros_defense_vs_position():
+    options = Options()
+    options.use_chromium = True
+    options.add_argument('--headless')
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument('--disable-gpu')
+
     driver = webdriver.Edge()
     url = "https://www.fantasypros.com/nba/defense-vs-position.php"
     driver.get(url)
