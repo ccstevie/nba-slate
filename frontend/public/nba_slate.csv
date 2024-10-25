@@ -4,7 +4,6 @@ Cam Thomas,Magic,4,/public/Cam_Thomas_statlines.json,,-20.8,10,-0.8,5,0.0,8,-5.8
 Cameron Johnson,Magic,6,/public/Cameron_Johnson_statlines.json,,0.0,13,0.0,8,1.8,3,0.8,14,0.5,18,-0.8,13
 Dorian Finney-Smith,Magic,5,/public/Dorian_Finney-Smith_statlines.json,,-3.8,4,-4.0,4,0.0,2,-1.4,3,0.4,25,-1.4,17
 Nic Claxton,Magic,7,/public/Nic_Claxton_statlines.json,,3.6,4,3.6,3,1.7,11,,14,-0.4,7,0.9,18
-Day'Ron Sharpe,Magic,6,/public/Day'Ron_Sharpe_statlines.json,"Oct 7: Sharpe will miss at least six weeks with a left hamstring strain, Brett Siegel of ClutchPoints.com reports.",-0.3,4,-1.4,3,-0.9,11,,14,-0.2,7,0.0,18
 Jalen Suggs,Nets,6,/public/Jalen_Suggs_statlines.json,,-0.5,13,0.3,10,-2.5,11,0.8,26,0.0,20,0.5,3
 Kentavious Caldwell-Pope,Nets,0,/public/Kentavious_Caldwell-Pope_statlines.json,,,25,,16,,22,,24,,5,,7
 Franz Wagner,Nets,7,/public/Franz_Wagner_statlines.json,,-4.7,11,2.0,15,0.1,14,-1.7,13,-0.9,12,-0.7,4
@@ -15,14 +14,12 @@ Eric Gordon,Raptors,8,/public/Eric_Gordon_statlines.json,,9.1,16,1.4,12,1.5,20,1
 Kelly Oubre,Raptors,4,/public/Kelly_Oubre_statlines.json,,-0.8,30,3.0,23,0.2,26,2.2,28,1.8,17,0.5,26
 KJ,Raptors,7,/public/KJ_statlines.json,,6.1,29,-1.1,25,1.1,18,0.6,17,0.1,20,0.4,30
 Andre Drummond,Raptors,0,/public/Andre_Drummond_statlines.json,,,25,,30,,22,,4,,14,,30
-Joel Embiid,Raptors,6,/public/Joel_Embiid_statlines.json,"Oct 23: Embiid (knee), who has already been ruled out for Wednesday's opening night match versus Milwaukee, will remain out Friday versus Toronto and Sunday versus Indiana. His ""player participation"" in the 76ers' health management protocols will be investigated by the league in coming days, Shams Charania of ESPN reports.",-5.2,25,-1.0,30,-0.3,22,-0.2,4,-0.4,14,-0.4,30
 Gradey Dick,76ers,4,/public/Gradey_Dick_statlines.json,,-9.0,7,-1.5,4,0.0,4,-0.8,7,0.8,2,,25
 Ochai Agbaji,76ers,7,/public/Ochai_Agbaji_statlines.json,,1.4,16,-3.7,26,-0.4,16,0.9,18,-0.7,21,-0.6,19
 Scottie Barnes,76ers,7,/public/Scottie_Barnes_statlines.json,,8.7,7,1.3,26,0.3,7,1.4,22,1.0,4,1.0,26
 Jakob Poeltl,76ers,7,/public/Jakob_Poeltl_statlines.json,,5.7,6,-0.9,26,0.7,21,,6,0.4,3,0.4,27
-Kelly Olynyk,76ers,-1,/public/Kelly_Olynyk_statlines.json,"Oct 24: Olynyk (back) is out for Friday's game versus the 76ers, Josh Lewenberg of TSN.ca reports.",,6,,26,,21,,6,,3,,27
 LaMelo Ball,Hawks,3,/public/LaMelo_Ball_statlines.json,,-10.0,19,-3.3,23,-1.7,19,1.7,25,-0.3,3,-0.7,10
-Tre Mann,Hawks,3,/public/Tre_Mann_statlines.json,,-8.7,22,-1.3,17,6.3,24,-2.0,19,3.3,27,,29
+Seth Curry,Hawks,-1,/public/Seth_Curry_statlines.json,,,22,,17,,24,,19,,27,,29
 Miles Bridges,Hawks,3,/public/Miles_Bridges_statlines.json,,10.7,11,-4.7,8,0.3,17,3.0,26,-0.7,14,0.0,13
 Nick Richards,Hawks,6,/public/Nick_Richards_statlines.json,,3.5,9,-0.5,19,-0.3,4,,8,0.2,14,-1.5,16
 Trae Young,Hornets,6,/public/Trae_Young_statlines.json,,-8.3,12,-2.5,29,-0.8,28,-0.5,15,-0.2,5,,11
@@ -45,15 +42,11 @@ Andrew Nembhard,Knicks,14,/public/Andrew_Nembhard_statlines.json,,3.6,1,0.9,13,-
 Aaron Nesmith,Knicks,13,/public/Aaron_Nesmith_statlines.json,,6.5,7,3.2,17,1.4,7,1.1,10,-1.4,1,-0.7,9
 Pascal Siakam,Knicks,18,/public/Pascal_Siakam_statlines.json,,4.6,6,-0.6,2,-4.4,16,0.1,1,-1.3,6,0.6,22
 Myles Turner,Knicks,11,/public/Myles_Turner_statlines.json,,-4.1,28,-2.6,5,-2.1,27,-0.8,30,0.6,5,-2.5,15
-James Wiseman,Knicks,0,/public/James_Wiseman_statlines.json,"Oct 24: The Pacers announced Thursday that Wiseman has suffered a torn left Achilles, Shams Charania of ESPN reports.",,28,,5,,27,,30,,5,,15
-Isaiah Jackson,Knicks,13,/public/Isaiah_Jackson_statlines.json,Oct 24: Jackson (groin) is questionable for Friday's game against the Knicks.,-0.5,28,0.5,5,0.1,27,,30,-0.4,5,0.2,15
 Jalen Brunson,Pacers,12,/public/Jalen_Brunson_statlines.json,,9.6,14,1.5,3,3.1,1,1.0,6,0.8,2,0.2,11
 Mikal Bridges,Pacers,12,/public/Mikal_Bridges_statlines.json,,-0.2,28,4.2,24,2.1,18,0.2,15,1.2,13,0.3,20
 Josh Hart,Pacers,15,/public/Josh_Hart_statlines.json,,-1.6,27,7.3,16,1.5,12,0.7,3,1.5,14,0.5,14
 OG,Pacers,12,/public/OG_statlines.json,,11.4,13,0.2,12,-0.8,12,2.1,3,0.4,7,0.8,13
 Karl-Anthony Towns,Pacers,0,/public/Karl-Anthony_Towns_statlines.json,,,16,,15,,6,,20,,2,,4
-Precious Achiuwa,Pacers,9,/public/Precious_Achiuwa_statlines.json,"Oct 20: Achiuwa sustained a strained left hamstring in Friday's preseason finale against the Wizards and will be reevaluated in two to four weeks, James L. Edwards III of The Athletic reports.",0.1,16,-1.3,15,-0.8,6,-0.2,20,0.5,2,0.2,4
-Mitchell Robinson,Pacers,5,/public/Mitchell_Robinson_statlines.json,"Sep 23: Robinson (ankle) will not be ready for the beginning of the NBA season, Ian Begley of SportsNet New York reports.",3.4,16,3.5,15,0.6,6,,20,0.6,2,2.9,4
 Ja Morant,Rockets,3,/public/Ja_Morant_statlines.json,,-3.7,30,-0.7,28,-3.3,3,0.7,21,0.3,11,0.7,29
 Marcus Smart,Rockets,3,/public/Marcus_Smart_statlines.json,,-1.0,21,-1.7,18,5.7,9,1.0,13,0.7,10,,5
 Desmond Bane,Rockets,5,/public/Desmond_Bane_statlines.json,,1.2,6,3.2,27,0.2,19,0.0,2,0.2,28,-0.6,19
@@ -73,13 +66,11 @@ Damian Lillard,Bulls,4,/public/Damian_Lillard_statlines.json,,-15.0,23,-5.2,6,2.
 Gary Trent,Bulls,0,/public/Gary_Trent_statlines.json,,,23,,21,,29,,18,,9,,8
 Giannis Antetokounmpo,Bulls,7,/public/Giannis_Antetokounmpo_statlines.json,Oct 24: Antetokounmpo is probable for Friday's game against the Bulls due to a right patella tendinitis.,6.7,8,-0.7,15,-1.9,8,0.4,9,0.9,3,-0.1,20
 Brook Lopez,Bulls,8,/public/Brook_Lopez_statlines.json,Oct 24: Lopez is probable for Friday's game against the Bulls due to a right quadriceps contusion.,9.4,10,-2.8,12,-5.0,16,1.5,8,0.4,17,-4.0,11
-Brook Lopez,Bulls,8,/public/Brook_Lopez_statlines.json,Oct 24: Lopez is probable for Friday's game against the Bulls due to a right quadriceps contusion.,9.4,10,-2.8,12,-5.0,16,1.5,8,0.4,17,-4.0,11
 Stephen Curry,Jazz,3,/public/Stephen_Curry_statlines.json,Oct 24: Curry is questionable to play Friday against the Jazz due to a right hip contusion.,7.7,17,-4.7,17,-2.0,30,2.0,29,0.0,26,0.3,23
 Andrew Wiggins,Jazz,4,/public/Andrew_Wiggins_statlines.json,,-1.2,29,1.5,29,0.5,26,-1.2,30,1.5,19,0.2,26
 Jonathan Kuminga,Jazz,7,/public/Jonathan_Kuminga_statlines.json,,1.6,25,0.3,6,2.3,20,0.4,26,0.6,14,-0.3,17
 Draymond Green,Jazz,5,/public/Draymond_Green_statlines.json,Oct 24: Green is questionable for Friday's game against the Jazz due to a left knee contusion.,3.4,25,0.0,5,2.2,27,0.8,29,0.6,27,-0.2,24
 Trayce Jackson-Davis,Jazz,4,/public/Trayce_Jackson-Davis_statlines.json,,-4.2,30,-1.0,16,-1.0,23,,16,,23,1.5,21
-Draymond Green,Jazz,5,/public/Draymond_Green_statlines.json,Oct 24: Green is questionable for Friday's game against the Jazz due to a left knee contusion.,3.4,30,0.0,16,2.2,23,0.8,16,0.6,23,-0.2,21
 Keyonte George,Warriors,4,/public/Keyonte_George_statlines.json,,9.0,5,-0.5,5,-3.2,23,3.8,16,0.8,27,,16
 Collin Sexton,Warriors,6,/public/Collin_Sexton_statlines.json,,2.8,14,0.3,1,2.8,28,1.3,23,-0.5,1,-0.7,8
 Lauri Markkanen,Warriors,4,/public/Lauri_Markkanen_statlines.json,,-12.0,12,1.2,21,-0.8,17,0.8,15,0.5,10,,22
@@ -100,8 +91,7 @@ CJ,Trail Blazers,7,/public/CJ_statlines.json,,-2.6,12,2.3,20,2.3,10,-1.9,3,0.4,3
 Brandon Ingram,Trail Blazers,5,/public/Brandon_Ingram_statlines.json,,-8.6,20,-1.4,29,2.4,22,-2.0,6,-1.0,26,0.0,30
 Herbert Jones,Trail Blazers,6,/public/Herbert_Jones_statlines.json,,8.2,12,-0.3,6,1.7,4,1.0,20,-0.7,17,,27
 Zion Williamson,Trail Blazers,3,/public/Zion_Williamson_statlines.json,,2.8,19,1.9,24,-2.0,28,0.2,24,-0.1,30,0.0,23
-Scoot Henderson,Pelicans,2,/public/Scoot_Henderson_statlines.json,,-7.0,18,-1.5,2,4.5,13,1.0,22,1.5,16,0.5,14
-Anfernee Simons,Pelicans,4,/public/Anfernee_Simons_statlines.json,,2.2,4,1.0,6,1.8,5,1.0,28,,4,,19
+Anfernee Simons,Pelicans,4,/public/Anfernee_Simons_statlines.json,,2.2,18,1.0,2,1.8,13,1.0,22,,16,,14
 Deni Avdija,Pelicans,8,/public/Deni_Avdija_statlines.json,,-0.8,5,0.9,17,1.1,18,1.0,17,-1.5,2,-1.6,11
 Jerami Grant,Pelicans,4,/public/Jerami_Grant_statlines.json,,5.5,19,2.8,21,0.8,24,0.8,12,0.2,16,-0.5,13
 Deandre Ayton,Pelicans,8,/public/Deandre_Ayton_statlines.json,,9.5,15,-0.9,23,-0.1,8,0.2,17,-1.4,11,1.0,20

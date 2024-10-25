@@ -9,6 +9,9 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import os
 
+from bs4 import BeautifulSoup
+import requests
+
 def scrape_nba_lineups():
     url = "https://www.rotowire.com/basketball/nba-lineups.php"
     response = requests.get(url)
@@ -18,40 +21,40 @@ def scrape_nba_lineups():
     games = []
 
     for matchup in matchups:
-        if matchup.find('a', class_='lineup__mteam is-visit white') == None: continue
-        # Find away team with the class for visiting team
+        if matchup.find('a', class_='lineup__mteam is-visit white') is None:
+            continue
+
+        # Find away and home teams
         away_team = matchup.find('a', class_='lineup__mteam is-visit white')
-        # Find home team with the class for home team
         home_team = matchup.find('a', class_='lineup__mteam is-home white')
 
-        # Extract the team name before the record (by splitting on the first occurrence of '(')
         away_team_name = away_team.text.split('(')[0].strip() if away_team else 'Unknown'
         home_team_name = home_team.text.split('(')[0].strip() if home_team else 'Unknown'
         
-        # Get player lineups for both teams
-        away_lineup = []
-        home_lineup = []
+        away_lineup, home_lineup = [], []
 
-        # Get away team players and add team name with each player
+        # Find away team players
         away_lineup_section = matchup.find_next('ul', class_='lineup__list is-visit')
-        if away_lineup_section: 
-            away_players = away_lineup_section.find_all('li', class_='lineup__player')
-            for player in away_players:
-                position = player.find('div', class_='lineup__pos').text.strip()
-                name = player.find('a').text.strip()
-                # Add player's team alongside their name and position
-                away_lineup.append((position, name, away_team_name))
-        
-        # Get home team players and add team name with each player
+        if away_lineup_section:
+            for item in away_lineup_section.find_all('li'):
+                if 'is-middle' in item.get('class', []):
+                    break
+                if 'lineup__player' in item.get('class', []):
+                    position = item.find('div', class_='lineup__pos').text.strip()
+                    name = item.find('a').text.strip()
+                    away_lineup.append((position, name, away_team_name))
+
+        # Find home team players
         home_lineup_section = matchup.find_next('ul', class_='lineup__list is-home')
-        if home_lineup_section: 
-            home_players = home_lineup_section.find_all('li', class_='lineup__player')
-            for player in home_players:
-                position = player.find('div', class_='lineup__pos').text.strip()
-                name = player.find('a').text.strip()
-                # Add player's team alongside their name and position
-                home_lineup.append((position, name, home_team_name))
-        
+        if home_lineup_section:
+            for item in home_lineup_section.find_all('li'):
+                if 'is-middle' in item.get('class', []):
+                    break
+                if 'lineup__player' in item.get('class', []):
+                    position = item.find('div', class_='lineup__pos').text.strip()
+                    name = item.find('a').text.strip()
+                    home_lineup.append((position, name, home_team_name))
+
         games.append({
             "away_team": away_team_name, 
             "home_team": home_team_name, 
@@ -369,25 +372,25 @@ def get_injury_report():
 def create_player_rankings():
     print("Fetching lineups")
     lineups = scrape_nba_lineups()
-    # print(lineups)
+    print(lineups)
 
     print("Scraping fantasypros")
     df_dvp = scrape_fantasypros_defense_vs_position()
-    # print(df_dvp)
+    print(df_dvp)
 
     categories = ['PTS', 'REB', 'AST', '3PM', 'STL', 'BLK']
     ranks = get_positional_ranks(df_dvp, lineups, categories)
     filtered_ranks = filter_ranks(ranks)
-    # print("Team ranks:", ranks)
+    print("Team ranks:", ranks)
     
     print("Mapping player to opposing defence")
     player_defense_map = map_players_to_defense_rankings(lineups, filtered_ranks)
-    # print("player_df")
-    # print(player_defense_map)
+    print("player_df")
+    print(player_defense_map)
     
     print("Fetching statmuse")
     player_history = get_player_statistics(player_defense_map)
-    # print(player_history)
+    print(player_history)
 
     print("Getting injury report")
     injury_report = get_injury_report()
