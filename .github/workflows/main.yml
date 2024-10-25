@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '1 3 * * *'  # Runs every day at 3:01 AM
   workflow_dispatch:
-  
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -21,7 +21,11 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-        # Add any other commands to install EdgeDriver if needed
+        # Ensure selenium and pyvirtualdisplay are installed
+        pip install selenium pyvirtualdisplay
+
+    - name: Install xvfb
+      run: sudo apt-get install -y xvfb
 
     - name: Download and install EdgeDriver
       run: |
@@ -31,7 +35,22 @@ jobs:
         unzip -q msedgedriver.zip -d /usr/local/bin/
         chmod +x /usr/local/bin/msedgedriver
 
-    - name: Run scraping script
+    - name: Start xvfb and run scraping script
       env:
         MONGODB_URI: ${{ secrets.MONGODB_URI }}
-      run: python code/nba.py
+      run: |
+        # Start virtual display
+        Xvfb :99 -screen 0 1920x1080x24 &
+        export DISPLAY=:99
+
+        # Run the scraping script
+        python code/nba.py
+
+    - name: Commit and Push Results
+      if: success()
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add -A
+        git commit -m "GitHub Actions Results added"
+        git push
