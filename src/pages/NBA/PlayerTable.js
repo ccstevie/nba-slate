@@ -23,7 +23,7 @@ const PlayerTable = () => {
     const [gameLogs, setGameLogs] = useState({});
 
     useEffect(() => {
-        fetch('/api/players')
+        fetch('/api/getPlayers')
             .then(response => response.json())
             .then(playersData => {
                 setData(playersData.map(row => ({
@@ -75,7 +75,7 @@ const PlayerTable = () => {
             setExpandedPlayer(player);
     
             if (!gameLogs[player]) {
-                fetch(`/api/playerStatlines?player=${player.replace(/\s+/g, '_')}`)
+                fetch(`/api/getPlayerStatlines?player=${player.replace(/\s+/g, '_')}`)
                     .then(response => response.json())
                     .then(logs => {
                         setGameLogs((prev) => ({ ...prev, [player]: logs.reverse() }));
