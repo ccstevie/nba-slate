@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
+    Box,
     Container,
     Table,
     TableBody,
@@ -236,6 +237,12 @@ const PlayerTable = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
+
+            <Box sx={{ padding: 4, fontStyle: 'italic', textAlign: 'center' }}>
+                <Typography variant="body2">
+                    Data is sourced from StatMuse and FantasyPros for player performance and matchup statistics.
+                </Typography>
+            </Box>
         </Container>
     );
 };
