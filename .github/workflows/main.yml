@@ -15,14 +15,14 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8'
+          python-version: '3.10.5'
 
       - name: Install dependencies
         run: |
-          pip install -r backend/requirements.txt
+          pip install -r requirements.txt
 
       - name: Run script
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}  # Access your secret here
         run: |
-          python backend/your_script.py
+          python backend/nba.py
