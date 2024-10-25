@@ -20,26 +20,19 @@ jobs:
 
     - name: Install dependencies
       run: |
+        # Install Python dependencies from requirements.txt
         pip install -r requirements.txt
-        # Ensure selenium and pyvirtualdisplay are installed
-        pip install selenium pyvirtualdisplay
+        # Install selenium, chromedriver-autoinstaller, and pyvirtualdisplay if not already in requirements.txt
+        pip install selenium chromedriver-autoinstaller pyvirtualdisplay
 
     - name: Install xvfb
       run: sudo apt-get install -y xvfb
-
-    - name: Download and install EdgeDriver
-      run: |
-        # Get the latest EdgeDriver version
-        LATEST_DRIVER=$(curl -s https://msedgedriver.azureedge.net/LATEST_STABLE)
-        wget -q "https://msedgedriver.azureedge.net/${LATEST_DRIVER}/msedgedriver_linux64.zip" -O msedgedriver.zip
-        unzip -q msedgedriver.zip -d /usr/local/bin/
-        chmod +x /usr/local/bin/msedgedriver
 
     - name: Start xvfb and run scraping script
       env:
         MONGODB_URI: ${{ secrets.MONGODB_URI }}
       run: |
-        # Start virtual display
+        # Start virtual display for headless Chrome
         Xvfb :99 -screen 0 1920x1080x24 &
         export DISPLAY=:99
 
