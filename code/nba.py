@@ -17,9 +17,9 @@ MONGODB
 """
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 db_uri = os.getenv("MONGODB_URI")
 
 client = MongoClient(db_uri, server_api=ServerApi('1'))
