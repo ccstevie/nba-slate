@@ -110,6 +110,13 @@ def scrape_fantasypros_defense_vs_position():
     driver.get(url)
     
     wait = WebDriverWait(driver, 10)
+
+    try:
+        close_banner = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'onetrust-close-btn-handler')))
+        close_banner.click()
+        print("Cookie banner closed")
+    except:
+        print("No cookie banner to close")
     
     filter_dropdown = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'game-change')))
     filter_dropdown.click()
