@@ -17,14 +17,23 @@ MONGODB
 """
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
-# load_dotenv()
+load_dotenv()
 db_uri = os.getenv("MONGODB_URI")
 
 client = MongoClient(db_uri, server_api=ServerApi('1'))
 
 db = client['nba_stats']
+final_table_collection = db['final_table']
+player_statlines_collection = db['player_statlines'] 
+
+# Clear old data by dropping the collections
+print("Dropping old data...")
+final_table_collection.drop()  # Drops the 'final_table' collection
+player_statlines_collection.drop()  # Drops the 'player_statlines' collection
+
+# Recreate collections after dropping (optional)
 final_table_collection = db['final_table']
 player_statlines_collection = db['player_statlines'] 
 
