@@ -10,8 +10,6 @@ from selenium.webdriver.common.by import By
 import time
 import os
 import chromedriver_autoinstaller
-
-from bs4 import BeautifulSoup
 import requests
 
 """
@@ -19,7 +17,9 @@ MONGODB
 """
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
+# from dotenv import load_dotenv
 
+# load_dotenv()
 db_uri = os.getenv("MONGODB_URI")
 
 client = MongoClient(db_uri, server_api=ServerApi('1'))
@@ -102,10 +102,10 @@ def scrape_fantasypros_defense_vs_position():
     
     wait = WebDriverWait(driver, 10)
     
-    # Select "Last 30 games"
     filter_dropdown = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'game-change')))
     filter_dropdown.click()
     
+    print("Select Last 30 Games")
     last_30_option = wait.until(EC.element_to_be_clickable((By.XPATH, "//option[@value='GC-30']")))
     last_30_option.click()
 
@@ -420,8 +420,6 @@ def create_player_rankings():
     print("Getting injury report")
     injury_report = get_injury_report()
 
-    public_folder_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'frontend', 'public')
-
     print("Finalizing Table")
     final_table = []
 
@@ -441,13 +439,7 @@ def create_player_rankings():
             'games_played': games_played
         }
 
-        # Save game log (detailed statlines) to a separate JSON file for each player
         game_log = player_data['game_log']
-        player_filename = f"{public_folder_path}/{player.replace(' ', '_')}_statlines.json"
-        with open(player_filename, 'w') as json_file:
-            json.dump(game_log, json_file)
-
-        stats_row['statlines_path'] = f'/public/{player.replace(" ", "_")}_statlines.json'
 
         # Upload the game log to MongoDB's player_statlines collection
         player_statline_data = {
