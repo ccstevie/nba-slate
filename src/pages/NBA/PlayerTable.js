@@ -183,13 +183,13 @@ const PlayerTable = () => {
                                     <TableCell align="left" sx={{ padding: '12px', backgroundColor: getColor(row.REB), borderRight: '1px solid #e0e0e0' }}>{row.REB}</TableCell>
                                     <TableCell align="left" sx={{ padding: '12px', borderRight: '1px solid #e0e0e0' }}>{row.REB_rank}</TableCell>
                                     <TableCell align="left" sx={{ padding: '12px', backgroundColor: getColor(row.AST), borderRight: '1px solid #e0e0e0' }}>{row.AST}</TableCell>
-                                    <TableCell align="left" sx={{ padding: '12px', borderRight: '1px solid #e0e0e0' }}>{row.PTS_rank}</TableCell>
+                                    <TableCell align="left" sx={{ padding: '12px', borderRight: '1px solid #e0e0e0' }}>{row.AST_rank}</TableCell>
                                     <TableCell align="left" sx={{ padding: '12px', backgroundColor: getColor(row['3PM']), borderRight: '1px solid #e0e0e0' }}>{row['3PM']}</TableCell>
-                                    <TableCell align="left" sx={{ padding: '12px', borderRight: '1px solid #e0e0e0' }}>{row.REB_rank}</TableCell>
+                                    <TableCell align="left" sx={{ padding: '12px', borderRight: '1px solid #e0e0e0' }}>{row['3PM_rank']}</TableCell>
                                     <TableCell align="left" sx={{ padding: '12px', backgroundColor: getColor(row.STL), borderRight: '1px solid #e0e0e0' }}>{row.STL}</TableCell>
-                                    <TableCell align="left" sx={{ padding: '12px', borderRight: '1px solid #e0e0e0' }}>{row.PTS_rank}</TableCell>
+                                    <TableCell align="left" sx={{ padding: '12px', borderRight: '1px solid #e0e0e0' }}>{row.STL_rank}</TableCell>
                                     <TableCell align="left" sx={{ padding: '12px', backgroundColor: getColor(row.BLK), borderRight: '1px solid #e0e0e0' }}>{row.BLK}</TableCell>
-                                    <TableCell align="left" sx={{ padding: '12px', borderRight: '1px solid #e0e0e0' }}>{row.REB_rank}</TableCell>
+                                    <TableCell align="left" sx={{ padding: '12px', borderRight: '1px solid #e0e0e0' }}>{row.BLK_rank}</TableCell>
                                 </TableRow>
 
                                 {expandedPlayer === row.player && (
