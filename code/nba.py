@@ -269,11 +269,10 @@ def get_statmuse_player_vs_team(player, player_team, opp_team, category):
         # Create rows for each game
         rows = [values[i:i + len(headers)] for i in range(0, len(values), len(headers))]
 
-        # Count the number of games (excluding the summary row)
-        games_played = len(rows) - 2  # Adjusted for possible summary row
+        if len(rows) == 1: 
+            games_played = 1
 
-        # Loop through the game rows (excluding the summary)
-        for row in rows[:-2]:
+            row = rows[0]
             game_statline = []
 
             date = row[3]
@@ -290,6 +289,28 @@ def get_statmuse_player_vs_team(player, player_team, opp_team, category):
                 else:
                     game_statline.append(0.0)
             game_log.append(game_statline)
+        else:
+            # Count the number of games (excluding the summary row)
+            games_played = len(rows) - 2  # Adjusted for possible summary row
+
+            # Loop through the game rows (excluding the summary)
+            for row in rows[:-2]:
+                game_statline = []
+
+                date = row[3]
+                game_statline.append(date)
+                for stat in category:
+                    stat_index = headers.index(stat)
+                    stat_value = row[stat_index].strip()
+                    
+                    # If stat value is present, append it to the game log and update averages
+                    if stat_value:
+                        stat_float = float(stat_value)
+                        game_statline.append(stat_float)
+                        averages[stat] += stat_float
+                    else:
+                        game_statline.append(0.0)
+                game_log.append(game_statline)
 
         # Calculate averages by dividing the total for each stat by games played
         for stat in category:
