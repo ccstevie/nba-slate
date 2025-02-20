@@ -14,6 +14,7 @@ import {
     Tooltip,
     Collapse,
 } from '@mui/material';
+import DownloadMatchups from '../../components/DownloadMatchups/DownloadMatchups';
 
 const PlayerTable = () => {
     const [data, setData] = useState([]);
@@ -238,6 +239,8 @@ const PlayerTable = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
+
+            <DownloadMatchups />
 
             <Box sx={{ padding: 4, fontStyle: 'italic', textAlign: 'center' }}>
                 <Typography variant="body2">

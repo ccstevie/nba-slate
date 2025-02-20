@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-import json
+from datetime import datetime
 import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -11,35 +11,10 @@ import time
 import os
 import chromedriver_autoinstaller
 import requests
-
-"""
-MONGODB
-"""
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
-# from dotenv import load_dotenv
-
-# load_dotenv()
-db_uri = os.getenv("MONGODB_URI")
-
-client = MongoClient(db_uri, server_api=ServerApi('1'))
-
-db = client['nba_stats']
-final_table_collection = db['final_table']
-player_statlines_collection = db['player_statlines'] 
-
-# Clear old data by dropping the collections
-print("Dropping old data...")
-final_table_collection.drop()  # Drops the 'final_table' collection
-player_statlines_collection.drop()  # Drops the 'player_statlines' collection
-
-# Recreate collections after dropping (optional)
-final_table_collection = db['final_table']
-player_statlines_collection = db['player_statlines'] 
-
-"""
-MONGODB
-"""
+from dotenv import load_dotenv
+load_dotenv()
 
 def scrape_nba_lineups():
     url = "https://www.rotowire.com/basketball/nba-lineups.php"
@@ -438,90 +413,134 @@ def get_injury_report():
     return df_injury_report
 
 def create_player_rankings():
-    print("Fetching lineups")
-    lineups = scrape_nba_lineups()
+    # MongoDB connection
+    db_uri = os.getenv("MONGODB_URI")
+    if not db_uri:
+        raise ValueError("MONGODB_URI is not set in environment variables.")
 
-    print("Scraping fantasypros")
-    df_dvp = scrape_fantasypros_defense_vs_position()
+    # Establish MongoDB connection
+    try:
+        client = MongoClient(db_uri, server_api=ServerApi('1'))
+        db = client['nba_stats']
 
-    categories = ['PTS', 'REB', 'AST', '3PM', 'STL', 'BLK']
-    ranks = get_positional_ranks(df_dvp, lineups, categories)
-    filtered_ranks = filter_ranks(ranks)
+        matchups_collection = db['matchups']
+        final_table_collection = db['final_table']
+        player_statlines_collection = db['player_statlines'] 
 
-    print("Mapping player to opposing defence")
-    player_defense_map = map_players_to_defense_rankings(lineups, filtered_ranks)
+        # Clear old data by dropping the collections
+        print("Dropping old data...")
+        matchups_collection.drop()
+        final_table_collection.drop()
+        player_statlines_collection.drop() 
 
-    print("Fetching statmuse")
-    player_history = get_player_statistics(player_defense_map)
+        # Recreate collections after dropping
+        matchups_collection = db['matchups']
+        final_table_collection = db['final_table']
+        player_statlines_collection = db['player_statlines']
 
-    print("Getting injury report")
-    injury_report = get_injury_report()
+        print("Fetching lineups")
+        lineups = scrape_nba_lineups()
 
-    print("Finalizing Table")
-    final_table = []
+        print("Scraping fantasypros")
+        df_dvp = scrape_fantasypros_defense_vs_position()
 
-    for player_data in player_history:
-        player = player_data['player']
-        opposing_team = player_data['opposing_team']
-        season_averages = player_data['season_averages']
-        games_played = player_data['games_played']
+        categories = ['PTS', 'REB', 'AST', '3PM', 'STL', 'BLK']
+        ranks = get_positional_ranks(df_dvp, lineups, categories)
+        filtered_ranks = filter_ranks(ranks)
 
-        if not opposing_team or not season_averages:
-            continue
+        print("Mapping player to opposing defence")
+        player_defense_map = map_players_to_defense_rankings(lineups, filtered_ranks)
 
-        # Initialize the row for each player
-        stats_row = {
-            'player': player,
-            'opposing_team': opposing_team,
-            'games_played': games_played
-        }
+        print("Fetching statmuse")
+        player_history = get_player_statistics(player_defense_map)
 
-        game_log = player_data['game_log']
+        print("Getting injury report")
+        injury_report = get_injury_report()
 
-        # Upload the game log to MongoDB's player_statlines collection
-        player_statline_data = {
-            "player": player,
-            "opposing_team": opposing_team,
-            "game_log": game_log
-        }
-        player_statlines_collection.insert_one(player_statline_data)
+        print("Finalizing Table")
+        final_table = []
 
-        # Check if the player is on the injury report
-        injury_info = injury_report[injury_report['player'] == player]
-        if not injury_info.empty:
-            injury_note = injury_info.iloc[0]['status_comment']
-            stats_row['injury_note'] = injury_note
-        else:
-            stats_row['injury_note'] = ''
+        for player_data in player_history:
+            print(player_data)
+            player = player_data['player']
+            opposing_team = player_data['opposing_team']
+            season_averages = player_data['season_averages']
+            games_played = player_data['games_played']
 
-        # Process final stat values and defense rankings
-        for category in categories:
-            avg = player_data['averages'].get(category, '')
-            season_avg = season_averages.get(category, '')
+            if not opposing_team or not season_averages:
+                continue
 
-            if avg and season_avg:
-                difference = round(float(avg) - float(season_avg), 1)
+            # Initialize the row for each player
+            stats_row = {
+                'player': player,
+                'opposing_team': opposing_team,
+                'games_played': games_played
+            }
+
+            game_log = player_data['game_log']
+
+            # Upload the game log to MongoDB's player_statlines collection
+            player_statline_data = {
+                "player": player,
+                "opposing_team": opposing_team,
+                "game_log": game_log
+            }
+            player_statlines_collection.insert_one(player_statline_data)
+
+            # Check if the player is on the injury report
+            injury_info = injury_report[injury_report['player'] == player]
+            if not injury_info.empty:
+                injury_note = injury_info.iloc[0]['status_comment']
+                stats_row['injury_note'] = injury_note
             else:
-                difference = ''
+                stats_row['injury_note'] = ''
 
-            if category in player_data['defense_stats']:
-                defense_rank = player_data['defense_stats'][category]
-                stats_row[category] = difference
-                stats_row[category + '_rank'] = defense_rank
-            else:
-                stats_row[category] = ''
-                stats_row[category + '_rank'] = ''
+            # Process final stat values and defense rankings
+            for category in categories:
+                avg = player_data['averages'].get(category, '')
+                season_avg = season_averages.get(category, '')
 
-        final_table.append(stats_row)
+                if avg and season_avg:
+                    difference = round(float(avg) - float(season_avg), 1)
+                else:
+                    difference = ''
 
-    # Convert final table to DataFrame and filter non-zero rows
-    df_final = pd.DataFrame(final_table)
-    df_final_filtered = df_final[(df_final[categories] != 0).any(axis=1)]
+                if category in player_data['defense_stats']:
+                    defense_rank = player_data['defense_stats'][category]
+                    stats_row[category] = difference
+                    stats_row[category + '_rank'] = defense_rank
+                else:
+                    stats_row[category] = ''
+                    stats_row[category + '_rank'] = ''
 
-    # Insert df_final_filtered into MongoDB
-    final_table_collection.insert_many(df_final_filtered.to_dict('records'))
+            final_table.append(stats_row)
 
-    print("Data uploaded to MongoDB successfully")
+        # Convert final table to DataFrame and filter non-zero rows
+        df_final = pd.DataFrame(final_table)
+        df_final_filtered = df_final[(df_final[categories] != 0).any(axis=1)]
+
+        # Insert df_final_filtered into MongoDB
+        final_table_collection.insert_many(df_final_filtered.to_dict('records'))
+
+        # Extract only the matchups (away/home teams)
+        matchups = [{'away_team': game['away_team'], 'home_team': game['home_team']} for game in lineups]
+
+        # Insert today's matchups into MongoDB
+        today = datetime.today().strftime('%Y-%m-%d')
+        matchup_entry = {'date': today, 'matchups': matchups}
+
+        # Upsert to avoid duplicate entries for the same date
+        matchups_collection.update_one({'date': today}, {'$set': matchup_entry}, upsert=True)
+
+        print("Data uploaded to MongoDB successfully")
+
+    except Exception as e:
+        print(f"Error occurred: {e}")
+    
+    finally:
+        # Close MongoDB connection
+        client.close()
+        print("MongoDB connection closed.")
 
 if __name__ == '__main__':
     create_player_rankings()
