@@ -42,6 +42,7 @@ const DownloadMatchups = () => {
                 backgroundColor: '#303f9f'
               }
             }}
+            onClick={handleDownload}
           >
             Download Slate
           </Button>

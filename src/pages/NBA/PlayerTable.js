@@ -27,7 +27,6 @@ const PlayerTable = () => {
         fetch('/api/getPlayers')
             .then(response => response.json())
             .then(playersData => {
-                console.log(playersData);
                 setData(playersData.map(row => ({
                     player: row.player,
                     opposing_team: row.opposing_team,
