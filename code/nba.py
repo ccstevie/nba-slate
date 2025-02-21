@@ -13,8 +13,8 @@ import chromedriver_autoinstaller
 import requests
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 
 def scrape_nba_lineups():
     url = "https://www.rotowire.com/basketball/nba-lineups.php"
