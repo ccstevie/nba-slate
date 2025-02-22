@@ -1,10 +1,9 @@
-import mongoose from 'mongoose';
-
+const mongoose = require("mongoose");
 const uri = process.env.MONGODB_URI;
 
 const FinalTable = mongoose.model('FinalTable', new mongoose.Schema({}, { strict: false }), 'final_table');
 
-export default async function handler(req, res) {
+async function getPlayers(req, res) {
     if (req.method === 'GET') {
         try {
             await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -22,3 +21,5 @@ export default async function handler(req, res) {
         res.status(405).end(`Method ${req.method} Not Allowed`);
     }
 }
+
+module.exports = getPlayers;

@@ -1,5 +1,4 @@
-import mongoose from "mongoose";
-
+const mongoose = require("mongoose");
 const uri = process.env.MONGODB_URI;
 
 // Define schema inside the API file
@@ -16,10 +15,9 @@ const MatchupSchema = new mongoose.Schema(
   { strict: false }
 );
 
-// Use existing model if already defined
-const Matchup = mongoose.models.Matchup || mongoose.model("Matchup", MatchupSchema);
+const Matchup = mongoose.model('Matchup', MatchupSchema, 'matchups');
 
-export default async function handler(req, res) {
+async function getMatchups(req, res) {
   if (req.method === "GET") {
     try {
       await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -43,3 +41,5 @@ export default async function handler(req, res) {
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
+
+module.exports = getMatchups;

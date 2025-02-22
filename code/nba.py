@@ -21,13 +21,15 @@ def scrape_nba_lineups():
     response = requests.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
 
-    matchups = soup.find_all('div', class_='lineup__matchup')
+    matchups = soup.find_all('div', class_='lineup is-nba')
     games = []
 
     for matchup in matchups:
         if matchup.find('a', class_='lineup__mteam is-visit white') is None:
             continue
 
+        time = matchup.find('div', class_='lineup__time').text
+        
         # Find away and home teams
         away_team = matchup.find('a', class_='lineup__mteam is-visit white')
         home_team = matchup.find('a', class_='lineup__mteam is-home white')
@@ -60,6 +62,7 @@ def scrape_nba_lineups():
                     home_lineup.append((position, name, home_team_name))
 
         games.append({
+            "time": time,
             "away_team": away_team_name, 
             "home_team": home_team_name, 
             "away_lineup": away_lineup, 
@@ -461,7 +464,6 @@ def create_player_rankings():
         final_table = []
 
         for player_data in player_history:
-            print(player_data)
             player = player_data['player']
             opposing_team = player_data['opposing_team']
             season_averages = player_data['season_averages']
@@ -523,7 +525,7 @@ def create_player_rankings():
         final_table_collection.insert_many(df_final_filtered.to_dict('records'))
 
         # Extract only the matchups (away/home teams)
-        matchups = [{'away_team': game['away_team'], 'home_team': game['home_team']} for game in lineups]
+        matchups = [{'time': game['time'], 'away_team': game['away_team'], 'home_team': game['home_team']} for game in lineups]
 
         # Insert today's matchups into MongoDB
         today = datetime.today().strftime('%Y-%m-%d')
