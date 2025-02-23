@@ -3,7 +3,7 @@ const uri = process.env.MONGODB_URI;
 
 const PlayerStatlines = mongoose.model('PlayerStatlines', new mongoose.Schema({}, { strict: false }), 'player_statlines');
 
-async function getPlayerStatlines(req, res) {
+export default async function getPlayerStatlines(req, res) {
     if (req.method === 'GET') {
         const player = req.query.player.replace('_', ' '); // Use query parameters for player name
 
@@ -23,4 +23,4 @@ async function getPlayerStatlines(req, res) {
     }
 }
 
-module.exports = getPlayerStatlines;
+// module.exports = getPlayerStatlines;

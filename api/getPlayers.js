@@ -3,7 +3,7 @@ const uri = process.env.MONGODB_URI;
 
 const FinalTable = mongoose.model('FinalTable', new mongoose.Schema({}, { strict: false }), 'final_table');
 
-async function getPlayers(req, res) {
+export default async function getPlayers(req, res) {
     if (req.method === 'GET') {
         try {
             await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -22,4 +22,4 @@ async function getPlayers(req, res) {
     }
 }
 
-module.exports = getPlayers;
+// module.exports = getPlayers;

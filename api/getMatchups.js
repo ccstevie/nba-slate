@@ -17,7 +17,7 @@ const MatchupSchema = new mongoose.Schema(
 
 const Matchup = mongoose.model('Matchup', MatchupSchema, 'matchups');
 
-async function getMatchups(req, res) {
+export default async function getMatchups(req, res) {
   if (req.method === "GET") {
     try {
       await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -42,4 +42,4 @@ async function getMatchups(req, res) {
   }
 }
 
-module.exports = getMatchups;
+// module.exports = getMatchups;
