@@ -9,11 +9,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/api/matchups", getMatchups);
+app.get("/api/getMatchups", getMatchups);
 
-app.get("/api/players", getPlayers);
+app.get("/api/getPlayers", getPlayers);
 
-app.get("/api/statlines", getPlayerStatlines);
+app.get("/api/getPlayerStatlines", getPlayerStatlines);
 
 // Start the server
 const PORT = process.env.PORT || 5000;
