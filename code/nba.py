@@ -226,12 +226,12 @@ def map_players_to_defense_rankings(lineups, filtered_ranks):
 
     return player_defense_mapping
 
-def format_statmuse_url(player, player_team, opp_team):
+def format_statmuse_url(player, opp_team):
     player_formatted = "-".join(player.lower().split())
-    return f"https://www.statmuse.com/nba/ask/{player_team}+{player_formatted}-vs-{opp_team}-last-2-years-including-playoffs"
+    return f"https://www.statmuse.com/nba/ask/{player_formatted}-vs-{opp_team}-last-2-years-including-playoffs"
 
-def get_statmuse_player_vs_team(player, player_team, opp_team, category):
-    url = format_statmuse_url(player, player_team, opp_team)
+def get_statmuse_player_vs_team(player, opp_team, category):
+    url = format_statmuse_url(player, opp_team)
     response = requests.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
     
@@ -254,7 +254,10 @@ def get_statmuse_player_vs_team(player, player_team, opp_team, category):
             game_statline = []
 
             date = row[3]
-            game_statline.append(date)
+            player_team = row[4]
+            loc = "Home" if row[5] == "vs" else "Away"
+            minutes = row[7]
+            game_statline.extend([date, player_team, loc, minutes])
             for stat in category:
                 stat_index = headers.index(stat)
                 stat_value = row[stat_index].strip()
@@ -276,7 +279,10 @@ def get_statmuse_player_vs_team(player, player_team, opp_team, category):
                 game_statline = []
 
                 date = row[3]
-                game_statline.append(date)
+                player_team = row[4]
+                loc = "Home" if row[5] == "vs" else "Away"
+                minutes = row[7]
+                game_statline.extend([date, player_team, loc, minutes])
                 for stat in category:
                     stat_index = headers.index(stat)
                     stat_value = row[stat_index].strip()
@@ -301,12 +307,12 @@ def get_statmuse_player_vs_team(player, player_team, opp_team, category):
         "games_played": games_played  # Number of games played
     }
 
-def format_season_averages_url(player, team):
+def format_season_averages_url(player):
     player_formatted = "-".join(player.lower().split())
-    return f"https://www.statmuse.com/nba/ask?q={team}+{player_formatted}+averages+this+season"
+    return f"https://www.statmuse.com/nba/ask?q={player_formatted}+averages+this+season"
 
-def get_statmuse_season_averages(player, team):
-    url = format_season_averages_url(player, team)
+def get_statmuse_season_averages(player):
+    url = format_season_averages_url(player)
     response = requests.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
     
@@ -348,17 +354,16 @@ def get_player_statistics(player_map):
         player_name = player_info['player']
         opposing_team = player_info['opposing_team']
         defense_stats = player_info['defense_stats']
-        player_team = player_info['player_team']
         
         # Get the stats for the player vs the opposing team (historical)
-        historical_stats = get_statmuse_player_vs_team(player_name, player_team, opposing_team, player_info['defense_stats'].keys())
+        historical_stats = get_statmuse_player_vs_team(player_name, opposing_team, player_info['defense_stats'].keys())
         game_log = historical_stats['game_log']
         averages = historical_stats['averages']
         games_played = historical_stats['games_played']
         
         # Get the player's season averages
-        fullname, season_averages = get_statmuse_season_averages(player_name, player_team)
-        
+        fullname, season_averages = get_statmuse_season_averages(player_name)
+
         player_stats.append({
             'player': fullname,
             'opposing_team': opposing_team,
@@ -416,12 +421,10 @@ def get_injury_report():
     return df_injury_report
 
 def create_player_rankings():
-    # MongoDB connection
     db_uri = os.getenv("MONGODB_URI")
     if not db_uri:
         raise ValueError("MONGODB_URI is not set in environment variables.")
 
-    # Establish MongoDB connection
     try:
         client = MongoClient(db_uri, server_api=ServerApi('1'))
         db = client['nba_stats']

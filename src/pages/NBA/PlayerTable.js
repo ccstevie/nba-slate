@@ -204,6 +204,9 @@ const PlayerTable = () => {
                                                         <TableHead>
                                                             <TableRow>
                                                                 <TableCell>Date</TableCell>
+                                                                <TableCell>Team</TableCell>
+                                                                <TableCell>Location</TableCell>
+                                                                <TableCell>Minutes</TableCell>
                                                                 <TableCell>Points</TableCell>
                                                                 <TableCell>Rebounds</TableCell>
                                                                 <TableCell>Assists</TableCell>
@@ -222,6 +225,9 @@ const PlayerTable = () => {
                                                                     <TableCell>{log[4]}</TableCell>
                                                                     <TableCell>{log[5]}</TableCell>
                                                                     <TableCell>{log[6]}</TableCell>
+                                                                    <TableCell>{log[7]}</TableCell>
+                                                                    <TableCell>{log[8]}</TableCell>
+                                                                    <TableCell>{log[9]}</TableCell>
                                                                 </TableRow>
                                                             ))}
                                                         </TableBody>
