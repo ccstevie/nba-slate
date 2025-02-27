@@ -4,6 +4,7 @@ const cors = require('cors');
 const getMatchups = require("./api/getMatchups");
 const getPlayers = require("./api/getPlayers");
 const getPlayerStatlines = require("./api/getPlayerStatlines");
+const getPicks = require("./api/getPicks");
 
 const app = express();
 app.use(cors());
@@ -14,6 +15,9 @@ app.get("/api/getMatchups", getMatchups);
 app.get("/api/getPlayers", getPlayers);
 
 app.get("/api/getPlayerStatlines", getPlayerStatlines);
+
+app.get("/api/getPicks", getPicks);
+
 
 // Start the server
 const PORT = process.env.PORT || 5000;
