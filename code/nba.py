@@ -72,65 +72,20 @@ def scrape_nba_lineups():
     return games
 
 def scrape_fantasypros_defense_vs_position():
-    # Automatically install the compatible ChromeDriver
-    chromedriver_autoinstaller.install()
+    fp_url = "https://www.fantasypros.com/nba/defense-vs-position.php?range=30"
+    positions = ["PG", "SG", "SF", "PF", "C"]
 
-    # Set up Chrome options for headless mode and performance
-    options = Options()
-    options.add_argument('--headless')
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
-    options.add_argument('--disable-gpu')
-
-    # Initialize Chrome WebDriver with options
-    driver = webdriver.Chrome(options=options)
-    url = "https://www.fantasypros.com/nba/defense-vs-position.php"
-    driver.get(url)
-    
-    wait = WebDriverWait(driver, 10)
-
-    try:
-        close_banner = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'onetrust-close-btn-handler')))
-        close_banner.click()
-        print("Cookie banner closed")
-    except:
-        print("No cookie banner to close")
-    
-    filter_dropdown = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'game-change')))
-    filter_dropdown.click()
-    
-    print("Select Last 30 Games")
-    last_30_option = wait.until(EC.element_to_be_clickable((By.XPATH, "//option[@value='GC-30']")))
-    last_30_option.click()
-
-    # Wait for the table to load
-    time.sleep(5)
-
-    # Dictionary to store rankings for each position
     all_position_data = {}
 
-    # List of positions to loop through
-    positions = ['PG', 'SG', 'SF', 'PF', 'C']
-    
-    for position in positions:
-        # Click on the position filter
-        position_button = wait.until(EC.element_to_be_clickable((By.XPATH, f"//li[@data-pos='{position}']")))
-        position_button.click()
-        
-        # Wait for the table to refresh
-        time.sleep(5)
+    for pos in positions:
+        url = f"{fp_url}&pos={pos}"
+        html = requests.get(url).text
+        soup = BeautifulSoup(html, "html.parser")
+        table = soup.find("table")
+        df = pd.read_html(str(table))[0]
+        all_position_data[pos] = df
 
-        # Parse the updated table into a DataFrame
-        page_source = driver.page_source
-        soup = BeautifulSoup(page_source, 'html.parser')
-        table = soup.find('table')
-        df = pd.read_html(str(table))[0]  # This pulls the table into a DataFrame
-        
-        # Store the rankings for the current position
-        all_position_data[position] = df
-    
-    driver.quit()
-    return all_position_data  # Dictionary with rankings for each position
+    return all_position_data
 
 def create_ranks(df_dvp, rank_columns):    
     for column in rank_columns:
