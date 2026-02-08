@@ -47,7 +47,10 @@ def scrape_nba_lineups():
                     break
                 if 'lineup__player' in item.get('class', []):
                     position = item.find('div', class_='lineup__pos').text.strip()
-                    name = item.find('a').text.strip()
+                    
+                    player_tag = item.find('a')
+                    name = player_tag.get("title", player_tag.text).strip()
+
                     away_lineup.append((position, name, away_team_name))
 
         # Find home team players
@@ -58,7 +61,10 @@ def scrape_nba_lineups():
                     break
                 if 'lineup__player' in item.get('class', []):
                     position = item.find('div', class_='lineup__pos').text.strip()
-                    name = item.find('a').text.strip()
+
+                    player_tag = item.find('a')
+                    name = player_tag.get("title", player_tag.text).strip()
+
                     home_lineup.append((position, name, home_team_name))
 
         games.append({

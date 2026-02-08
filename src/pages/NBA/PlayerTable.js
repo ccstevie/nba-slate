@@ -85,7 +85,7 @@ const PlayerTable = () => {
         }
     };    
 
-    const sortedData = data.sort((a, b) => {
+    const sortedData = [...data].sort((a, b) => {
         if (sortDirection === 'asc') {
             return a[sortColumn] - b[sortColumn];
         }
