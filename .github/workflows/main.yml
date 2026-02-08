@@ -20,7 +20,7 @@ jobs:
         pip uninstall -y numpy pandas
         pip install numpy==1.23.5  # Specify a stable version of numpy
         pip install pandas==1.5.3  # Specify a compatible pandas version
-        pip install -r requirements.txt
+        pip install -r code/requirements.txt
         pip install selenium chromedriver-autoinstaller pyvirtualdisplay
     - name: Install xvfb
       run: sudo apt-get install -y xvfb
