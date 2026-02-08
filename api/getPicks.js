@@ -4,27 +4,25 @@ const uri = process.env.MONGODB_URI;
 const FinalTable = mongoose.model("FinalTable", new mongoose.Schema({}, { strict: false }), "final_table");
 
 export default async function getPicks(req, res) {
-    if (req.method === 'GET') {
+    if (req.method === "GET") {
         try {
             await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
             const players = await FinalTable.find().lean();
-            
-            // Filter criteria
-            const threshold = 5;  // Points above average
-            const minGames = 5;   // Minimum games played
-            
-            // Separate best and worst matchups
-            const bestMatchups = players.filter(player => 
-                player.PTS_Diff >= threshold &&
-                player.PTS_rank >= 25 &&
-                player.games_played > minGames
-            ).sort((a, b) => b.PTS_Diff - a.PTS_Diff);
 
-            const worstMatchups = players.filter(player => 
-                player.PTS_Diff <= -threshold &&
-                player.PTS_rank <= 5 &&
-                player.games_played > minGames
-            ).sort((a, b) => a.PTS_Diff - b.PTS_Diff);
+            const minGames = 5; // Minimum games played
+
+            // Filter players with sufficient games
+            const validPlayers = players.filter(player => player.games_played > minGames);
+
+            // Rank best matchups: Sort by highest PTS_Diff and worst defense (highest PTS_rank)
+            const bestMatchups = [...validPlayers]
+                .sort((a, b) => b.PTS_Diff - a.PTS_Diff || b.PTS_rank - a.PTS_rank)
+                .slice(0, 3); // Take top 3 best matchups
+
+            // Rank worst matchups: Sort by lowest PTS_Diff and strongest defense (lowest PTS_rank)
+            const worstMatchups = [...validPlayers]
+                .sort((a, b) => a.PTS_Diff - b.PTS_Diff || a.PTS_rank - b.PTS_rank)
+                .slice(0, 3); // Take top 3 worst matchups
 
             res.status(200).json({ bestMatchups, worstMatchups });
         } catch (err) {
