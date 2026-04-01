@@ -474,8 +474,13 @@ def create_player_rankings():
 
             final_table.append(stats_row)
 
+        print("Final table length:", len(final_table))
+        print("Sample row:", final_table[:1])
         # Convert final table to DataFrame and filter non-zero rows
         df_final = pd.DataFrame(final_table)
+        
+        print("DataFrame columns:", df_final.columns)
+        
         df_final_filtered = df_final[(df_final[categories] != 0).any(axis=1)]
 
         # Insert df_final_filtered into MongoDB
