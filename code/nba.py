@@ -186,7 +186,11 @@ def format_statmuse_url(player, opp_team):
 
 def get_statmuse_player_vs_team(player, opp_team, category):
     url = format_statmuse_url(player, opp_team)
-    response = requests.get(url)
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+    }
+    
+    response = requests.get(url, headers=headers)
     soup = BeautifulSoup(response.content, 'html.parser')
     
     game_log = []  # List of lists to store statlines for each game
