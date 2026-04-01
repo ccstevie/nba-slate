@@ -194,6 +194,8 @@ def get_statmuse_player_vs_team(player, opp_team, category):
     games_played = 0
 
     table = soup.find('table')
+    print("StatMuse URL:", url)
+    print("Table found:", table is not None)
     if table:
         headers = [th.get_text().strip() for th in table.find_all('th')]
         values = [td.get_text().strip() for td in table.find_all('td')]
