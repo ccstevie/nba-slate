@@ -254,6 +254,8 @@ def get_statmuse_player_vs_team(player, opp_team, category):
                     else:
                         game_statline.append(0.0)
                 game_log.append(game_statline)
+    else:
+        print(f"No data found for {player} vs {opp_team} on Statmuse.")
 
         # Calculate averages by dividing the total for each stat by games played
         for stat in category:
@@ -333,6 +335,7 @@ def get_player_statistics(player_map):
             'season_averages': season_averages  # Season averages
         })
 
+    print(player_stats)
     return player_stats
 
 def get_injury_report():
