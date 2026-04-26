@@ -341,46 +341,42 @@ def get_player_statistics(player_map):
 def get_injury_report():
     url = 'https://www.espn.com/nba/injuries'
     headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
     }
-    response = requests.get(url, headers=headers)
-    soup = BeautifulSoup(response.content, 'html.parser')
+    try:
+        response = requests.get(url, headers=headers)
+        soup = BeautifulSoup(response.content, 'html.parser')
+        injury_report = []
+        teams_sections = soup.find_all('div', class_='ResponsiveTable Table__league-injuries')
 
-    injury_report  = []
+        for team_section in teams_sections:
+            team_name_tag = team_section.find('span', class_='injuries__teamName')
+            if not team_name_tag:
+                continue
+            team_name = team_name_tag.text.strip()
+            table = team_section.find('table')
+            if table:
+                players = table.find_all('tr')[1:]
+                for player_row in players:
+                    player_data = player_row.find_all('td')
+                    if len(player_data) >= 5:
+                        injury_report.append({
+                            'team': team_name,
+                            'player': player_data[0].text.strip(),
+                            'position': player_data[1].text.strip(),
+                            'est_return_date': player_data[2].text.strip(),
+                            'status_comment': player_data[4].text.strip()
+                        })
 
-    teams_sections = soup.find_all('div', class_='ResponsiveTable Table__league-injuries')
+        df = pd.DataFrame(injury_report)
+        if df.empty:
+            print("Warning: Injury report came back empty — ESPN structure may have changed.")
+            return pd.DataFrame(columns=['team', 'player', 'position', 'est_return_date', 'status_comment'])
+        return df
 
-    for team_section in teams_sections:
-        # Get team name from the section
-        team_name = team_section.find('span', class_='injuries__teamName').text.strip()
-        
-        # Find the table within the team section
-        table = team_section.find('table')
-        
-        if table:
-            players = table.find_all('tr')[1:]  # Skip the header row
-
-            for player_row in players:
-                # Extract the columns for player name, position, return date, status, and comment
-                player_data = player_row.find_all('td')
-                if len(player_data) >= 5:  # Ensure there are enough columns
-                    player_name = player_data[0].text.strip()
-                    position = player_data[1].text.strip()
-                    est_return_date = player_data[2].text.strip()
-                    status_comment = player_data[4].text.strip()  # Comment is the last column
-
-                    # Add the data to the injury report list
-                    injury_report.append({
-                        'team': team_name,
-                        'player': player_name,
-                        'position': position,
-                        'est_return_date': est_return_date,
-                        'status_comment': status_comment
-                    })
-
-    # Convert the list into a DataFrame for easier searching later
-    df_injury_report = pd.DataFrame(injury_report)
-    return df_injury_report
+    except Exception as e:
+        print(f"Failed to fetch injury report: {e}")
+        return pd.DataFrame(columns=['team', 'player', 'position', 'est_return_date', 'status_comment'])
 
 def create_player_rankings():
     db_uri = os.getenv("MONGODB_URI")
@@ -424,6 +420,8 @@ def create_player_rankings():
 
         print("Getting injury report")
         injury_report = get_injury_report()
+        print("Injury report columns:", injury_report.columns.tolist())
+        print("Injury report shape:", injury_report.shape)
 
         print("Finalizing Table")
         final_table = []
