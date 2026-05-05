@@ -81,7 +81,7 @@ def scrape_fantasypros_defense_vs_position():
         html = requests.get(url).text
         soup = BeautifulSoup(html, "html.parser")
         table = soup.find("table")
-        df = pd.read_html(str(table))[0]
+        df = pd.read_html(str(table), flavor="lxml")[0]
         all_position_data[pos] = df
 
     return all_position_data
