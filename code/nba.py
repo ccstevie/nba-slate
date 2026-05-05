@@ -405,15 +405,30 @@ def create_player_rankings():
         print("Fetching lineups")
         lineups = scrape_nba_lineups()
 
-        print("Scraping fantasypros")
-        df_dvp = scrape_fantasypros_defense_vs_position()
-
+        print("Skipping FantasyPros — using raw lineups only")
+        
         categories = ['PTS', 'REB', 'AST', '3PM', 'STL', 'BLK']
-        ranks = get_positional_ranks(df_dvp, lineups, categories)
-        filtered_ranks = filter_ranks(ranks)
-
-        print("Mapping player to opposing defence")
-        player_defense_map = map_players_to_defense_rankings(lineups, filtered_ranks)
+        
+        player_defense_map = []
+        
+        for game in lineups:
+            for pos, player, team in game['home_lineup']:
+                player_defense_map.append({
+                    'player': player,
+                    'position': pos,
+                    'player_team': team,
+                    'opposing_team': game['away_team'],
+                    'defense_stats': {cat: None for cat in categories}
+                })
+        
+            for pos, player, team in game['away_lineup']:
+                player_defense_map.append({
+                    'player': player,
+                    'position': pos,
+                    'player_team': team,
+                    'opposing_team': game['home_team'],
+                    'defense_stats': {cat: None for cat in categories}
+                })
 
         print("Fetching statmuse")
         player_history = get_player_statistics(player_defense_map)
@@ -471,7 +486,7 @@ def create_player_rankings():
                     difference = ''
 
                 if category in player_data['defense_stats']:
-                    defense_rank = player_data['defense_stats'][category]
+                    defense_rank = player_data['defense_stats'].get(category)
                     stats_row[category] = difference
                     stats_row[category + '_rank'] = defense_rank
                 else:
